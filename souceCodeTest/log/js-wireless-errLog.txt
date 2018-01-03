@@ -1,0 +1,47 @@
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:define(function (require, exports, module) {
+line:1
+character:1
+a:define
+b:undefined
+c:undefined
+d:undefined
+reason:'define' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:	var pageModule = new PageLogic({
+line:3
+character:23
+a:PageLogic
+b:undefined
+c:undefined
+d:undefined
+reason:'PageLogic' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:		pageModule.update("wifiAdvCfg,wifiTime", 2000, update);
+line:14
+character:50
+a:update
+b:undefined
+c:undefined
+d:undefined
+reason:'update' was used before it was defined.
+id:(error)
+raw:Unexpected '{a}'.
+code:unexpected_a
+evidence:	function update(obj) {
+line:17
+character:2
+a:function
+b:undefined
+c:undefined
+d:undefined
+reason:Unexpected 'function'.
+reason:Stopping. (3% scanned).
+line:17
+character:2

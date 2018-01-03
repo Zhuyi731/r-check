@@ -1,0 +1,55 @@
+type:warning
+line:34
+message:Expected (<filter-function-list> | none) but found 'alpha(opacity=90)'.
+evidence:    filter: alpha(opacity=90);
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:41
+message:Expected end of value but found '	'.
+evidence:    width: 90px \9;
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:164
+message:Values of 0 shouldn't have units specified.
+evidence:  padding: 0px;
+rule:{
+id:zero-units
+name:Disallow units for 0 values
+desc:You don't need to specify units when a value is 0.
+browsers:All
+}
+
+type:warning
+line:255
+message:float can't be used with display: inline-block.
+evidence:  float: left;
+rule:{
+id:display-property-grouping
+name:Require properties appropriate for display
+desc:Certain properties shouldn't be used with certain display property values.
+browsers:All
+}
+
+type:warning
+line:261
+message:Expected end of value but found '	'.
+evidence:  margin:0 3px 4px 4px \9;
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+

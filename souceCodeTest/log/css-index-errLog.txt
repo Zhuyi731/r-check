@@ -1,0 +1,198 @@
+type:warning
+line:10
+message:Duplicate property 'overflow-y' found.
+evidence:  overflow-y: scroll;
+rule:{
+id:duplicate-properties
+name:Disallow duplicate properties
+desc:Duplicate properties must appear one after the other.
+browsers:All
+}
+
+type:warning
+line:11
+message:Duplicate property 'overflow-y' found.
+evidence:  overflow-y: scroll;
+rule:{
+id:duplicate-properties
+name:Disallow duplicate properties
+desc:Duplicate properties must appear one after the other.
+browsers:All
+}
+
+type:warning
+line:12
+message:Duplicate property 'overflow-y' found.
+evidence:  overflow-y: scroll;
+rule:{
+id:duplicate-properties
+name:Disallow duplicate properties
+desc:Duplicate properties must appear one after the other.
+browsers:All
+}
+
+type:error
+line:19
+message:Unexpected token '20\0' at line 19, col 18.
+evidence:  margin-bottom: 20\0;
+rule:{
+id:errors
+name:Parsing Errors
+desc:This rule looks for recoverable syntax errors.
+browsers:All
+}
+
+type:warning
+line:54
+message:Unknown property 'webkit-transition'.
+evidence:    webkit-transition: all 0.3s ease;
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:132
+message:Expected (<filter-function-list> | none) but found 'alpha(opacity=90)'.
+evidence:  filter: alpha(opacity=90);
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:269
+message:Values of 0 shouldn't have units specified.
+evidence:  border: 0px;
+rule:{
+id:zero-units
+name:Disallow units for 0 values
+desc:You don't need to specify units when a value is 0.
+browsers:All
+}
+
+type:warning
+line:283
+message:Values of 0 shouldn't have units specified.
+evidence:  border: 0px;
+rule:{
+id:zero-units
+name:Disallow units for 0 values
+desc:You don't need to specify units when a value is 0.
+browsers:All
+}
+
+type:warning
+line:409
+message:Expected (<filter-function-list> | none) but found 'alpha(opacity=0)'.
+evidence:  filter: alpha(opacity=0);
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:459
+message:Unknown property 'backgound-color'.
+evidence:  backgound-color: #e4e4e4;
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:463
+message:Values of 0 shouldn't have units specified.
+evidence:  margin-right: 0px;
+rule:{
+id:zero-units
+name:Disallow units for 0 values
+desc:You don't need to specify units when a value is 0.
+browsers:All
+}
+
+type:warning
+line:476
+message:Values of 0 shouldn't have units specified.
+evidence:    margin-left: 0px;
+rule:{
+id:zero-units
+name:Disallow units for 0 values
+desc:You don't need to specify units when a value is 0.
+browsers:All
+}
+
+type:warning
+line:514
+message:Fallback background (hex or RGB) should precede RGBA background.
+evidence:  background:rgba(0,0,0,.75);
+rule:{
+id:fallback-colors
+name:Require fallback colors
+desc:For older browsers that don't support RGBA, HSL, or HSLA, provide a fallback color.
+browsers:IE6,IE7,IE8
+}
+
+type:warning
+line:515
+message:Expected (<filter-function-list> | none) but found 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF000000,endColorstr=#BF000000) 	'.
+evidence:  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF000000,endColorstr=#BF000000) \9;
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:538
+message:float can't be used with display: inline-block.
+evidence:  float:right;
+rule:{
+id:display-property-grouping
+name:Require properties appropriate for display
+desc:Certain properties shouldn't be used with certain display property values.
+browsers:All
+}
+
+type:warning
+line:755
+message:Fallback background (hex or RGB) should precede RGBA background.
+evidence:  background:rgba(0,0,0,.75);
+rule:{
+id:fallback-colors
+name:Require fallback colors
+desc:For older browsers that don't support RGBA, HSL, or HSLA, provide a fallback color.
+browsers:IE6,IE7,IE8
+}
+
+type:warning
+line:756
+message:Expected (<filter-function-list> | none) but found 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF000000,endColorstr=#BF000000) 	'.
+evidence:  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF000000,endColorstr=#BF000000) \9;
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:791
+message:float can't be used with display: inline-block.
+evidence:  float:right;
+rule:{
+id:display-property-grouping
+name:Require properties appropriate for display
+desc:Certain properties shouldn't be used with certain display property values.
+browsers:All
+}
+

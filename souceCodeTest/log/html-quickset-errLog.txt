@@ -1,0 +1,91 @@
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"ip"}'
+evidence:      <input type="text" id="wanIP" name="wanIP" class="form-control validatebox" maxlength="15" required="required" data-options='{"type":"ip"}' placeholder="IP">
+line:73
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"mask"}'
+evidence:      <input type="text" id="wanMask" name="wanMask" class="form-control validatebox" maxlength="15" required="required" data-options='{"type":"mask"}' placeholder="Subnet Mask">
+line:79
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"ip"}'
+evidence:           required="required" data-options='{"type":"ip"}' placeholder="Default Gateway">
+line:87
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"ip"}'
+evidence:           required="required" data-options='{"type":"ip"}' placeholder="Preferred DNS Server" />
+line:95
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw:
+           data-options='{"type":"ip"}'
+evidence:           data-options='{"type":"ip"}' placeholder="Alternative DNS Server">
+line:103
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "pppoeUser"}'
+evidence:            required="required" data-options='{"type": "pppoeUser"}' />
+line:132
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "pppoePassword"}'
+evidence:           required="required" data-options='{"type": "pppoePassword"}'>
+line:140
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"ssid"}'
+evidence:      <input type="text" name="wifiSSID" id="wifiSSID" class="form-control validatebox" maxlength="32" required="required" data-options='{"type":"ssid"}' placeholder="WiFi Name">
+line:156
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"ssidPasword","args":[8, 63]}'
+evidence:      <input type="password" name="wifiPwd" id="wifiPwd" class="form-control validatebox" maxlength="63" placeholder="WiFi Password" data-options='{"type":"ssidPasword","args":[8, 63]}'>
+line:162
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+

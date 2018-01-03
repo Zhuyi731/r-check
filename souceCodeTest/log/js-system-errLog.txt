@@ -1,0 +1,47 @@
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:define(function (require, exports, module) {
+line:1
+character:1
+a:define
+b:undefined
+c:undefined
+d:undefined
+reason:'define' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:	var pageModule = new PageLogic({
+line:3
+character:23
+a:PageLogic
+b:undefined
+c:undefined
+d:undefined
+reason:'PageLogic' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:		pageModule.update("sysTime", 5000, updateTime);
+line:13
+character:38
+a:updateTime
+b:undefined
+c:undefined
+d:undefined
+reason:'updateTime' was used before it was defined.
+id:(error)
+raw:Unexpected '{a}'.
+code:unexpected_a
+evidence:	pageModule.beforeSubmit = function () {
+line:16
+character:2
+a:pageModule
+b:undefined
+c:undefined
+d:undefined
+reason:Unexpected 'pageModule'.
+reason:Stopping. (2% scanned).
+line:16
+character:2

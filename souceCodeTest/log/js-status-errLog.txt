@@ -1,0 +1,58 @@
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:define(function (require, exports, module) {
+line:1
+character:1
+a:define
+b:undefined
+c:undefined
+d:undefined
+reason:'define' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:	var pageModule = new PageLogic({
+line:4
+character:23
+a:PageLogic
+b:undefined
+c:undefined
+d:undefined
+reason:'PageLogic' was used before it was defined.
+id:(error)
+raw:Combine this with the previous 'var' statement.
+code:combine_var
+evidence:	var statusTimer = null;
+line:11
+character:6
+a:statusTimer
+b:undefined
+c:undefined
+d:undefined
+reason:Combine this with the previous 'var' statement.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:			updateInternetConnectStatus(obj, "wan-connect-status");
+line:26
+character:4
+a:updateInternetConnectStatus
+b:undefined
+c:undefined
+d:undefined
+reason:'updateInternetConnectStatus' was used before it was defined.
+id:(error)
+raw:Unexpected '{a}'.
+code:unexpected_a
+evidence:	module.exports = pageModule;
+line:30
+character:2
+a:module
+b:undefined
+c:undefined
+d:undefined
+reason:Unexpected 'module'.
+reason:Stopping. (16% scanned).
+line:30
+character:2

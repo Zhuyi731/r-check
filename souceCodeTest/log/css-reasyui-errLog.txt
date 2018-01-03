@@ -1,0 +1,275 @@
+type:warning
+line:183
+message:Expected (none | button | button-bevel | caps-lock-indicator | caret | checkbox | default-button | listbox	| listitem | media-fullscreen-button | media-mute-button | media-play-button | media-seek-back-button	| media-seek-forward-button	| media-slider | media-sliderthumb | menulist	| menulist-button	| menulist-text	| menulist-textfield | push-button	| radio	| searchfield	| searchfield-cancel-button	| searchfield-decoration | searchfield-results-button | searchfield-results-decoration | slider-horizontal | slider-vertical | sliderthumb-horizontal | sliderthumb-vertical	| square-button	| textarea	| textfield	| scrollbarbutton-down | scrollbarbutton-left | scrollbarbutton-right | scrollbarbutton-up | scrollbargripper-horizontal | scrollbargripper-vertical | scrollbarthumb-horizontal | scrollbarthumb-vertical | scrollbartrack-horizontal | scrollbartrack-vertical) but found 'textfield'.
+evidence:  -webkit-appearance: textfield;
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:999
+message:Values of 0 shouldn't have units specified.
+evidence:  margin-left: 0%;
+rule:{
+id:zero-units
+name:Disallow units for 0 values
+desc:You don't need to specify units when a value is 0.
+browsers:All
+}
+
+type:warning
+line:1169
+message:Values of 0 shouldn't have units specified.
+evidence:    margin-left: 0%;
+rule:{
+id:zero-units
+name:Disallow units for 0 values
+desc:You don't need to specify units when a value is 0.
+browsers:All
+}
+
+type:warning
+line:1328
+message:Values of 0 shouldn't have units specified.
+evidence:    margin-left: 0%;
+rule:{
+id:zero-units
+name:Disallow units for 0 values
+desc:You don't need to specify units when a value is 0.
+browsers:All
+}
+
+type:warning
+line:1487
+message:Values of 0 shouldn't have units specified.
+evidence:    margin-left: 0%;
+rule:{
+id:zero-units
+name:Disallow units for 0 values
+desc:You don't need to specify units when a value is 0.
+browsers:All
+}
+
+type:warning
+line:1831
+message:Expected end of value but found '	'.
+evidence:  margin-top: 1px \9;
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:1985
+message:Expected end of value but found '	'.
+evidence:  margin-top: 4px \9;
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:2442
+message:Expected (<filter-function-list> | none) but found 'alpha(opacity=65)'.
+evidence:  filter: alpha(opacity=65);
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:2726
+message:Duplicate property 'height' found.
+evidence:  height: 300px;
+rule:{
+id:duplicate-properties
+name:Disallow duplicate properties
+desc:Duplicate properties must appear one after the other.
+browsers:All
+}
+
+type:warning
+line:3308
+message:The properties margin-top, margin-bottom, margin-left, margin-right can be replaced by margin.
+evidence:.navbar-form {
+rule:{
+id:shorthand
+name:Require shorthand properties
+desc:Use shorthand properties where possible.
+browsers:All
+}
+
+type:warning
+line:3654
+message:Values of 0 shouldn't have units specified.
+evidence:  width: 0%;
+rule:{
+id:zero-units
+name:Disallow units for 0 values
+desc:You don't need to specify units when a value is 0.
+browsers:All
+}
+
+type:warning
+line:3665
+message:Missing vendor-prefixed CSS gradients for Firefox 3.6+, Old Webkit (Safari 4+, Chrome).
+evidence:.progress-striped .progress-bar,
+rule:{
+id:gradients
+name:Require all gradient definitions
+desc:When using a vendor-prefixed gradient, make sure to use them all.
+browsers:All
+}
+
+type:warning
+line:3684
+message:Missing vendor-prefixed CSS gradients for Firefox 3.6+, Old Webkit (Safari 4+, Chrome).
+evidence:.progress-striped .progress-bar-success {
+rule:{
+id:gradients
+name:Require all gradient definitions
+desc:When using a vendor-prefixed gradient, make sure to use them all.
+browsers:All
+}
+
+type:warning
+line:3694
+message:Missing vendor-prefixed CSS gradients for Firefox 3.6+, Old Webkit (Safari 4+, Chrome).
+evidence:.progress-striped .progress-bar-info {
+rule:{
+id:gradients
+name:Require all gradient definitions
+desc:When using a vendor-prefixed gradient, make sure to use them all.
+browsers:All
+}
+
+type:warning
+line:3704
+message:Missing vendor-prefixed CSS gradients for Firefox 3.6+, Old Webkit (Safari 4+, Chrome).
+evidence:.progress-striped .progress-bar-warning {
+rule:{
+id:gradients
+name:Require all gradient definitions
+desc:When using a vendor-prefixed gradient, make sure to use them all.
+browsers:All
+}
+
+type:warning
+line:3714
+message:Missing vendor-prefixed CSS gradients for Firefox 3.6+, Old Webkit (Safari 4+, Chrome).
+evidence:.progress-striped .progress-bar-danger {
+rule:{
+id:gradients
+name:Require all gradient definitions
+desc:When using a vendor-prefixed gradient, make sure to use them all.
+browsers:All
+}
+
+type:warning
+line:3728
+message:Expected (<filter-function-list> | none) but found 'alpha(opacity=20)'.
+evidence:  filter: alpha(opacity=20);
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:3736
+message:Expected (<filter-function-list> | none) but found 'alpha(opacity=50)'.
+evidence:  filter: alpha(opacity=50);
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:3832
+message:Expected (<filter-function-list> | none) but found 'progid:DXImageTransform.Microsoft.gradient(enabledenabled =falsefalse)'.
+evidence:  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:3982
+message:Expected (<filter-function-list> | none) but found 'alpha(opacity=100)'.
+evidence:  filter: alpha(opacity=100);
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:4007
+message:Expected (<filter-function-list> | none) but found 'progid:dximagetransform.microsoft.gradient(startColorstr='#ff545454' endColorstr='#ff414141' GradientType=0)'.
+evidence:  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff545454', endColorstr='#ff414141', GradientType=0);
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:4030
+message:Expected (<filter-function-list> | none) but found 'alpha(opacity=0)'.
+evidence:  filter: alpha(opacity=0);
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:4035
+message:Expected (<filter-function-list> | none) but found 'alpha(opacity=50)'.
+evidence:  filter: alpha(opacity=50);
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:4117
+message:Expected (<length> | <percentage> | <content-sizing> | auto) but found 'device-width'.
+evidence:  width: device-width;
+rule:{
+id:known-properties
+name:Require use of known properties
+desc:Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.
+browsers:All
+}
+
+type:warning
+line:4380
+message:float can't be used with display: inline-block.
+evidence:  float:left;
+rule:{
+id:display-property-grouping
+name:Require properties appropriate for display
+desc:Certain properties shouldn't be used with certain display property values.
+browsers:All
+}
+

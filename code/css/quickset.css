@@ -1,0 +1,267 @@
+body {
+  background: #f1f3f6;
+}
+
+.form-actions {
+  padding-top: 10px;
+  margin-top: 18px;
+  margin-bottom: 30px;
+}
+
+.placeholder-content .placeholder-text {
+  line-height: 40px !important;
+}
+
+.logo-wrap {
+  padding: 0px;
+  margin-bottom: 20px;
+  margin-top: 60px;
+}
+
+.logo-wrap .logo-text {
+  margin-top: 13px;
+  padding-left: 0px;
+  color: #8B979F;
+}
+
+.quickSet {
+  margin-top: 46px;
+  min-height: 480px;
+  padding-bottom: 40px;
+  box-shadow: 0 0 12px #ccc;
+}
+
+.quickContent {
+  padding-bottom: 40px;
+  padding: 20px 40px;
+}
+
+.quickContent .quickset-connect-info {
+  color: #ccc;
+  text-align: left;
+}
+
+.icon-internet.quickSet-net-icon, .icon-wireless.quickSet-wireless-icon {
+  font-size: 48px;
+  color: #555;
+}
+
+.network-config-wrapper {
+  display: inline-block;
+  width: 430px;
+  text-align: left;
+}
+
+.wireless-config {
+  display: inline-block;
+  width: 430px;
+}
+
+.network-pic-wrapper, .wireless-pic-wrapper {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 10px 0;
+}
+
+.quickset-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  height: 56px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.quickset-footer .save-btn {
+  background: #c40f39;
+  color: #fff;
+  margin-top: 12px;
+}
+.quickset-footer .save-btn:hover{
+  background-color:#A81D34;
+}
+#savedWrap .text-warn {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  color: #c40f39;
+}
+
+@media (max-width: 767px) {
+  .quickSet {
+    padding: 10px;
+    padding-top:25px;
+    min-height: 460px;
+    background-color: #fff;
+  }
+}
+
+.quickContent header {
+  margin: 10px 0;
+}
+
+.quickContent .net-status {
+  width: 100%;
+  height: auto;
+}
+
+#quickSetStaticWrap .form-group {
+  margin-bottom: 5px;
+}
+
+.quickSet h1 {
+  font-size: 22px;
+  color: #c40f39;
+}
+
+.quickSet h2 {
+  font-size: 18px;
+}
+
+.quickContent .content {
+  padding: 40px 0 20px;
+}
+
+.text-wrap {
+  padding: 20px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.count {
+  color: #666;
+  line-height: 96px;
+  background: #fff;
+}
+
+.icon-check-circled, .icon-warn-circled {
+  font-size: 94px;
+  color:#7fc247;
+  font-weight: 100;
+  line-height: inherit;
+}
+
+.dialog-pancel {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  margin-left: -25%;
+  width: 50%;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  z-index: 3000;
+  border: 1px solid #f2f2f2;
+  padding: 0;
+}
+
+@media (max-width: 767px) {
+  .dialog-pancel {
+    left: 0;
+    right: 0;
+    margin: 15px;
+    width: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .dialog-pancel {
+    margin-left: -20%;
+    width: 40%;
+  }
+}
+
+.dialog-message {
+  margin-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.dialog-title {
+  height: 45px;
+  line-height: 45px;
+  background: #f2f2f2;
+}
+
+.dialog-close {
+  float: right;
+  cursor: pointer;
+  font-size: 22px;
+  margin-right: 15px;
+}
+
+.round-icons {
+  width: 20px;
+  height: 20px;
+  margin-left: 25px;
+  float: left;
+  background: url(../img/round.png) 0 no-repeat;
+}
+
+#lodding-tips {
+  width: 170px;
+  margin-bottom: 40px;
+  height: 22px;
+}
+
+.img-responsive .icon-warn-circled {
+  color: #c40f39;
+  margin-bottom: 40px;
+}
+.img-responsive{
+  max-width: 80px;
+}
+
+.test-tips {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  left: 50%;
+  margin-left: -150px;
+  top: 100px;
+  z-index: 99;
+  padding: 10px;
+  color: #000;
+  background-color: #ccc;
+  border-radius: 8px;
+}
+
+#wireSuccess {
+  margin-top: 30px;
+  font-style: normal;
+  font-size: 14px;
+  color: #ccc;
+}
+
+#wirelessSuccess {
+  font-weight: 400;
+  font-size: 16px;
+  color: #333333;
+}
+
+@media (max-width: 550px) {
+  .network-config-wrapper, .wireless-config {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .wireless-config {
+    width: 100%;
+  }
+  .wireless-pic-wrapper, .network-pic-wrapper {
+    float: none;
+    margin: 10px auto;
+  }
+  .logo-text {
+    text-align: center;
+  }
+  .network-config-wrapper {
+    width: 100%;
+  }
+}
+.con-label{
+  margin-left:-35px !important;
+  margin-right:-35px !important;
+}

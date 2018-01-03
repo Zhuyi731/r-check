@@ -1,0 +1,124 @@
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:		$("input[name=wanType][value=pppoe]")[0].checked = true;
+line:4
+character:3
+a:$
+b:undefined
+c:undefined
+d:undefined
+reason:'$' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:		$("#save").on("click", function () {
+line:17
+character:3
+a:$
+b:undefined
+c:undefined
+d:undefined
+reason:'$' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:		$("input[name=wanType]").on("click", function () {
+line:21
+character:3
+a:$
+b:undefined
+c:undefined
+d:undefined
+reason:'$' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:		var wanType = $("input[name=wanType]:checked").val();
+line:28
+character:17
+a:$
+b:undefined
+c:undefined
+d:undefined
+reason:'$' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:		$("#quickSetPPPoEWrap, #quickSetStaticWrap, #quickSetDHCPWrap").addClass("none");
+line:29
+character:3
+a:$
+b:undefined
+c:undefined
+d:undefined
+reason:'$' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:			$("#quickSetPPPoEWrap").removeClass("none");
+line:32
+character:4
+a:$
+b:undefined
+c:undefined
+d:undefined
+reason:'$' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:			$("#quickSetStaticWrap").removeClass("none");
+line:35
+character:4
+a:$
+b:undefined
+c:undefined
+d:undefined
+reason:'$' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:			$("#quickSetDHCPWrap").removeClass("none");
+line:38
+character:4
+a:$
+b:undefined
+c:undefined
+d:undefined
+reason:'$' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:		$.get("goform/getWizard" + data, function (str) {
+line:46
+character:3
+a:$
+b:undefined
+c:undefined
+d:undefined
+reason:'$' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:				obj = $.parseJSON(str);
+line:50
+character:11
+a:$
+b:undefined
+c:undefined
+d:undefined
+reason:'$' was used before it was defined.
+id:(error)
+raw:Unexpected '{a}'.
+code:unexpected_a
+evidence:	this.initValue = function (obj) {
+line:60
+character:2
+a:this
+b:undefined
+c:undefined
+d:undefined
+reason:Unexpected 'this'.
+reason:Stopping. (20% scanned).
+line:60
+character:2

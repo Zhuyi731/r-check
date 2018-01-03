@@ -1,0 +1,168 @@
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:define(function (require, exports, module) {
+line:1
+character:1
+a:define
+b:undefined
+c:undefined
+d:undefined
+reason:'define' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:	var pageModule = new PageLogic({
+line:3
+character:23
+a:PageLogic
+b:undefined
+c:undefined
+d:undefined
+reason:'PageLogic' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:		pageModule.update("ddns", 2e3, updateDDNSStatus)
+line:10
+character:34
+a:updateDDNSStatus
+b:undefined
+c:undefined
+d:undefined
+reason:'updateDDNSStatus' was used before it was defined.
+id:(error)
+raw:Expected '{a}' and instead saw '{b}'.
+code:expected_a_b
+evidence:		pageModule.update("ddns", 2e3, updateDDNSStatus)
+line:10
+character:51
+a:;
+b:}
+c:undefined
+d:undefined
+reason:Expected ';' and instead saw '}'.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:		showConnectStatus(obj.ddns.ddnsStatus);
+line:14
+character:3
+a:showConnectStatus
+b:undefined
+c:undefined
+d:undefined
+reason:'showConnectStatus' was used before it was defined.
+id:(error)
+raw:Combine this with the previous 'var' statement.
+code:combine_var
+evidence:	var staticModule = new StaticModule();
+line:22
+character:6
+a:staticModule
+b:undefined
+c:undefined
+d:undefined
+reason:Combine this with the previous 'var' statement.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:	var staticModule = new StaticModule();
+line:22
+character:25
+a:StaticModule
+b:undefined
+c:undefined
+d:undefined
+reason:'StaticModule' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:			$("#staticHead").delegate(".icon-plus-circled", "click", addStaticList);
+line:34
+character:4
+a:$
+b:undefined
+c:undefined
+d:undefined
+reason:'$' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:			$("#staticHead").delegate(".icon-plus-circled", "click", addStaticList);
+line:34
+character:61
+a:addStaticList
+b:undefined
+c:undefined
+d:undefined
+reason:'addStaticList' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:			$("#staticTbody").delegate(".icon-minus-circled", "click", delStaticList)
+line:35
+character:4
+a:$
+b:undefined
+c:undefined
+d:undefined
+reason:'$' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:			$("#staticTbody").delegate(".icon-minus-circled", "click", delStaticList)
+line:35
+character:63
+a:delStaticList
+b:undefined
+c:undefined
+d:undefined
+reason:'delStaticList' was used before it was defined.
+id:(error)
+raw:Expected '{a}' and instead saw '{b}'.
+code:expected_a_b
+evidence:			$("#staticTbody").delegate(".icon-minus-circled", "click", delStaticList)
+line:35
+character:77
+a:;
+b:$
+c:undefined
+d:undefined
+reason:Expected ';' and instead saw '$'.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:			$("#staticHead").delegate("#staticRemark", "keyup", function () {
+line:37
+character:4
+a:$
+b:undefined
+c:undefined
+d:undefined
+reason:'$' was used before it was defined.
+id:(error)
+raw:'{a}' was used before it was defined.
+code:used_before_a
+evidence:					totalByte = getStrByteNum(deviceVal); //输入总字节数
+line:40
+character:18
+a:getStrByteNum
+b:undefined
+c:undefined
+d:undefined
+reason:'getStrByteNum' was used before it was defined.
+id:(error)
+raw:Move 'var' declarations to the top of the function.
+code:move_var
+evidence:					for (var i = len - 1; i > 0; i--) {
+line:43
+character:11
+a:var
+b:undefined
+c:undefined
+d:undefined
+reason:Move 'var' declarations to the top of the function.
+reason:Stopping. (5% scanned).
+line:43
+character:11

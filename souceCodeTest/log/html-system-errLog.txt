@@ -1,0 +1,153 @@
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw:
+            data-options='{"type": "pwd", "args":[5,32]}'
+evidence:            data-options='{"type": "pwd", "args":[5,32]}'>
+line:11
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw:
+            data-options='{"type": "pwd", "args":[5,32]}'
+evidence:            data-options='{"type": "pwd", "args":[5,32]}'>
+line:19
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw:
+          data-options='{"type": "pwd", "args":[5,32]}'
+evidence:          data-options='{"type": "pwd", "args":[5,32]}'>
+line:27
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"ascii"}'
+evidence:			<input type="text" class="validatebox form-control none" id="wanServerName" required="required" maxlength="64" data-options='{"type":"ascii"}'>
+line:47
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"ascii"}'
+evidence:			<input type="text" class="validatebox form-control none" id="wanServiceName" required="required" maxlength="64" data-options='{"type":"ascii"}'>
+line:60
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"num", "args":[576, 1500]}'
+evidence:        <span id="wanMTU" class="dropdown validatebox" required="required" data-options='{"type":"num", "args":[576, 1500]}'>
+line:67
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"mac"}'
+evidence:        <input type="text" class="validatebox form-control none" id="macCurrentWan" required="required" maxlength="17" data-options='{"type":"mac"}'>
+line:83
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"ip"}'
+evidence:          maxlength="15" required="required" data-options='{"type":"ip"}'>
+line:109
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"lanMaskExt"}'
+evidence:          maxlength="15" required="required" data-options='{"type":"lanMaskExt"}'>
+line:116
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"num", "args":[1,254]}'
+evidence:            maxlength="15" required="required" data-options='{"type":"num", "args":[1,254]}'>
+line:132
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"num", "args":[1,254]}'
+evidence:            maxlength="15" required="required" data-options='{"type":"num", "args":[1,254]}'>
+line:139
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"ip"}'
+evidence:            maxlength="15" required="required" data-options='{"type":"ip"}'>
+line:158
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"ip"}'
+evidence:            maxlength="15" data-options='{"type":"ip"}'>
+line:165
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"ip"}'
+evidence:              class="form-control validatebox" maxLength="15" required="required" data-options='{"type":"ip"}'>
+line:193
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type":"num","args":[1024,65534]}'
+evidence:              required data-options='{"type":"num","args":[1024,65534]}'>
+line:201
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+

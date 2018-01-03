@@ -1,0 +1,130 @@
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "ipv6"}'
+evidence:						<input type="text" required="required" name="ipv6WanIP" class="form-control validatebox" maxlength="128" data-options='{"type": "ipv6"}'>
+line:73
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "num", "args":[1,128]}'
+evidence:							<input type="text" required="required" name="ipv6IpPlen" class="form-control validatebox" maxlength="3" data-options='{"type": "num", "args":[1,128]}'>
+line:77
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "ipv6"}'
+evidence:						<input type="text" required="required" name="ipv6WanGateway" class="form-control validatebox" maxlength="128" data-options='{"type": "ipv6"}'>
+line:85
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "ipv6"}'
+evidence:						<input type="text" required="required" name="ipv6WanDns1" class="form-control validatebox" maxlength="128" data-options='{"type": "ipv6"}'>
+line:93
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "ipv6"}'
+evidence:						<input type="text" name="ipv6WanDns2" class="form-control validatebox" maxlength="128" data-options='{"type": "ipv6"}'>
+line:101
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "ipv6"}'
+evidence:							<input type="text" required="required" name="ipv6LanIP" class="form-control validatebox" maxlength="128" data-options='{"type": "ipv6"}'>
+line:122
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "num", "args":[1,128]}'
+evidence:							<input type="text" required="required" name="ipv6LanIPLen" class="form-control validatebox" maxlength="3" data-options='{"type": "num", "args":[1,128]}'>
+line:126
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "ipv6Prefix"}'
+evidence:							<input type="text" required="required" name="ipv6LanDhcpPrefix" class="form-control validatebox" maxlength="128" data-options='{"type": "ipv6Prefix"}'>
+line:142
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "num", "args":[1,128]}'
+evidence:							<input type="text" required="required" name="ipv6LanDhcpPrefixLen" class="form-control validatebox" maxlength="3" data-options='{"type": "num", "args":[1,128]}'>
+line:146
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "ipv6Postfix"}'
+evidence:								<input type="text" required="required" name="ipv6LanDhcpStartID" class="form-control validatebox" maxlength="128" data-options='{"type": "ipv6Postfix"}'>
+line:179
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "ipv6Postfix"}'
+evidence:								<input type="text" required="required" name="ipv6LanDhcpEndID" class="form-control validatebox" maxlength="128" data-options='{"type": "ipv6Postfix"}'>
+line:187
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "ipv6"}'
+evidence:						<input type="text" required="required" name="ipv6LanDns1" class="form-control validatebox" maxlength="128" data-options='{"type": "ipv6"}'>
+line:209
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "ipv6"}'
+evidence:						<input type="text" name="ipv6LanDns2" class="form-control validatebox" maxlength="128" data-options='{"type": "ipv6"}'>
+line:217
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
