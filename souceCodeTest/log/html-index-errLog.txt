@@ -1,4 +1,15 @@
 type:error
+message:头部必须加入<meta http-equiv="X-UA-Compatible" content="IE=edge">标签
+
+raw:</head>
+evidence:</head>
+line:18
+rule:{
+id:undefined
+description:undefined
+}
+
+type:error
 message:The value of attribute [ class ] must be in double quotes.
 raw: class=index-body
 evidence:<body class=index-body>

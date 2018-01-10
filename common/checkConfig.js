@@ -35,7 +35,10 @@ var options = {
         //属性特殊字符检查    
         "attr-unsafe-chars": false,
         //头部js文件检查
-        "head-script-disabled": false
+        "head-script-disabled": false,
+		//自定义规则
+		//检查IE 头部是否加入meta进行兼容
+		'IE-meta':true
     },
     //英文原文文档
     //https://github.com/CSSLint/csslint/wiki/
