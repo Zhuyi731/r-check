@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>IWR 3001</title>
+<link rel="shortcut icon" href="./favicon.ico">
+<link rel="stylesheet" href="./css/reasyui.css?t=201611101353">
+
+<link rel="stylesheet" href="./css/quickset.css?t=201611101353">
+
+<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 
+HTML5SHIV需放在头部，RESPOND.JS需要服务器--> 
+<!--[if lt IE 9]>
+<script src="./js/libs/respond.min.js"></script>
+<script src="./js/libs/html5shiv.min.js"></script>
+<![endif]--> 
+<script src="./lang/b28n.js?t=201611101353"></script>
+</head>
+<body >
+<noscript>
+  <div id="testJs" class="test-tips">
+    <p>Error! The browser does not support JavaScript. </p>
+    <p>Please enable JavaScript or try another browser compatible with JavaScript to 
+      experience more features of the device.
+    </p>
+  </div>
+</noscript>
+<div id="main_content">
+  <section class="container container-fluid">
+    <header class="center-block pull-none col-sm-9 col-md-8 col-lg-7 logo-wrap">
+      <div class="col-xs-3 col-sm-3"> 
+        <img src="img/logo-login.png" class="img-responsive">
+      </div>
+      <div class="col-xs-12 col-sm-9 logo-text">You can enjoy the Internet after completing the settings on this page.</div>
+    </header>
+    <article class="quickSet box-shadow center-block pull-none col-sm-11 col-md-10 col-lg-7" style="padding:0px; margin-bottom:20px;" id="quickSetWrap">
+
+      <form class="form-horizontal">
+      <div class="quickContent text-center">
+        <div class="text-center net-status" style="border-bottom:1px solid #eee; padding-bottom:12px; margin-bottom:10px;"><img id="loading" class="img-loading" alt="Loading..." src="img/loading1.gif" width="30px" height="30px"><span>We're detecting your Internet connection type</span></div>
+        <div class="network-wrapper">
+          <div class="network-pic-wrapper"><span class="icon-internet quickSet-net-icon"></span><br /><div style="padding:10px 0;">Internet Settings</div></div>
+          <div class="network-config-wrapper">
+
+<div class="form-group con-label" style="margin-bottom: 4px;">
+  <label class="col-sm-4 col-md-4 control-label ">Connection Type</label>
+  <div class="col-sm-8">
+    <label class="radio-inline" for="adsl">
+      <input type="radio" id="adsl" name="wanType" value="pppoe" />
+      PPPoE</label>
+    <label class="radio-inline" for="dhcp">
+      <input type="radio" id="dhcp" name="wanType" value="dhcp" />
+      Dynamic IP</label>
+    <label class="radio-inline" for="static">
+      <input type="radio" id="static" name="wanType" value="static" />
+      Static IP2</label>
+  </div>
+</div>
+
+            <section id="quickSetStaticWrap" class="none">
+  <div class="form-group">
+    <label class="col-sm-4 col-md-3 control-label"></label>
+    <div class="controls col-sm-7 col-md-6 col-lg-9 quickset-connect-info">
+      Select Static IP if your Internet connection asks for static IP info.
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-4 col-md-4 control-label">IP Address</label>
+    <div class="controls col-sm-7 col-md-6 col-lg-7">
+      <input type="text" id="wanIP" name="wanIP" class="form-control validatebox" maxlength="15" required="required" data-options='{"type":"ip"}' placeholder="IP">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-4 col-md-4 control-label">Subnet Mask</label>
+    <div class="controls col-sm-7 col-md-6 col-lg-7">
+      <input type="text" id="wanMask" name="wanMask" class="form-control validatebox" maxlength="15" required="required" data-options='{"type":"mask"}' placeholder="Subnet Mask">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-4 col-md-4 control-label">Default Gateway</label>
+    <div class="controls col-sm-7 col-md-6 col-lg-7">
+      <input type="text" id="wanGateway" name="wanGateway"
+           class="form-control validatebox" maxlength="15"
+           required="required" data-options='{"type":"ip"}' placeholder="Default Gateway">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-4 col-md-4 control-label" data-lang="Preferred  DNS">Preferred DNS</label>
+    <div class="controls col-sm-7 col-md-6 col-lg-7">
+      <input type="text" id="wanDns1" name="wanDns1"
+           class="form-control validatebox" maxlength="15"
+           required="required" data-options='{"type":"ip"}' placeholder="Preferred DNS Server" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-4 col-md-4 control-label" data-lang="Alternative  DNS">Alternative DNS</label>
+    <div class="controls col-sm-7 col-md-6 col-lg-7">
+      <input type="text" id="wanDns2" name="wanDns2"
+           class="form-control validatebox" maxlength="15"
+           data-options='{"type":"ip"}' placeholder="Alternative DNS Server">
+    </div>
+  </div>
+</section>
+
+            <section id="quickSetDHCPWrap" class="none">
+
+  <div class="form-group">
+    <label class="col-sm-4 col-md-3 control-label"></label>
+    <div class="controls col-sm-7 col-md-6 col-lg-9 quickset-connect-info">
+      Select Dynamic IP if your Internet can be auto-connected with no account or static IP info set.
+    </div>
+  </div>
+
+</section>
+
+            <section id="quickSetPPPoEWrap">
+  <div class="form-group">
+    <label class="col-sm-4 col-md-3 control-label"></label>
+    <div class="controls col-sm-7 col-md-7 col-lg-9 quickset-connect-info">
+    Select PPPoE if your Internet connection asks for the user name and password.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 col-md-4 control-label">User Name</label>
+    <div class="controls col-sm-7  col-lg-7">
+      <input type="text" id="wanPPPoEUser" name="wanPPPoEUser"
+            class="form-control validatebox" maxlength="128"
+            required="required" data-options='{"type": "pppoeUser"}' />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-4 col-md-4 control-label">Password</label>
+    <div class="controls col-sm-7  col-lg-7">
+      <input type="password" id="wanPPPoEPwd" name="wanPPPoEPwd"
+           class="form-control validatebox" maxlength="128"
+           required="required" data-options='{"type": "pppoePassword"}'>
+    </div>
+  </div>
+</section>
+
+          </div>
+        </div>
+        <div style="clear:both"></div><hr />
+        <div class="wireless-wrapper">
+          <div class="wireless-pic-wrapper">
+          <span class="icon-wireless quickSet-wireless-icon"></span><div data-lang="Wireless  Settings">Wireless Settings</div>
+          </div>
+          <div class="wireless-config">
+  <div class="form-group">
+    <label class="col-sm-4 col-md-4 control-label" for="wifiSSID" data-lang="WiFi  Name">WiFi Name</label>
+    <div class="col-sm-7">
+      <input type="text" name="wifiSSID" id="wifiSSID" class="form-control validatebox" maxlength="32" required="required" data-options='{"type":"ssid"}' placeholder="WiFi Name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-4 col-md-4 control-label" for="wifiPwd" data-lang="WiFi  Password">WiFi Password</label>
+    <div class="col-sm-7">
+      <input type="password" name="wifiPwd" id="wifiPwd" class="form-control validatebox" maxlength="63" placeholder="WiFi Password" data-options='{"type":"ssidPasword","args":[8, 63]}'>
+    </div>
+  </div>
+</div>
+        </div><br /><br />
+      </div>
+      </form>
+      <footer class="quickset-footer">
+        <div class="col-md-4 col-sm-6 col-lg-3 col-sm-offset-3 col-md-offset-5">
+          <input class="form-control save-btn" type="button" id="save" value="OK" />
+        </div>
+      </footer>
+    </article>
+    <article class="quickSet box-shadow text-center center-block pull-none col-sm-9 col-md-8 col-lg-7 none" style="padding:0px; margin-bottom:20px;" id="quicksetDoneWrap">
+  <div id="savedWrap" style="margin-top:60px;">
+    <section class="content center-block" style="width:100px;"> 
+      <div id="status">
+        <img src="./img/ok.png" style="margin-top:40px;">
+      </div>
+      <div>Saved!</div>
+    </section>
+    <div id="wireSuccess" class="none"></div>
+    <div id="wirelessSuccess" class="none">
+      <span>The wireless connection has been disconnected. Please connect to WiFi name:</span>
+      <div class="text-warn" id="newSSID">KEOLINK_AABBCC</div>
+    </div>
+  </div>
+</article>
+  </section>
+</div>
+  <script src="./js/libs/j.js?t=201611101353"></script> 
+<script src="./js/libs/reasy-ui-1.0.3.js?t=201611101353"></script> 
+<script src="./js/libs/common.js?t=201611101353"></script>
+
+<script src="./js/quickset.js?t=201611101353"></script>
+
+<script src="./js/libs/time-zone.js?t=201611101353"></script>
+
+</body>
+</html>
+

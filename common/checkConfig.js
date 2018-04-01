@@ -1,5 +1,5 @@
 var options = {
-    htmlCheckOptions: {
+    "htmlCheckOptions": {
         //标签名 小写
         "tagname-lowercase": true,
         //属性名称小写
@@ -38,17 +38,18 @@ var options = {
         "head-script-disabled": false,
 		//自定义规则
 		//检查IE 头部是否加入meta进行兼容
-		'IE-meta':true
+		'IE-meta':true,
+		"placeholder":true
     },
     //英文原文文档
     //https://github.com/CSSLint/csslint/wiki/
-    cssCheckOptions: {
+    "cssCheckOptions": {
         //是否检测 !important
         "important": false,
         //是否允许 .bar.foo 这种两个连在一起的选择器
         "adjoining-classes": false,
         //未知属性检测
-        "known-properties": true,
+        "known-properties": false,
         //重复属性检测
         "duplicate-properties": true,
         //border-box 和 box-sizing检测
@@ -98,44 +99,47 @@ var options = {
         //不能只有前缀属性，没有通用属性  -moz-border-radius  并且通用属性必须在最后
         "vendor-prefix":false,
         //不允许 0px  0% 0em
-        "zero-units":true
+        "zero-units":true,
+		//自定义的规则
+		//opacity属性需要做兼容性处理
+		"opacity":false
     },
-    jsCheckOptions: {
-        anon : true , //匿名函数声明中function关键字与()之间的空白可以被省略
-        bitwise : true , //允许按位运算
-        browser : true , //浏览器(标准)是预定义的全局
-        cap : false , //允许大写的HTML
-        continue : false , //容忍continuation语句
-        css : false,  //允许检查CSS
-        debug : false,  //允许debuger语句
-        devel : false , //允许控制台语句console、alert语句
-        eqeq : true  ,//允许==和!=运算符
-        es5 : true  ,//允许ECMAScript 5 的语法
-        eval : false  ,//允许使用eval
-        forin : true  ,//for in声明的中的key不需要使用hasOwnProperty过滤
-        fragment : false,  //允许检查HTML片段
-        maxerr :  50,//允许做大的错误数，默认是50
-        maxlen : 200,//允许单行的最大长度
-        newcap : true,  //构造函数的首字母大小写可以被忽略
-        node : false  ,//node.js是预定义的全局
-        nomen : true , //允许标识符以_开头
-        on : false  ,//允许在HTML使用类似onclick这样的事件处理
-        passfail : false,  //应该在扫描到第一个错误时停止
-        plusplus : true , //允许++递增 或 --递减
-        properties : false,  //由于 JavaScript 是松散类型、动态对象的语言，在编译时不可能确定，如果希望检查属性名称拼写，所有内置的属性名称必须写在 /*properties*/中
-        regexp : true , //允许正则表达式文本中含有.
-        rhino : false , //假设是在rhino环境中
-        undef : false , //变量的定义顺序可以是混乱的，比如var a = b.name, b = {name: "b"};
-        unparam : false,  //允许忽略未使用的参数
-        sloppy : true , //'use strict'标注是可选的
-        sub : false , //容忍所有的下标表示法，如果属性名是一个合法的标识符，建议用.表示法
-        vars : false , //允许每个函数有多个var声明
-        white : true , //容忍多余的空白
-        widget : false , //假设是在Yahoo Widgets环境中
-        windows : false , //MS Windows的特定全局应该是预定义的
-        this:true
+    "jsCheckOptions": {
+        "anon" : true , //匿名函数声明中function关键字与()之间的空白可以被省略
+        "bitwise" : true , //允许按位运算
+        "browser" : true , //浏览器(标准)是预定义的全局
+        "cap" : false , //允许大写的HTML
+        "continue" : false , //容忍continuation语句
+        "css" : false,  //允许检查CSS
+        "debug" : false,  //允许debuger语句
+        "devel" : false , //允许控制台语句console、alert语句
+        "eqeq" : true  ,//允许==和!=运算符
+        "es5" : true  ,//允许ECMAScript 5 的语法
+        "eval" : false  ,//允许使用eval
+        "forin" : true  ,//for in声明的中的key不需要使用hasOwnProperty过滤
+        "fragment" : false,  //允许检查HTML片段
+        "maxerr" :  50,//允许做大的错误数，默认是50
+        "maxlen" : 200,//允许单行的最大长度
+        "newcap" : true,  //构造函数的首字母大小写可以被忽略
+        "node" : false  ,//node.js是预定义的全局
+        "nomen" : true , //允许标识符以_开头
+        "on" : false  ,//允许在HTML使用类似onclick这样的事件处理
+        "passfail" : false,  //应该在扫描到第一个错误时停止
+        "plusplus" : true , //允许++递增 或 --递减
+        "properties" : false,  //由于 JavaScript 是松散类型、动态对象的语言，在编译时不可能确定，如果希望检查属性名称拼写，所有内置的属性名称必须写在 /*properties*/中
+        "regexp" : true , //允许正则表达式文本中含有.
+        "rhino" : false , //假设是在rhino环境中
+        "undef" : false , //变量的定义顺序可以是混乱的，比如var a = b.name, b = {name: "b"};
+        "unparam" : false,  //允许忽略未使用的参数
+        "sloppy" : true , //'use strict'标注是可选的
+        "sub" : false , //容忍所有的下标表示法，如果属性名是一个合法的标识符，建议用.表示法
+        "vars" : false , //允许每个函数有多个var声明
+        "white" : true , //容忍多余的空白
+        "widget" : false , //假设是在Yahoo Widgets环境中
+        "windows" : false , //MS Windows的特定全局应该是预定义的
+        "this":true
     },
-    errorLogPath: "./souceCodeTest/log"
-}
+    "errorLogPath": "./errorLog"
+};
 
 module.exports = options;

@@ -27,15 +27,12 @@ function RUtil() {
                 if (!(prop in that.logFilter)) {
                     st += prop + ":" + obj[prop] + "\n";
                 }
-
             } else {//迭代弄出信息
                 st += prop + ":{\n" + that.objToString(obj[prop]) + "}\n\n";
             }
         }
         return st;
     }
-
-
 }
 Rutil = new RUtil();
 module.exports = Rutil;

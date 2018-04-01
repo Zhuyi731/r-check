@@ -1,17 +1,22 @@
 {
-  "name": "Rtest",
+  "name": "reasy-htmlcss-hint-node",
   "version": "1.0.0",
-  "description": "a test tool for self test",
+  "description": "Check the princepal of html and css files",
   "main": "index.js",
   "dependencies": {
+    "commander": "^2.15.1",
     "csslint": "^1.0.5",
-    "htmlhint": "^0.9.13",
-    "jslint": "^0.12.0",
-    "readline": "^1.3.0"
+    "glob": "^7.1.2",
+    "htmlhint": "^0.9.13"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
   "scripts": {
     "test": "node index.js"
+  },
+  "bin": {
+    "reasy-check": "./bin/reasy-check"
   },
   "author": "zhuyi",
   "license": "ISC"
