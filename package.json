@@ -1,7 +1,7 @@
 {
   "name": "reasy-htmlcss-hint-node",
-  "version": "1.0.0",
-  "description": "Check the princepal of html and css files",
+  "version": "1.4.0",
+  "description": "Fixed a bug that will product empty error log files",
   "main": "index.js",
   "dependencies": {
     "commander": "^2.15.1",
@@ -16,7 +16,7 @@
     "test": "node index.js"
   },
   "bin": {
-    "reasy-check": "./bin/reasy-check"
+    "r-check": "./bin/r-check"
   },
   "author": "zhuyi",
   "license": "ISC"

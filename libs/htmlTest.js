@@ -36,7 +36,6 @@ function htmlTest(htmlList, checkOptions) {
         code = fs.readFileSync(el, "utf-8");
         messages = HTMLHint.verify(code, checkOptions.htmlCheckOptions);
         errNum += messages.length;
-
         //如果错误日志文件路径不存在，则创建
         if (!logExist) {
             if (!fs.existsSync(errLogPath)) {
@@ -48,11 +47,11 @@ function htmlTest(htmlList, checkOptions) {
             }
             logExist = true;
         }
-        if (errNum) {
+        if (messages.length) {
             //写入错误日志
             fs.writeFileSync(htmlLogPath + "/" + el.split("/").pop().split(".")[0] + ".txt", util.dealErrLog(messages), "utf8", (err) => {
-                if (err) throw err;
                 console.log("写入log文件出现错误");
+                if (err) throw err;
             });
         }
     }, this);

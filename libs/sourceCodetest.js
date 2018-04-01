@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 const glob = require("glob");
-const HTMLHint = require("htmlhint").HTMLHint;
 const htmlCheck = require("./htmlTest");
 const cssCheck = require("./cssTest");
 

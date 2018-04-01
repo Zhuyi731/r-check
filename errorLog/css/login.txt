@@ -1,0 +1,22 @@
+type:warning
+line:167
+message:Values of 0 shouldn't have units specified.
+evidence:  padding: 0px;
+rule:{
+id:zero-units
+name:Disallow units for 0 values
+desc:You don't need to specify units when a value is 0.
+browsers:All
+}
+
+type:warning
+line:258
+message:float can't be used with display: inline-block.
+evidence:  float: left;
+rule:{
+id:display-property-grouping
+name:Require properties appropriate for display
+desc:Certain properties shouldn't be used with certain display property values.
+browsers:All
+}
+

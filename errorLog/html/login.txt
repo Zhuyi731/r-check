@@ -1,0 +1,10 @@
+type:warning
+message:标签[placeholder]中包含placeholder属性，IE8及以下版本不兼容placeholderLogin Password2
+raw: placeholder="Login Password2"
+evidence:  <input id="login-password" type="password" class="ico-text login-password" maxlength="32" placeholder="Login Password2">
+line:77
+rule:{
+id:placeholder
+description:IE8及以下不支持placeholder属性，请使用公共库或组件的实现
+}
+

@@ -1,0 +1,30 @@
+type:error
+message:The value of attribute [ class ] must be in double quotes.
+raw: class=index-body
+evidence:<body class=index-body>
+line:19
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:error
+message:The value of attribute [ data-options ] must be in double quotes.
+raw: data-options='{"type": "pwd", "args":[5,32]}'
+evidence:           <input type="text" id="adminPassword" name="adminPassword" class="form-control validatebox" maxlength="32" data-options='{"type": "pwd", "args":[5,32]}' required="required" placeholder="Somente letras e números">
+line:261
+rule:{
+id:attr-value-double-quotes
+description:Attribute values must be in double quotes.
+}
+
+type:warning
+message:标签[placeholder]中包含placeholder属性，IE8及以下版本不兼容placeholderSomente letras e números
+raw: placeholder="Somente letras e números"
+evidence:           <input type="text" id="adminPassword" name="adminPassword" class="form-control validatebox" maxlength="32" data-options='{"type": "pwd", "args":[5,32]}' required="required" placeholder="Somente letras e números">
+line:261
+rule:{
+id:placeholder
+description:IE8及以下不支持placeholder属性，请使用公共库或组件的实现
+}
+

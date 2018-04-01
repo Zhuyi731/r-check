@@ -44,11 +44,11 @@ function cssTest(cssList, checkOptions) {
             logExist = true;
         }
 
-        if (errNum) {
+        if (messages.length) {
             //写入错误日志
             fs.writeFileSync(cssLogPath + "/" + el.split("/").pop().split(".")[0] + ".txt", util.dealErrLog(messages), "utf8", (err) => {
-                if (err) throw err;
                 console.log("写入log文件出现错误");
+                if (err) throw err;
             });
         }
 
