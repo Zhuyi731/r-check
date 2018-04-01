@@ -1,0 +1,1 @@
+var unixFormatter=function(o,n,e){var l=e.nocolor;o.on("file",function(o){o.messages.forEach(function(n){console.log([o.file,n.line,n.col," "+n.message+" ["+n.type+"/"+n.rule.id+"]"].join(":"))})}),o.on("end",function(o){if(o.allHintCount>0){console.log("");console.log(l?"%d problems":"%d problems".red,o.allHintCount)}})};module.exports=unixFormatter;

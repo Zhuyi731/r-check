@@ -1,0 +1,1 @@
+var compactFormatter=function(o,e,l){var n=l.nocolor;o.on("file",function(o){o.messages.forEach(function(e){console.log("%s: line %d, col %d, %s - %s (%s)",o.file,e.line,e.col,e.type,e.message,e.rule.id)})}),o.on("end",function(o){if(o.allHintCount>0){console.log("");console.log(n?"%d problems":"%d problems".red,o.allHintCount)}})};module.exports=compactFormatter;

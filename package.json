@@ -1,23 +1,18 @@
 {
-  "name": "reasy-htmlcss-hint-node",
-  "version": "1.4.0",
-  "description": "Fixed a bug that will product empty error log files",
+  "name": "html-hint-node",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "dependencies": {
-    "commander": "^2.15.1",
-    "csslint": "^1.0.5",
-    "glob": "^7.1.2",
-    "htmlhint": "^0.9.13"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1"
-  },
   "scripts": {
-    "test": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin": {
-    "r-check": "./bin/r-check"
-  },
-  "author": "zhuyi",
-  "license": "ISC"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglify-es": "^1.0.1",
+    "pump": "^3.0.0"
+  }
 }
