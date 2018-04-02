@@ -202,3 +202,18 @@
 	};
 
 	module.exports = options;
+
+#开发及扩展  
+npm install 安装的是压缩版本  
+开发版本请到[github](https://github.com/Zhuyi731/reasy-htmlcss-hint-node.git)下载  
+下载至本地git clone https://github.com/Zhuyi731/reasy-htmlcss-hint-node.git   
+
+##目录结构
+	  
+	│  
+	├─compressed          //压缩后的代码，用于发布
+	│  
+	├─reasy-htmlcss-hint-node   //开发时的代码
+	│  └─code
+	│
+	├─gulpfile.js    //gulp相关配置文件
