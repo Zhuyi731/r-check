@@ -13,8 +13,8 @@
 
 ![r-check.png](imgs/r-check.png)
 
-#目录结构
 
+#目录结构
 	ROOT:.
 	├─bin   //二进制文件,用于生成r-check.cmd
 	├─common //默认配置，utils
@@ -48,6 +48,8 @@
 
 -V 或者 --version 查看版本信息  
 -h 或者 --help 查看帮助
+
+
 
 ##配置文件  
 配置文件包含三个部分  
@@ -203,10 +205,14 @@
 
 	module.exports = options;
 
+
+
 #开发及扩展  
 npm install 安装的是压缩版本  
 开发版本请到[github](https://github.com/Zhuyi731/reasy-htmlcss-hint-node.git)下载  
 下载至本地git clone https://github.com/Zhuyi731/reasy-htmlcss-hint-node.git   
+
+
 
 ##目录结构
 	  
