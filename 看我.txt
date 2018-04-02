@@ -1,0 +1,4 @@
+这里用用于压缩的，
+1.npm install  (安装gulp及相关插件)
+2.rm compressed -R  删除compressed文件夹
+2.gulp compress 压缩 得到compressed文件夹
