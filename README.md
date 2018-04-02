@@ -11,7 +11,7 @@
 6.在cmd中，可以输入r-check -V查看当前版本  
 7.在cmd中,输入r-check -h查看其他配置参数，配置参数具体用法参考[CLI参数](#CLI参数)  
 
-![r-check.png]("imgs/r-check.png")
+![r-check.png](imgs/r-check.png)
 
 #目录结构
 
