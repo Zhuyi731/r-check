@@ -5,43 +5,85 @@
  */
 var program = require("commander");
 var args = process.argv;
-const sourceCode = require("../index");
+const run = require("../index");
 const fs = require("fs");
 const path = require("path");
+const initConfigFile = require("../libs/initConfig/initConfig");
 
 /**
- * 当输入reasy-check -h是会显示下列帮助信息
+ * 当输入r-check -h是会显示下列帮助信息
  */
 program.version(require('../package').version)
     .usage('<command> [options]')
-    .option("-P", "--path <config path>", "The path of your config file")
-    .option("-C", "--close-css", "Close css check")
-    .option("-H", "--close-html", "Close html check")
-    .parse(args);
+    .option("-P, --path [configfile path]", "The path of your config file which should follow with the -P or --path option")
+    .option("-S, --close-check", "Close source code check")
+    .option("-C, --close-css", "Close css check")
+    .option("-H, --close-html", "Close html check")
+    .option("-J, --close-js", "Close js check")
+    .option("-E, --close-encode", "Close encode check")
+    .option("-T, --check-translate", "Open translate check");
 
-var options = generateOptions(args);
-sourceCode(process.cwd(), options);
+program.command("init")
+    .action((name) => {
+        generateConfigFile(name);
+    });
+
+program.parse(args);
+
+
+let options = generateOptions(args);
+checkOptionsValid(options);
+run(process.cwd(), options);
+
+/**
+ * 检查输入配置是否有冲突的地方
+ * @param options 生成的配置
+ */
+function checkOptionsValid(options) {
+    if (options.closeCheck === true && options.checkTranslate === false && options.closeEncode == true) {
+        throw new Error("没有配置任何检查");
+    }
+
+    if (options.checkTranslate === true && options.optionsPath === null) {
+        // throw new Error("")
+    }
+
+}
 
 /**
  * 根据cli的输入生成配置项
  */
 function generateOptions() {
     let defaultOptions = {
-        checkCss: true,
-        checkHtml: true,
-        checkJs: false,
-        optionsPath: null
+        "closeCheck": program.closeCheck ? true : false,
+        "checkCss": program.closeCss ? false : true,
+        "checkHtml": program.closeHtml ? false : true,
+        "checkJs": program.closeJs ? false : true,
+        "checkTranslate": program.checkTranslate ? true : false,
+        "optionsPath": "r.config.js",
+        "checkEncode": program.closeEncode ? false : true
+    };
+
+    if (defaultOptions.optionsPath == "r.config.js") {
+        if (!fs.existsSync(path.join(process.cwd(), "r.config.js"))) {
+            console.warn("/***********************没有r.config.js配置文件***********************/");
+            generateConfigFile();
+            console.warn("/***********************请检查配置，并重新开始***********************/");
+            process.exit(1);
+        }
     }
-    for (var i = 2; i < args.length; i++) {
-        if (args[i] == "-P" || args[i] == "--path") {
-            defaultOptions.optionsPath = args[i + 1];
-        }
-        if (args[i] == "-C" || args[i] == "--close-css") {
-            defaultOptions.checkCss = false;
-        }
-        if (args[i] == "-H" || args[i] == "--close-html") {
-            defaultOptions.checkCss = false;
-        }
-    }
+
     return defaultOptions;
+}
+
+//生产配置文件
+function generateConfigFile(name) {
+    console.log("");
+    console.log("/***************************生成配置文件中***************************/");
+    console.log("");
+    initConfigFile(name);
+    console.log("");
+    console.log("/***************************配置文件已生成***************************/");
+    console.log("");
+    process.exit(1);
 }

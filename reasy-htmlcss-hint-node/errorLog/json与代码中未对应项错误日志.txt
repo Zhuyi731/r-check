@@ -1,0 +1,116 @@
+/********./test/app/common/lang/cn/translate.json********/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\BaseComponent.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\ComponentManage.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormButton.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormCalendar.js    ----------------------*/
+<dt>日</dt>
+<dt>一</dt>
+<dt>二</dt>
+<dt>三</dt>
+<dt>四</dt>
+<dt>五</dt>
+<dt>六</dt>
+Date format: YYYY-MM-DD
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormCheckbox.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormCheckList.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormDemo.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormDropDownList.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormHelpText.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormInput.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormList.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormMultiInput.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormPercent.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormRadioList.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormSelect.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormTab.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormTable.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormText.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\FormUpload.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\component\ModalDialog.js    ----------------------*/
+消息提醒
+消息体
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\libs\common.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\libs\countryCode.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\libs\highcharts.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\libs\macro_config.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\libs\menu.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\libs\moduleSet.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\libs\oldie.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\common\libs\reasy-ui.js    ----------------------*/
+Cannot enter \\
+Space, dot(.), single quotation marks ('') and double quotation marks (\"\") are disallowed in a host name.
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\index.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\index.tmpl.html    ----------------------*/
+O3V2.0
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\login.html    ----------------------*/
+O3V2.0
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\login.js    ----------------------*/
+简体中文
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\lan\js\lan.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\lan\lan.html    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\lan_dhcps\js\lan_dhcps.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\lan_dhcps\lan_dhcps.html    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\lan_dhcp_client\js\lan_dhcp_client.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\lan_dhcp_client\lan_dhcp_client.html    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\lan_speed\js\lan_speed.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\lan_speed\lan_speed.html    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\lan_vlan\js\lan_vlan.js    ----------------------*/
+PVID
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\lan_vlan\lan_vlan.html    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\mac_clone\js\mac_clone.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\mac_clone\mac_clone.html    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\mac_filter\js\mac_filter.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\mac_filter\mac_filter.html    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\net_bandwidth\js\net_bandwidth.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\net_bandwidth\net_bandwidth.html    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\net_server\js\net_server.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\net_server\net_server.html    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\net_tool\js\net_tool.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\net_tool\js\_ping.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\net_tool\js\_rate_test.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\net_tool\js\_scan_signal.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\net_tool\js\_traceroute.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\net_tool\net_tool.html    ----------------------*/
+AVG RX
+AVG TX
+AVG Total
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\port_forward\js\port_forward.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\port_forward\port_forward.html    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\system_config\js\system_config.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\system_config\system_config.html    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\system_log\js\system_log.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\system_log\system_log.html    ----------------------*/
+WAN
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\system_password\js\system_password.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\system_password\system_password.html    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\system_status\js\system_status.js    ----------------------*/
+Mixed WPA/WPA2-PSK
+You can change the name of this device on the \"Network\" > \"LAN Setup\" page.
+it displays \"No Peer AP\" if the device works in AP or Router mode. And in other modes, it displays the MAC address of peer AP that this device bridged.
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\system_status\system_status.html    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\system_time\js\system_time.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\system_time\system_time.html    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wizard\js\apMode.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wizard\js\p2mpMode.js    ----------------------*/
+Mixed WPA/WPA2-PSK
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wizard\js\repeaterMode.js    ----------------------*/
+Mixed WPA/WPA2-PSK
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wizard\js\routerMode.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wizard\js\stationMode.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wizard\js\universalrepeaterMode.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wizard\js\wispMode.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wizard\js\wizard.js    ----------------------*/
+Mixed WPA/WPA2-PSK
+Open
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wizard\js\wizardUtil.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wizard\wizard.html    ----------------------*/
+The device is set to
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wrl_basic\js\wrl_advance.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wrl_basic\js\wrl_basic.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wrl_basic\js\wrl_filter.js    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wrl_basic\wrl_advance.html    ----------------------*/
+WMM
+APSD
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wrl_basic\wrl_basic.html    ----------------------*/
+/*----------------------   E:\Practice\reasy-htmlcss-hint-node\reasy-htmlcss-hint-node\test\app\module\wrl_basic\wrl_filter.html    ----------------------*/
+/********./test/app/common/lang/cn/translate.json********/

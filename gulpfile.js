@@ -1,6 +1,6 @@
 var gulp = require("gulp");
 var uglify = require('gulp-uglify-es').default;
-var pump = require('pump');
+var pump = require('pump')
 
 gulp.task('compress', function (cb) {
     pump([
