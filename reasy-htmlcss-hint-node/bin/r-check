@@ -85,5 +85,7 @@ function generateConfigFile(name) {
     console.log("");
     console.log("/***************************配置文件已生成***************************/");
     console.log("");
+    console.warn("/***********************请检查配置，并重新开始***********************/");
+    console.log("");
     process.exit(1);
 }

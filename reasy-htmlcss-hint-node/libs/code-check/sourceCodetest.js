@@ -27,14 +27,20 @@ function souceCode(fPath, options) {
     //获取所有js、css、html文件路径
     getFileList(fPath);
 
-    //检查ESLint语法规则是否加入package.json
-    checkEslintConfig(fPath);
-
     //检查html和css和js语法规范
-    options.checkHtml && (checkHtml(htmlList, htmlOptions));
-    options.checkCss && (checkCss(cssList, cssCheckOptions));
-    options.jsCheck && (checkJs());
+    options.checkHtml && (checkHtml());
+    options.checkCss && (checkCss());
+    options.checkJs && (checkJs());
 
+}
+
+function checkJs() {
+    console.log("");
+    console.log("");
+    console.info("/***************开始JS检查********************/");
+    jsCheck(checkOptions.originPath);
+
+    console.info("/***************JS检查结束********************/");
 }
 
 function checkCss() {
@@ -79,7 +85,6 @@ function checkHtml() {
 function getFileList(filePath) {
     htmlList = glob.sync("**/*.html");
     cssList = glob.sync("**/*.css");
-    // jsList = glob.sync(filePath + "/*.js");
 }
 
 /**
@@ -108,18 +113,11 @@ function checkOptionsValid(fPath, opt) {
         console.info("/******************使用默认配置********************/");
     }
 
+    checkOptions.originPath = checkOptions.errorLogPath;
     checkOptions.errorLogPath = path.join(fPath, checkOptions.errorLogPath);
 
     htmlCheckOptions = checkOptions.htmlCheckOptions;
     cssCheckOptions = checkOptions.cssCheckOptions;
 }
-
-function checkEslintConfig(fPath) {
-    let pJson = fs.readFileSync(path.join(fPath, "package.json"), "utf-8");
-    pJson = JSON.parse(pJson);
-    console.log(pJson);
-
-}
-
 
 module.exports = souceCode;

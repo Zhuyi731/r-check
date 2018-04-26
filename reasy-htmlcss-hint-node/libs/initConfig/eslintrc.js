@@ -1,5 +1,8 @@
 
 module.exports = {
+  "parserOptions": {
+    "ecmaVersion": 6//兼容ES6
+  },
   rules: {
     /*
      *以下的 off||0代表关闭  warm||1代表抛出Error，不会使编译退出  
