@@ -15,8 +15,9 @@
 
 
 #目录结构
-	r-check: 
-	├─bin   //二进制文件,用于生成r-check.cmd  并解析输入的配置参数
+
+	r-check:   
+	├─bin   //二进制文件,用于生成r-check.cmd  并解析输入的配置参数    
 	├─common //默认配置，utils  
 	├─custom-csslint  //自定义的csslint插件  
 	│  └─dist  
@@ -24,18 +25,18 @@
 	│
 	├─libs          //源文件代码  
 	│  ├─code-check //检查代码规范的
-	│  │  ├─ cssTest.js  //检查css源码规范，使用cssLint插件
-	│  │  ├─ htmlTest.js //检查html源码规范,使用htmlHint插件
-	│  │  ├─ jsTest.js   // 检查js源码规范，使用ESLint插件
-	│  │  └─ sourceCodetest.js  //用于检查配置参数是否正确，控制检查的开启与关闭
-	│  ├─encode-check 
-	│  │  └─ checkEncode.js //检查编码格式	
-	│  │	
-	│  ├─encode-check 
-	│  │  └─ initConfig.js //用于执行 init指令生成配置文件	
-	│  └─translate-check   //用于翻译检查
+	│  │  ├─ cssTest.js  //检查css源码规范，使用cssLint插件  
+	│  │  ├─ htmlTest.js //检查html源码规范,使用htmlHint插件  
+	│  │  ├─ jsTest.js   // 检查js源码规范，使用ESLint插件  
+	│  │  └─ sourceCodetest.js  //用于检查配置参数是否正确，控制检查的开启与关闭  
+	│  ├─encode-check     
+	│  │  └─ checkEncode.js //检查编码格式  	
+	│  │  	
+	│  ├─encode-check   
+	│  │  └─ initConfig.js //用于执行 init指令生成配置文件  	
+	│  └─translate-check   //用于翻译检查  
 	│  
-	├─test          //用于测试的代码  
+	├─test          //用于测试的代码    
 	└─index.js      //入口文件     
 
 
@@ -260,23 +261,23 @@ e.g:
 		//opacity属性需要做兼容性处理
 		"opacity":false
     },
-	"jsonAndCode": { //检查源码中每条翻译是否在json中都由对应的词条
-	 "jsonPath": "./app/common/lang",     //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况
-	 "codePath": "./app",                 //***必填  代码的路径，如果就是本地  输入./即可
-	 "logPath": "./errorLog"              //***选填  错误日志的路径，不填默认为 ./errorLog
-   },
-  "jsonAndExcel": { //检查json文件和excel文件的词条是否一一对应
-	 "jsonPath": "./app/common/lang", //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况
-	 "excelPath": "./docs/O3.xlsx",   //***必填   语言包的路径
-	 "logPath": "./errorLog",         //***选填   错误日志的路径，不填默认为 ./errorLog
-	 "defaultLang": "en",             //***必填   默认的语言，excel文件中以这种语言为基准
-	 "langToCheck": ["cn"]            //***必填   需要检查的语言项，必须要能在excel文件中找到
-   },
-  "checkDuplicate": { //检查excel中是否有重复的词条。重复词条会导致翻译的一对多问题
-	 "excelPath": "./test/O3.xlsx", //***必填   语言包的路径、
-	 "defaultLang": "en",           //***必填   默认的语言，excel文件中以这种语言为基准
-	 "logPath": "./errorLog"        //***选填   错误日志的路径，不填默认为 ./errorLo
-   },
+	"jsonAndCode": { //检查源码中每条翻译是否在json中都由对应的词条  
+		 "jsonPath": "./app/common/lang",     //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况  
+		 "codePath": "./app",                 //***必填  代码的路径，如果就是本地  输入./即可  
+		 "logPath": "./errorLog"              //***选填  错误日志的路径，不填默认为 ./errorLog  
+	},  
+	"jsonAndExcel": { //检查json文件和excel文件的词条是否一一对应  
+	 	"jsonPath": "./app/common/lang", //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况
+		 "excelPath": "./docs/O3.xlsx",   //***必填   语言包的路径
+		 "logPath": "./errorLog",         //***选填   错误日志的路径，不填默认为 ./errorLog
+		 "defaultLang": "en",             //***必填   默认的语言，excel文件中以这种语言为基准
+		 "langToCheck": ["cn"]            //***必填   需要检查的语言项，必须要能在excel文件中找到
+	 },
+	"checkDuplicate": { //检查excel中是否有重复的词条。重复词条会导致翻译的一对多问题
+		 "excelPath": "./test/O3.xlsx", //***必填   语言包的路径、
+		 "defaultLang": "en",           //***必填   默认的语言，excel文件中以这种语言为基准
+		 "logPath": "./errorLog"        //***选填   错误日志的路径，不填默认为 ./errorLo
+	},
     "errorLogPath": "./errorLog"
 	};
 
