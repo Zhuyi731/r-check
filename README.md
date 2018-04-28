@@ -15,46 +15,141 @@
 
 
 #目录结构
-	ROOT:.
-	├─bin   //二进制文件,用于生成r-check.cmd
-	├─common //默认配置，utils
-	├─custom-csslint  //自定义的csslint插件
-	│  └─dist
-	├─custom-htmlhint  //自定义的htmlhint插件
-	│  ├─bin
-	│  │  └─formatters
-	│  ├─lib
-	│  └─node_modules
-	│      ├─.bin
-	│      ├─csslint
-	│      │  └─lib
-	│      └─parserlib
-	│          └─lib
-	├─libs          //源文件代码
-	├─test          //用于测试的代码
-	└─index.js      //入口文件   
+	r-check: 
+	├─bin   //二进制文件,用于生成r-check.cmd  并解析输入的配置参数
+	├─common //默认配置，utils  
+	├─custom-csslint  //自定义的csslint插件  
+	│  └─dist  
+	├─custom-htmlhint  //自定义的htmlhint插件  
+	│
+	├─libs          //源文件代码  
+	│  ├─code-check //检查代码规范的
+	│  │  ├─ cssTest.js  //检查css源码规范，使用cssLint插件
+	│  │  ├─ htmlTest.js //检查html源码规范,使用htmlHint插件
+	│  │  ├─ jsTest.js   // 检查js源码规范，使用ESLint插件
+	│  │  └─ sourceCodetest.js  //用于检查配置参数是否正确，控制检查的开启与关闭
+	│  ├─encode-check 
+	│  │  └─ checkEncode.js //检查编码格式	
+	│  │	
+	│  ├─encode-check 
+	│  │  └─ initConfig.js //用于执行 init指令生成配置文件	
+	│  └─translate-check   //用于翻译检查
+	│  
+	├─test          //用于测试的代码  
+	└─index.js      //入口文件     
 
 
 ## CLI参数 
-输入r-check -h可以查看能够配置的参数  
+使用r-check -v 查看版本号(当前版本@1.1.5)  
+使用r-check -h 可以查看帮助信息  
+运行r-check 检查目录下编码规范及翻译检查。
+帮助信息显示如下  
 
--P 或者 --path配置配置文件的路径(配置文件详细内容见[配置文件](配置文件));  
-用法： r-check -P config/config.js  
-这条命令会去读取当前路径下config文件夹下config.js作为配置  
-配置-P或者--path之后将不会采用默认的配置文件，而是使用自定义的配置  
+ Usage: r-check <command> [options]
 
--H 或者  --close-html 关闭HTML语法检查    
--C 或者  --close-css  关闭CSS语法检查  
+  Options:
 
--V 或者 --version 查看版本信息  
--h 或者 --help 查看帮助
+    -V, --version                 output the version number  
+    -P, --path [configfile path]  The path of your config file which should follow with the -P or --path option.  
+    -S, --close-check             Close source code check.  
+    -C, --close-css               Close css check.  
+    -H, --close-html              Close html check.    
+    -J, --close-js                Close js check.  
+    -E, --close-encode            Close encode check.  
+    -T, --check-translate         Open translate check.  
+    -D, --debug,                  run in debug mode.  
+    -h, --help                    output usage information  
+
+  Commands:
+
+    init                          generate eslint config file and r.config.js.  
+    init-eslint                   generate eslint config file only.  
+
+# r-check 配置文件生成方法  
+
+1. 使用指令 r-check init  
+   该指令将会生成3个文件，分别是r.config.js  &&  .eslintrc.js  &&  .eslintignore  
+2. 使用指令 r-check init-eslint  
+   该指令会生成两个文件，分别是.eslintrc.js  &&  .eslintignore  
+
+这三个文件的作用  
+  r.config.js:用于配置翻译检查的参数以及html、css语法规范的检查配置。  
+  .eslintrc.js:用于配置ESLint插件的语法规范检查规则(组内统一)。此规则同时也将应用于你的IDE（如果你装了ESLint插件的话）  
+  .eslintignore:用于配置ESLint应该忽略的文件(比如node_modules)  
+
+
+# r-check **命令选项** 
+r-check指令后可以跟上一些选项来选择关闭某些检查  
+
+### -S or --close-check 关闭代码规范检查  
+>  输入此指令后将不会检查代码规范    
+>  包括html,css,js代码规范   
+
+e.g:
+>  r-check -S 
+
+或者  
+
+>  r-check --close-check
+
+### -C or--close-css关闭css检查  
+### -H or --close-html关闭html检查  
+### -J or --close-js关闭js检查     
+**注意：**所有的短指令是可以组合起来的  
+但是长指令不可以  
+e.g:
+>  例如 r-check -CHJ
+
+等价于
+
+>  r-check -C -H -J
+
+等价于
+
+>  r-check --close-css --close-html --close-js  
+
+
+### -E or --close-encode **关闭编码检查**  
+编码检查会检查你的文件是否为UTF-8格式(有无BOM均可，但必须是UTF8)。  
+以避免在前后台在编码格式上出现错误，以及在IE8下的显示问题。    
+编码检查虽然是必须的，但是编码检查会进行大量的IO操作，建议检查一次确认没有问题之后手动关闭。  
+e.g:  
+>  r-check -E
+
+### -T or --check-translate **开启翻译检查**  
+因为不一定所有的产品需要翻译检查。  
+当开启翻译检查却没有检查到语言包或者翻译检查的相关配置项时会报错。   
+翻译检查的配置在r.config.js中配置。  
+具体配置项如下:  
+
+    //配置项中有重复的项是为了配置方便，避免出现混淆。请在每个检查下都配置一遍  
+    module.exports = {
+      "jsonAndCode": { //检查源码中每条翻译是否在json中都由对应的词条
+         "jsonPath": "./app/common/lang",     //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况
+         "codePath": "./app",                 //***必填  代码的路径，如果就是本地  输入./即可
+         "logPath": "./errorLog"              //***选填  错误日志的路径，不填默认为 ./errorLog
+       },
+      "jsonAndExcel": { //检查json文件和excel文件的词条是否一一对应
+         "jsonPath": "./app/common/lang", //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况
+         "excelPath": "./docs/O3.xlsx",   //***必填   语言包的路径
+         "logPath": "./errorLog",         //***选填   错误日志的路径，不填默认为 ./errorLog
+         "defaultLang": "en",             //***必填   默认的语言，excel文件中以这种语言为基准
+         "langToCheck": ["cn"]            //***必填   需要检查的语言项，必须要能在excel文件中找到
+       },
+      "checkDuplicate": { //检查excel中是否有重复的词条。重复词条会导致翻译的一对多问题
+         "excelPath": "./test/O3.xlsx", //***必填   语言包的路径、
+         "defaultLang": "en",           //***必填   默认的语言，excel文件中以这种语言为基准
+         "logPath": "./errorLog"        //***选填   错误日志的路径，不填默认为 ./errorLo
+       }
+    };
 
 
 
 ##配置文件  
-配置文件包含三个部分  
+配置文件包含四个部分  
 - HTML语法检查规则  
-- CSS语法检查规则  
+- CSS语法检查规则 
+- 翻译检查配置 
 - 错误日志路径  
 
 默认配置文件配置如下  
@@ -165,41 +260,23 @@
 		//opacity属性需要做兼容性处理
 		"opacity":false
     },
-    "jsCheckOptions": {
-        "anon" : true , //匿名函数声明中function关键字与()之间的空白可以被省略
-        "bitwise" : true , //允许按位运算
-        "browser" : true , //浏览器(标准)是预定义的全局
-        "cap" : false , //允许大写的HTML
-        "continue" : false , //容忍continuation语句
-        "css" : false,  //允许检查CSS
-        "debug" : false,  //允许debuger语句
-        "devel" : false , //允许控制台语句console、alert语句
-        "eqeq" : true  ,//允许==和!=运算符
-        "es5" : true  ,//允许ECMAScript 5 的语法
-        "eval" : false  ,//允许使用eval
-        "forin" : true  ,//for in声明的中的key不需要使用hasOwnProperty过滤
-        "fragment" : false,  //允许检查HTML片段
-        "maxerr" :  50,//允许做大的错误数，默认是50
-        "maxlen" : 200,//允许单行的最大长度
-        "newcap" : true,  //构造函数的首字母大小写可以被忽略
-        "node" : false  ,//node.js是预定义的全局
-        "nomen" : true , //允许标识符以_开头
-        "on" : false  ,//允许在HTML使用类似onclick这样的事件处理
-        "passfail" : false,  //应该在扫描到第一个错误时停止
-        "plusplus" : true , //允许++递增 或 --递减
-        "properties" : false,  //由于 JavaScript 是松散类型、动态对象的语言，在编译时不可能确定，如果希望检查属性名称拼写，所有内置的属性名称必须写在 /*properties*/中
-        "regexp" : true , //允许正则表达式文本中含有.
-        "rhino" : false , //假设是在rhino环境中
-        "undef" : false , //变量的定义顺序可以是混乱的，比如var a = b.name, b = {name: "b"};
-        "unparam" : false,  //允许忽略未使用的参数
-        "sloppy" : true , //'use strict'标注是可选的
-        "sub" : false , //容忍所有的下标表示法，如果属性名是一个合法的标识符，建议用.表示法
-        "vars" : false , //允许每个函数有多个var声明
-        "white" : true , //容忍多余的空白
-        "widget" : false , //假设是在Yahoo Widgets环境中
-        "windows" : false , //MS Windows的特定全局应该是预定义的
-        "this":true
-    },
+	"jsonAndCode": { //检查源码中每条翻译是否在json中都由对应的词条
+	 "jsonPath": "./app/common/lang",     //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况
+	 "codePath": "./app",                 //***必填  代码的路径，如果就是本地  输入./即可
+	 "logPath": "./errorLog"              //***选填  错误日志的路径，不填默认为 ./errorLog
+   },
+  "jsonAndExcel": { //检查json文件和excel文件的词条是否一一对应
+	 "jsonPath": "./app/common/lang", //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况
+	 "excelPath": "./docs/O3.xlsx",   //***必填   语言包的路径
+	 "logPath": "./errorLog",         //***选填   错误日志的路径，不填默认为 ./errorLog
+	 "defaultLang": "en",             //***必填   默认的语言，excel文件中以这种语言为基准
+	 "langToCheck": ["cn"]            //***必填   需要检查的语言项，必须要能在excel文件中找到
+   },
+  "checkDuplicate": { //检查excel中是否有重复的词条。重复词条会导致翻译的一对多问题
+	 "excelPath": "./test/O3.xlsx", //***必填   语言包的路径、
+	 "defaultLang": "en",           //***必填   默认的语言，excel文件中以这种语言为基准
+	 "logPath": "./errorLog"        //***选填   错误日志的路径，不填默认为 ./errorLo
+   },
     "errorLogPath": "./errorLog"
 	};
 
