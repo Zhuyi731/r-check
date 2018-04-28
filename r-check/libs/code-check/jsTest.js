@@ -4,15 +4,17 @@ const fs = require("fs");
 const util = require("../../common/utils");
 const cwd = process.cwd();
 const c = cwd.split("\\").pop();
-
+const debug = require("../../common/debug");
 
 function test(logPath) {
     let args,
         json,
         messages,
         errorNum = 0,
-        warnNum = 0;
+        warnNum = 0,
+        res;
 
+    // console.log(global.debug);
     if (!fs.existsSync(path.join(cwd, logPath))) {
         fs.mkdirSync(path.join(cwd, logPath));
     }
@@ -21,12 +23,15 @@ function test(logPath) {
         fs.mkdirSync(path.join(cwd, logPath, "/js"));
     }
 
-    args = ["eslint", cwd, "-o", `${logPath}/js/index.json`, "-f", "json", "./test"];
+    debug(cwd, logPath);
+    args = ["eslint", cwd, "-o", `${logPath}/js/index.json`, "-f", "json", "./"];
     eslint.execute(args);
 
     json = fs.readFileSync(path.join(cwd, `${logPath}/js/index.json`));
     json = JSON.parse(json);
     messages = json.messages;
+
+    debug(json);
 
     json.forEach(function (error) {
         errorNum += error.errorCount;
@@ -42,7 +47,10 @@ function test(logPath) {
     //删除index.json文件
     fs.unlinkSync(path.join(cwd, `${logPath}/js/index.json`));
 
+    return {
+        "errorNum": errorNum,
+        "warnNum": warnNum
+    };
 }
-test("./errorLog");
 
 module.exports = test;

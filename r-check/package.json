@@ -1,7 +1,7 @@
 {
   "name": "r-check",
-  "version": "1.0.0",
-  "description": "Brand new check tool package for Tenda company UI team",
+  "version": "1.1.5",
+  "description": "add function to check whether there exists duplicate sentences in excel",
   "main": "index.js",
   "dependencies": {
     "commander": "^2.15.1",
@@ -21,10 +21,6 @@
     "r-check": "./bin/r-check"
   },
   "author": "zhuyi",
-  "license": "ISC",
-  "devDependencies": {
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-config-google": "^0.9.1",
-    "eslint-plugin-import": "^2.11.0"
-  }
+  "license": "ISC"
 }
+

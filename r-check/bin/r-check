@@ -3,8 +3,8 @@
 /**
  *dependencies
  */
-var program = require("commander");
-var args = process.argv;
+const program = require("commander");
+const args = process.argv;
 const run = require("../index");
 const fs = require("fs");
 const path = require("path");
@@ -15,21 +15,30 @@ const initConfigFile = require("../libs/initConfig/initConfig");
  */
 program.version(require('../package').version)
     .usage('<command> [options]')
-    .option("-P, --path [configfile path]", "The path of your config file which should follow with the -P or --path option")
-    .option("-S, --close-check", "Close source code check")
-    .option("-C, --close-css", "Close css check")
-    .option("-H, --close-html", "Close html check")
-    .option("-J, --close-js", "Close js check")
-    .option("-E, --close-encode", "Close encode check")
-    .option("-T, --check-translate", "Open translate check");
+    .option("-P, --path [configfile path]", "The path of your config file which should follow with the -P or --path option.")
+    .option("-S, --close-check", "Close source code check.")
+    .option("-C, --close-css", "Close css check.")
+    .option("-H, --close-html", "Close html check.")
+    .option("-J, --close-js", "Close js check.")
+    .option("-E, --close-encode", "Close encode check.")
+    .option("-T, --check-translate", "Open translate check.")
+    .option("-D, --debug,", "run in debug mode.");
 
+//生成配置文件
 program.command("init")
+    .description("generate eslint config file and r.config.js.")
     .action((name) => {
         generateConfigFile(name);
     });
 
-program.parse(args);
+//生成ESLint
+program.command("init-eslint")
+    .description("generate eslint config file only.")
+    .action(() => {
+        generateEslint();
+    });
 
+program.parse(args);
 
 let options = generateOptions(args);
 checkOptionsValid(options);
@@ -64,6 +73,12 @@ function generateOptions() {
         "checkEncode": program.closeEncode ? false : true
     };
 
+    if (program.debug) {
+        global.debug = true;
+    } else {
+        global.debug = false;
+    }
+
     if (defaultOptions.optionsPath == "r.config.js") {
         if (!fs.existsSync(path.join(process.cwd(), "r.config.js"))) {
             console.warn("/***********************没有r.config.js配置文件***********************/");
@@ -81,11 +96,22 @@ function generateConfigFile(name) {
     console.log("");
     console.log("/***************************生成配置文件中***************************/");
     console.log("");
-    initConfigFile(name);
+    initConfigFile(name, "all");
     console.log("");
     console.log("/***************************配置文件已生成***************************/");
     console.log("");
     console.warn("/***********************请检查配置，并重新开始***********************/");
+    console.log("");
+    process.exit(1);
+}
+//只生成ESLint配置文件
+function generateEslint(name) {
+    console.log("");
+    console.log("/***************************生成ESLint配置文件中***************************/");
+    console.log("");
+    initConfigFile(name, "eslint");
+    console.log("");
+    console.log("/***************************配置文件已生成***************************/");
     console.log("");
     process.exit(1);
 }

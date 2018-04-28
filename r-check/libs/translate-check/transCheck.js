@@ -3,18 +3,31 @@ const fs = require("fs");
 const path = require("path");
 const checkJsonCode = require("./node_b28");
 const checkJsonExcel = require("./jsonAndExcel/excelCheck");
+const checkDup = require("./checkDuplicate/checkDup");
+const debug = require("../../common/debug");
 
 function translateCheck(filePath, options) {
     //首先检查配置项是否合法，非法则抛出错误
     let configOptions = checkOptionsValid(filePath, options);
-    //
+    
     if (configOptions.jsonAndCode) {
+        console.log("检查语言包与代码翻译中");
         checkJsonCode(configOptions.jsonAndCode.codePath, configOptions.jsonAndCode.jsonPath, configOptions.jsonAndCode.logPath, "json与代码中未对应项错误日志.txt");
+        console.log("语言包与代码翻译检查完毕");
     }
 
     if (configOptions.jsonAndExcel) {
+        console.log("检查语言包与excel是否对应");
         checkJsonExcel(configOptions.jsonAndExcel);
+        console.log("语言包与excel检查完毕");
     }
+
+    if (configOptions.checkDuplicate) {
+        console.log("检查excel中的重复词条");
+        checkDup(configOptions.checkDuplicate);
+        console.log("重复词条检查完毕");
+    }
+
 }
 
 /**
@@ -53,6 +66,8 @@ function checkOptionsValid(filePath, options) {
         if (!configOptions.jsonAndCode.codePath || !configOptions.jsonAndCode.jsonPath) {
             throw new Error("jsonAndCode的codePath属性和jsonPath属性必须配置");
         } else {
+            debug("codePath", configOptions.jsonAndCode.codePath, !isFileExists(configOptions.jsonAndCode.codePath));
+            debug("jsonPath", configOptions.jsonAndCode.jsonPath, !isFileExists(configOptions.jsonAndCode.jsonPath));
 
             if (!isFileExists(configOptions.jsonAndCode.codePath) || !isFileExists(configOptions.jsonAndCode.jsonPath)) {
                 throw new Error("jsonAndCode路径配置有错误");
@@ -113,6 +128,23 @@ function checkOptionsValid(filePath, options) {
             fs.mkdirSync(configOptions.jsonAndExcel.logPath);
         }
     }
+    /**
+     * 如果配置了excel重复词条，则检查如下配置项
+     *1.检查是否配置了excelPath选项，该选项用于定位excel文件的路径
+     *2.检查是否配置了默认语言
+     */
+    if (configOptions.checkDuplicate) {
+        if (!configOptions.checkDuplicate.excelPath) {
+            throw new Error("checkDuplicate检查重复词条必须配置excelPath选项");
+        }
+        if (typeof configOptions.checkDuplicate.excelPath != "string") {
+            throw new Error("excelpath 必须为路径");
+        }
+        if(!configOptions.checkDuplicate.defaultLang){
+            throw new Error("checkDuplicate必须配置defaultLang选项");
+        }
+
+    }
 
     return configOptions;
 }
@@ -125,5 +157,10 @@ function isFileExists(filePath) {
     return fs.existsSync(filePath);
 }
 
+function output(str) {
+    console.log("");
+    console.log(str);
+    console.log("");
+}
 
 module.exports = translateCheck;

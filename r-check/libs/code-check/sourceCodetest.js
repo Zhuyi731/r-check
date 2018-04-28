@@ -4,6 +4,7 @@ const glob = require("glob");
 const htmlCheck = require("./htmlTest");
 const cssCheck = require("./cssTest");
 const jsCheck = require("./jsTest");
+const debug = require("../../common/debug");
 
 let htmlCheckOptions,
     cssCheckOptions,
@@ -15,7 +16,7 @@ let htmlList,
     jsList;
 
 /**
- * 
+ * export part
  * @rewrite by zy 
  * 异步检查变为同步检查
  * 精简部分代码
@@ -32,49 +33,6 @@ function souceCode(fPath, options) {
     options.checkCss && (checkCss());
     options.checkJs && (checkJs());
 
-}
-
-function checkJs() {
-    console.log("");
-    console.log("");
-    console.info("/***************开始JS检查********************/");
-    jsCheck(checkOptions.originPath);
-
-    console.info("/***************JS检查结束********************/");
-}
-
-function checkCss() {
-    console.log("");
-    console.log("");
-    console.info("/***************开始CSS检查********************/");
-    let errors = cssCheck(cssList, checkOptions);
-    if (errors) {
-        console.log("");
-        console.warn(`共发现${errors}个错误`);
-        console.log("");
-    } else {
-        console.log("");
-        console.info(`共发现${errors}个错误`);
-        console.log("");
-    }
-    console.info("/***************CSS检查结束********************/");
-}
-
-function checkHtml() {
-    console.log("");
-    console.log("");
-    console.info("/***************开始HTML检查********************/");
-    let errors = htmlCheck(htmlList, checkOptions);
-    if (errors) {
-        console.log("");
-        console.warn(`共发现${errors}个错误`);
-        console.log("");
-    } else {
-        console.log("");
-        console.info(`共发现${errors}个错误`);
-        console.log("");
-    }
-    console.info("/***************HTML检查结束********************/");
 }
 
 
@@ -118,6 +76,59 @@ function checkOptionsValid(fPath, opt) {
 
     htmlCheckOptions = checkOptions.htmlCheckOptions;
     cssCheckOptions = checkOptions.cssCheckOptions;
+}
+
+function checkJs() {
+    console.log("");
+    console.log("");
+    console.info("/***************开始JS检查********************/");
+
+    let res = jsCheck(checkOptions.originPath);
+    debug(res);
+
+    console.log("");
+    console.info(`共发现${res.errorNum}个错误`);
+    console.log("");
+
+    console.log("");
+    console.warn(`共发现${res.warnNum}个警告`);
+    console.log("");
+
+    console.info("/***************JS检查结束********************/");
+}
+
+function checkCss() {
+    console.log("");
+    console.log("");
+    console.info("/***************开始CSS检查********************/");
+    let errors = cssCheck(cssList, checkOptions);
+    if (errors) {
+        console.log("");
+        console.warn(`共发现${errors}个错误`);
+        console.log("");
+    } else {
+        console.log("");
+        console.info(`共发现${errors}个错误`);
+        console.log("");
+    }
+    console.info("/***************CSS检查结束********************/");
+}
+
+function checkHtml() {
+    console.log("");
+    console.log("");
+    console.info("/***************开始HTML检查********************/");
+    let errors = htmlCheck(htmlList, checkOptions);
+    if (errors) {
+        console.log("");
+        console.warn(`共发现${errors}个错误`);
+        console.log("");
+    } else {
+        console.log("");
+        console.info(`共发现${errors}个错误`);
+        console.log("");
+    }
+    console.info("/***************HTML检查结束********************/");
 }
 
 module.exports = souceCode;
