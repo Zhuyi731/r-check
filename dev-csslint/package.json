@@ -1,0 +1,50 @@
+{
+  "name": "csslint",
+  "version": "1.0.5",
+  "description": "CSSLint",
+  "author": "Nicole Sullivan",
+  "contributors": [
+    "Nicholas C. Zakas"
+  ],
+  "homepage": "http://csslint.net/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CSSLint/csslint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CSSLint/csslint/issues"
+  },
+  "license": "MIT",
+  "main": "./dist/csslint-node.js",
+  "bin": {
+    "csslint": "./dist/cli.js"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "clone": "~2.1.0",
+    "parserlib": "~1.1.1"
+  },
+  "devDependencies": {
+    "grunt": "~1.0.1",
+    "grunt-contrib-clean": "~1.0.0",
+    "grunt-contrib-concat": "~1.0.0",
+    "grunt-contrib-jshint": "~1.1.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-include-replace": "~5.0.0",
+    "load-grunt-tasks": "~3.5.0",
+    "time-grunt": "~1.4.0",
+    "yuitest": "~0.7.9"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "dist/cli.js",
+    "dist/csslint-node.js",
+    "dist/csslint.js",
+    "CHANGELOG",
+    "LICENSE"
+  ]
+}

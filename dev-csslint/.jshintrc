@@ -1,0 +1,21 @@
+{
+    "camelcase": true,
+    "curly": true,
+    "eqeqeq": true,
+    "es3": true,
+    "forin": true,
+    "immed": true,
+    "indent": 4,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "noempty": true,
+    "nonbsp": true,
+    "quotmark": "double",
+    "strict": true,
+    "undef": true,
+    "unused": true,
+    "globals": {
+        "CSSLint": true
+    }
+}

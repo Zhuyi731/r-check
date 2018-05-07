@@ -1,3 +1,9 @@
 /node_modules/*
 .eslintrc.js
 r.config.js
+webpack.config.js
+/goform/*
+jquery.js
+j.js
+reasy.js
+reasy-ui.js

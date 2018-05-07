@@ -1,7 +1,7 @@
 {
   "name": "r-check",
-  "version": "1.1.5",
-  "description": "add function to check whether there exists duplicate sentences in excel",
+  "version": "1.2.0",
+  "description": "completed the rules to check all things.",
   "main": "index.js",
   "dependencies": {
     "commander": "^2.15.1",

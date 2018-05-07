@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>YUI Test</title>
+
+    <!-- JS -->
+    <script src="../dist/csslint.js"></script>
+    <script src="../lib/yuitest.js"></script>
+    <script src="../dist/csslint-tests.js"></script>
+    <script src="all-rules.js"></script>
+    <script src="testrunner.js"></script>
+    <style>
+        .passed { color: green; }
+        .failed, .error { color: red; }
+        .ignored { color: silver; }
+    </style>
+
+</head>
+<body>
+    <div id="doc">
+        <h1>YUI Test - Test Runner</h1>
+        <button id="run">Run</button>
+
+        <h2>Results</h2>
+        <ul id="results"></ul>
+
+    </div>
+</body>
+</html>

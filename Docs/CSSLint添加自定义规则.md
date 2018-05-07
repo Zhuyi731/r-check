@@ -1,0 +1,2 @@
+#CSSLint添加自定义规则
+参考HTMLHint，差不多的
