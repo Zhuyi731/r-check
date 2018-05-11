@@ -9,7 +9,8 @@ const debug = require("../../common/debug");
 let htmlCheckOptions,
     cssCheckOptions,
     jsCheckOptions,
-    checkOptions = require("../../common/checkConfig");
+    checkOptions = require("../../common/checkConfig"),
+    cliOptions;
 
 let htmlList,
     cssList,
@@ -22,6 +23,7 @@ let htmlList,
  * 精简部分代码
  */
 function souceCode(fPath, options) {
+    cliOptions = options;
     //检查配置项是否有误
     checkOptionsValid(fPath, options);
 
@@ -66,7 +68,9 @@ function checkOptionsValid(fPath, opt) {
             console.info("配置文件缺少errorLogPath配置项,使用默认路径./errorLog作为日志路径");
             data.errorLogPath = "./errorLog";
         }
+
         checkOptions = data;
+
     } else {
         console.info("/******************使用默认配置********************/");
     }
@@ -83,7 +87,7 @@ function checkJs() {
     console.log("");
     console.info("/***************开始JS检查********************/");
 
-    let res = jsCheck(checkOptions.originPath);
+    let res = jsCheck(checkOptions, cliOptions);
     debug(res);
 
     console.log("");
@@ -101,7 +105,7 @@ function checkCss() {
     console.log("");
     console.log("");
     console.info("/***************开始CSS检查********************/");
-    let errors = cssCheck(cssList, checkOptions);
+    let errors = cssCheck(cssList, checkOptions, cliOptions);
     if (errors) {
         console.log("");
         console.warn(`共发现${errors}个错误`);
@@ -118,7 +122,7 @@ function checkHtml() {
     console.log("");
     console.log("");
     console.info("/***************开始HTML检查********************/");
-    let errors = htmlCheck(htmlList, checkOptions);
+    let errors = htmlCheck(htmlList, checkOptions, cliOptions);
     if (errors) {
         console.log("");
         console.warn(`共发现${errors}个错误`);

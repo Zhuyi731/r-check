@@ -1,0 +1,24 @@
+ruleId:no-undef
+message:'console' is not defined.
+line:7
+source:        console.log('# TOC');
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:36
+source:        console.log(arrToc.join('\r\n')+'\r\n');
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:37
+source:        console.log(arrContents.join('\r\n'));
+
+
+ruleId:no-undef
+message:'module' is not defined.
+line:40
+source:module.exports = markdownFormatter;
+
+

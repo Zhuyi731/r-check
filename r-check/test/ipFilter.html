@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Pragma" content="no-cache,no-store">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" href="/common/css/bootstrap.css">
+    <link rel="stylesheet" href="/common/css/reasy-ui.css">
+    <!-- 打开以下链接为Tenda页面风格；注释掉为IP-COM页面风格 -->
+    <link rel="stylesheet" href="/common/css/tenda-ex.css">
+    <script src="/common/lang/b28n.js"></script>
+    <!--[if lte IE 8]>
+      <script src="/common/js/lteIE8.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">
+            <span>IP Filter</span>
+        </div>
+    </div>
+    <div class="panel-body" id="ipFilterContainer">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="controls-label">IP Filter:</label>
+                <div class="controls-legend">
+                    <label class="radio-inline">
+                        <input type="radio" name="ipFilterEn" value="true" checked="">Enable</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="ipFilterEn" value="false">Disable</label>
+                </div>
+            </div>
+        </form>
+        <form id="ipFilterSetting" class="form-horizontal" role="form">
+            <hr>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <button type="button" id="addRules" class="btn btn-default">+<span>Add</span></button>
+                    <button type="button" id="removeRules" class="btn btn-default btn-del">Delete</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" data-bind="ipFilterRules">
+                            <thead>
+                                <tr>
+                                    <th class="th-checkbox">
+                                        <input type="checkbox" name="select" id="selectAll">
+                                    </th>
+                                    <th data-lang="Mode">Type</th>
+                                    <th>IP Group</th>
+                                    <th>Time Group</th>
+                                    <th>Remark</th>
+                                    <th>Status</th>
+                                    <th>Operation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="ipFilterDefaultPolicy"><span>Allow hosts covered by disabled rules or not covered by the preceding rules to access the internet.</span>
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal" id="ipFilter-modal">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <span>Add</span>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="/goform/setIpFilterRule">
+                    <input type="hidden" name="ipFilterRuleIndex">
+                    <div class="form-group">
+                        <label class="control-label col-xs-5">Filter Type:</label>
+                        <div class="col-xs-7">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="ipFilterRuleMode" value="white" checked="">Allow to access the internet</label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="ipFilterRuleMode" value="black">Forbid to access the internet</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-xs-5">IP Group:</label>
+                        <div class="col-xs-7">
+                            <select class="form-control controls-sm validatebox" name="ipGroupName" required="">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-xs-5">Time Group:</label>
+                        <div class="col-xs-7">
+                            <select class="form-control controls-sm validatebox" name="timeGroupName" required="">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="none">
+                        <label class="control-label col-xs-5">Remark:</label>
+                        <div class="col-xs-7">
+                            <input type="text" class="form-control controls-sm validatebox" name="ipFilterRuleDesc" placeholder="Optional" data-options="{&quot;type&quot;: &quot;remarkTxt&quot;, &quot;args&quot;: [1, 16]}">
+                        </div>
+                    </div>
+                    <div class="form-action">
+                        <input type="submit" class="btn btn-static-sm btn-primary" id="ipFilterRule-save" value="OK">
+                        <input type="reset" class="btn btn-static-sm btn-default" id="ipFilterRule-cancel" data-dismiss="modal" value="Cancel">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="form-action">
+    <button class="btn btn-static-sm btn-primary" id="ipFilter-save">OK</button>
+    <button class="btn btn-static-sm btn-default" id="ipFilter-cancel">Cancel</button>
+</div>    
+    <script src="/common/js/libs.js"></script>
+    <script src="/common/js/common.js"></script>
+    <script src="/common/js/macro_config.js"></script>
+
+    <script src="/behavior/js/ipFilter.js"></script>
+
+</body>
+</html>

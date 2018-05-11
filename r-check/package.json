@@ -1,7 +1,7 @@
 {
   "name": "r-check",
-  "version": "1.2.0",
-  "description": "completed the rules to check all things.",
+  "version": "1.2.2",
+  "description": "Added github repository to access github homepage",
   "main": "index.js",
   "dependencies": {
     "commander": "^2.15.1",
@@ -20,6 +20,8 @@
   "bin": {
     "r-check": "./bin/r-check"
   },
+  
+  "repository":"https://github.com/Zhuyi731/r-check",
   "author": "zhuyi",
   "license": "ISC"
 }

@@ -6,46 +6,55 @@ const cwd = process.cwd();
 const c = cwd.split("\\").pop();
 const debug = require("../../common/debug");
 
-function test(logPath) {
+function test(opt, cliOptions) {
     let args,
         json,
-        messages,
+        messages = [],
+        result,
         errorNum = 0,
         warnNum = 0,
-        res;
+        res,
+        logPath = opt.originPath,
+        multifile = cliOptions.multifile,
+        filename;
 
-    // console.log(global.debug);
-    if (!fs.existsSync(path.join(cwd, logPath))) {
-        fs.mkdirSync(path.join(cwd, logPath));
-    }
 
-    if (!fs.existsSync(path.join(cwd, logPath, "/js"))) {
-        fs.mkdirSync(path.join(cwd, logPath, "/js"));
-    }
+    //检查错误日志文件夹是否存在，若不存在则创建
+    util.isLogExist(path.join(cwd, logPath), path.join(cwd, logPath, "/js"));
 
-    debug(cwd, logPath);
-    args = ["eslint", cwd, "-o", `${logPath}/js/index.json`, "-f", "json", "./"];
+    // debug(cwd, logPath);
+    args = ["eslint", cwd, "-o", `${logPath}/js/errorLog.json`, "-f", "json", "./"];
     eslint.execute(args);
 
-    json = fs.readFileSync(path.join(cwd, `${logPath}/js/index.json`));
+    json = fs.readFileSync(path.join(cwd, `${logPath}/js/errorLog.json`));
     json = JSON.parse(json);
     messages = json.messages;
-
-    debug(json);
-
+    //  debug(json);
+    //如果是多文件的话就将index.json中的信息提取到不同的文件中去
     json.forEach(function (error) {
         errorNum += error.errorCount;
         warnNum += error.warningCount;
 
-        fs.writeFileSync(path.join(cwd, logPath, "/js/", error.filePath.split("\\").pop().split(".")[0]) + ".txt", util.dealJsMessage(error.messages), "utf8", (err) => {
-            console.log("写入log文件出现错误");
-            if (err) throw err;
-        });
-
+        //当需要写入到多个文件时,用writeFileSync
+        if (!!multifile) {
+            filename = path.join(cwd, logPath, "/js/", error.filePath.split("\\").pop().split(".")[0]) + ".txt";
+            fs.writeFileSync(filename, util.dealJsMessage(error.messages), "utf8", (err) => {
+                console.log(`写入log文件${filename}出现错误`);
+                if (err) throw err;
+            });
+        } else {
+            //写入到一个文件时用append
+            filename = path.join(cwd, logPath, "/js/errorLog.txt");
+            // util.creatEmptyFile(filename);
+            fs.appendFileSync(filename, util.dealJsMessage(error.messages), "utf-8", (err) => {
+                console.log(`写入log文件${filename}出现错误`,err);
+                if (err) throw err;
+            });
+        }
     }, this);
 
-    //删除index.json文件
-    fs.unlinkSync(path.join(cwd, `${logPath}/js/index.json`));
+    //删除index.json文件 多文件的话
+    fs.unlinkSync(path.join(cwd, `${logPath}/js/errorLog.json`));
 
     return {
         "errorNum": errorNum,

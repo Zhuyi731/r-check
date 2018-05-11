@@ -1,0 +1,138 @@
+ruleId:no-undef
+message:'require' is not defined.
+line:1
+source:const jschardet = require("jschardet");
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:2
+source:const fs = require("fs");
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:3
+source:const glob = require("glob");
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:4
+source:const path = require("path");
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:7
+source:    console.log(" ");
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:8
+source:    console.log("/************开始文件编码格式检查************/")
+
+
+ruleId:semi
+message:Missing semicolon.
+line:8
+source:    console.log("/************开始文件编码格式检查************/")
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:9
+source:    console.log(" ");
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:13
+source:    const rConfig = require(path.join(fPath, options.optionsPath));
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:29
+source:                console.log(`检测到文件${file}的编码格式为${fileType}。确信度：${confidence}`);
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:30
+source:                console.log("造成这种原因可能是:");
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:31
+source:                console.log("1.编码格式不正确");
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:32
+source:                console.log("2.文件被压缩");
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:33
+source:                console.log("3.不正确的文件后缀");
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:34
+source:                console.log("4.其他");
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:35
+source:                console.log("如果是第一种情况，请用NotePad++手动修改文件的编码格式");
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:40
+source:    if (!errorDatas) console.log("没有发现文件编码错误");
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:42
+source:    console.log(" ");
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:43
+source:    console.log("/************文件编码格式检查结束************/")
+
+
+ruleId:semi
+message:Missing semicolon.
+line:43
+source:    console.log("/************文件编码格式检查结束************/")
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:44
+source:    console.log(" ");
+
+
+ruleId:semi
+message:Missing semicolon.
+line:52
+source:    let testReg2 = /\.(txt|png|jpg|gif|eot|svg|ttf|woff|xlsx|doc|md)$/
+
+
+ruleId:no-undef
+message:'module' is not defined.
+line:68
+source:module.exports = checkEncode;
+
+

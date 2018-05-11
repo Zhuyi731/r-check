@@ -1,0 +1,60 @@
+ruleId:no-undef
+message:'require' is not defined.
+line:1
+source:const xlsx = require("xlsx");
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:2
+source:const fs = require("fs");
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:3
+source:const path = require("path");
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:4
+source:const debug = require("../../../common/debug");
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:14
+source:    if (!fs.existsSync(path.join(process.cwd(), excelPath))) {
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:15
+source:        throw new Error("没有找到对应的语言包文件  路径" + path.join(process.cwd(), excelPath));
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:24
+source:        console.warn(`[WARNING]:检查到${errorInfo.length-2}条重复词条，请检查语言包。详细错误信息请见${logPath}/重复词条.txt`);
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:28
+source:    fs.writeFileSync(path.join(process.cwd(), logPath, "重复词条.txt"), errorInfo.join("\n\r\n\r"));
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:56
+source:    let excelDatas = xlsx.readFileSync(path.join(process.cwd(), excelPath));
+
+
+ruleId:no-undef
+message:'module' is not defined.
+line:67
+source:module.exports = checkDup;
+
+

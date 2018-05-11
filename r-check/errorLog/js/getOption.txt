@@ -1,0 +1,18 @@
+ruleId:no-undef
+message:'module' is not defined.
+line:6
+source:module.exports = function(optionsArr) {
+
+
+ruleId:quote-props
+message:Unquoted property 'h' found.
+line:36
+source:        h: true
+
+
+ruleId:semi
+message:Missing semicolon.
+line:38
+source:}
+
+

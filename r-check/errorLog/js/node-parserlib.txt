@@ -1,0 +1,4153 @@
+ruleId:quote-props
+message:Unquoted property 'constructor' found.
+line:48
+source:    constructor: EventTarget,
+
+
+ruleId:quote-props
+message:Unquoted property 'addListener' found.
+line:57
+source:    addListener: function(type, listener){
+
+
+ruleId:quote-props
+message:Unquoted property 'fire' found.
+line:72
+source:    fire: function(event){
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:74
+source:            event = { type: event };
+
+
+ruleId:quote-props
+message:Unquoted property 'removeListener' found.
+line:101
+source:    removeListener: function(type, listener){
+
+
+ruleId:quote-props
+message:Unquoted property 'constructor' found.
+line:162
+source:    constructor: StringReader,
+
+
+ruleId:quote-props
+message:Unquoted property 'getCol' found.
+line:173
+source:    getCol: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'getLine' found.
+line:182
+source:    getLine: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'eof' found.
+line:191
+source:    eof: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'peek' found.
+line:205
+source:    peek: function(count){
+
+
+ruleId:quote-props
+message:Unquoted property 'read' found.
+line:225
+source:    read: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'mark' found.
+line:256
+source:    mark: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'cursor' found.
+line:258
+source:            cursor: this._cursor,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:259
+source:            line:   this._line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:260
+source:            col:    this._col
+
+
+ruleId:quote-props
+message:Unquoted property 'reset' found.
+line:264
+source:    reset: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'readTo' found.
+line:285
+source:    readTo: function(pattern){
+
+
+ruleId:quote-props
+message:Unquoted property 'readWhile' found.
+line:318
+source:    readWhile: function(filter){
+
+
+ruleId:quote-props
+message:Unquoted property 'readMatch' found.
+line:344
+source:    readMatch: function(matcher){
+
+
+ruleId:quote-props
+message:Unquoted property 'readCount' found.
+line:371
+source:    readCount: function(count){
+
+
+ruleId:quote-props
+message:Unquoted property 'constructor' found.
+line:475
+source:    constructor: SyntaxUnit,
+
+
+ruleId:quote-props
+message:Unquoted property 'valueOf' found.
+line:482
+source:    valueOf: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'toString' found.
+line:491
+source:    toString: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:569
+source:    tokenData.unshift({name:"EOF"});
+
+
+ruleId:quote-props
+message:Unquoted property 'constructor' found.
+line:593
+source:    constructor: TokenStreamBase,
+
+
+ruleId:quote-props
+message:Unquoted property 'match' found.
+line:613
+source:    match: function(tokenTypes, channel){
+
+
+ruleId:quote-props
+message:Unquoted property 'mustMatch' found.
+line:646
+source:    mustMatch: function(tokenTypes, channel){
+
+
+ruleId:quote-props
+message:Unquoted property 'advance' found.
+line:677
+source:    advance: function(tokenTypes, channel){
+
+
+ruleId:quote-props
+message:Unquoted property 'get' found.
+line:691
+source:    get: function(channel){
+
+
+ruleId:quote-props
+message:Unquoted property 'LA' found.
+line:781
+source:    LA: function(index){
+
+
+ruleId:quote-props
+message:Unquoted property 'LT' found.
+line:827
+source:    LT: function(index){
+
+
+ruleId:quote-props
+message:Unquoted property 'peek' found.
+line:842
+source:    peek: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'token' found.
+line:851
+source:    token: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'tokenName' found.
+line:862
+source:    tokenName: function(tokenType){
+
+
+ruleId:quote-props
+message:Unquoted property 'tokenType' found.
+line:877
+source:    tokenType: function(tokenName){
+
+
+ruleId:quote-props
+message:Unquoted property 'unget' found.
+line:885
+source:    unget: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'StringReader' found.
+line:899
+source:StringReader: StringReader,
+
+
+ruleId:quote-props
+message:Unquoted property 'SyntaxError' found.
+line:900
+source:SyntaxError : SyntaxError,
+
+
+ruleId:quote-props
+message:Unquoted property 'SyntaxUnit' found.
+line:901
+source:SyntaxUnit  : SyntaxUnit,
+
+
+ruleId:quote-props
+message:Unquoted property 'EventTarget' found.
+line:902
+source:EventTarget : EventTarget,
+
+
+ruleId:quote-props
+message:Unquoted property 'TokenStreamBase' found.
+line:903
+source:TokenStreamBase : TokenStreamBase
+
+
+ruleId:quote-props
+message:Unquoted property 'aliceblue' found.
+line:938
+source:    aliceblue       :"#f0f8ff",
+
+
+ruleId:quote-props
+message:Unquoted property 'antiquewhite' found.
+line:939
+source:    antiquewhite    :"#faebd7",
+
+
+ruleId:quote-props
+message:Unquoted property 'aqua' found.
+line:940
+source:    aqua            :"#00ffff",
+
+
+ruleId:quote-props
+message:Unquoted property 'aquamarine' found.
+line:941
+source:    aquamarine      :"#7fffd4",
+
+
+ruleId:quote-props
+message:Unquoted property 'azure' found.
+line:942
+source:    azure           :"#f0ffff",
+
+
+ruleId:quote-props
+message:Unquoted property 'beige' found.
+line:943
+source:    beige           :"#f5f5dc",
+
+
+ruleId:quote-props
+message:Unquoted property 'bisque' found.
+line:944
+source:    bisque          :"#ffe4c4",
+
+
+ruleId:quote-props
+message:Unquoted property 'black' found.
+line:945
+source:    black           :"#000000",
+
+
+ruleId:quote-props
+message:Unquoted property 'blanchedalmond' found.
+line:946
+source:    blanchedalmond  :"#ffebcd",
+
+
+ruleId:quote-props
+message:Unquoted property 'blue' found.
+line:947
+source:    blue            :"#0000ff",
+
+
+ruleId:quote-props
+message:Unquoted property 'blueviolet' found.
+line:948
+source:    blueviolet      :"#8a2be2",
+
+
+ruleId:quote-props
+message:Unquoted property 'brown' found.
+line:949
+source:    brown           :"#a52a2a",
+
+
+ruleId:quote-props
+message:Unquoted property 'burlywood' found.
+line:950
+source:    burlywood       :"#deb887",
+
+
+ruleId:quote-props
+message:Unquoted property 'cadetblue' found.
+line:951
+source:    cadetblue       :"#5f9ea0",
+
+
+ruleId:quote-props
+message:Unquoted property 'chartreuse' found.
+line:952
+source:    chartreuse      :"#7fff00",
+
+
+ruleId:quote-props
+message:Unquoted property 'chocolate' found.
+line:953
+source:    chocolate       :"#d2691e",
+
+
+ruleId:quote-props
+message:Unquoted property 'coral' found.
+line:954
+source:    coral           :"#ff7f50",
+
+
+ruleId:quote-props
+message:Unquoted property 'cornflowerblue' found.
+line:955
+source:    cornflowerblue  :"#6495ed",
+
+
+ruleId:quote-props
+message:Unquoted property 'cornsilk' found.
+line:956
+source:    cornsilk        :"#fff8dc",
+
+
+ruleId:quote-props
+message:Unquoted property 'crimson' found.
+line:957
+source:    crimson         :"#dc143c",
+
+
+ruleId:quote-props
+message:Unquoted property 'cyan' found.
+line:958
+source:    cyan            :"#00ffff",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkblue' found.
+line:959
+source:    darkblue        :"#00008b",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkcyan' found.
+line:960
+source:    darkcyan        :"#008b8b",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkgoldenrod' found.
+line:961
+source:    darkgoldenrod   :"#b8860b",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkgray' found.
+line:962
+source:    darkgray        :"#a9a9a9",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkgrey' found.
+line:963
+source:    darkgrey        :"#a9a9a9",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkgreen' found.
+line:964
+source:    darkgreen       :"#006400",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkkhaki' found.
+line:965
+source:    darkkhaki       :"#bdb76b",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkmagenta' found.
+line:966
+source:    darkmagenta     :"#8b008b",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkolivegreen' found.
+line:967
+source:    darkolivegreen  :"#556b2f",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkorange' found.
+line:968
+source:    darkorange      :"#ff8c00",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkorchid' found.
+line:969
+source:    darkorchid      :"#9932cc",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkred' found.
+line:970
+source:    darkred         :"#8b0000",
+
+
+ruleId:quote-props
+message:Unquoted property 'darksalmon' found.
+line:971
+source:    darksalmon      :"#e9967a",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkseagreen' found.
+line:972
+source:    darkseagreen    :"#8fbc8f",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkslateblue' found.
+line:973
+source:    darkslateblue   :"#483d8b",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkslategray' found.
+line:974
+source:    darkslategray   :"#2f4f4f",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkslategrey' found.
+line:975
+source:    darkslategrey   :"#2f4f4f",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkturquoise' found.
+line:976
+source:    darkturquoise   :"#00ced1",
+
+
+ruleId:quote-props
+message:Unquoted property 'darkviolet' found.
+line:977
+source:    darkviolet      :"#9400d3",
+
+
+ruleId:quote-props
+message:Unquoted property 'deeppink' found.
+line:978
+source:    deeppink        :"#ff1493",
+
+
+ruleId:quote-props
+message:Unquoted property 'deepskyblue' found.
+line:979
+source:    deepskyblue     :"#00bfff",
+
+
+ruleId:quote-props
+message:Unquoted property 'dimgray' found.
+line:980
+source:    dimgray         :"#696969",
+
+
+ruleId:quote-props
+message:Unquoted property 'dimgrey' found.
+line:981
+source:    dimgrey         :"#696969",
+
+
+ruleId:quote-props
+message:Unquoted property 'dodgerblue' found.
+line:982
+source:    dodgerblue      :"#1e90ff",
+
+
+ruleId:quote-props
+message:Unquoted property 'firebrick' found.
+line:983
+source:    firebrick       :"#b22222",
+
+
+ruleId:quote-props
+message:Unquoted property 'floralwhite' found.
+line:984
+source:    floralwhite     :"#fffaf0",
+
+
+ruleId:quote-props
+message:Unquoted property 'forestgreen' found.
+line:985
+source:    forestgreen     :"#228b22",
+
+
+ruleId:quote-props
+message:Unquoted property 'fuchsia' found.
+line:986
+source:    fuchsia         :"#ff00ff",
+
+
+ruleId:quote-props
+message:Unquoted property 'gainsboro' found.
+line:987
+source:    gainsboro       :"#dcdcdc",
+
+
+ruleId:quote-props
+message:Unquoted property 'ghostwhite' found.
+line:988
+source:    ghostwhite      :"#f8f8ff",
+
+
+ruleId:quote-props
+message:Unquoted property 'gold' found.
+line:989
+source:    gold            :"#ffd700",
+
+
+ruleId:quote-props
+message:Unquoted property 'goldenrod' found.
+line:990
+source:    goldenrod       :"#daa520",
+
+
+ruleId:quote-props
+message:Unquoted property 'gray' found.
+line:991
+source:    gray            :"#808080",
+
+
+ruleId:quote-props
+message:Unquoted property 'grey' found.
+line:992
+source:    grey            :"#808080",
+
+
+ruleId:quote-props
+message:Unquoted property 'green' found.
+line:993
+source:    green           :"#008000",
+
+
+ruleId:quote-props
+message:Unquoted property 'greenyellow' found.
+line:994
+source:    greenyellow     :"#adff2f",
+
+
+ruleId:quote-props
+message:Unquoted property 'honeydew' found.
+line:995
+source:    honeydew        :"#f0fff0",
+
+
+ruleId:quote-props
+message:Unquoted property 'hotpink' found.
+line:996
+source:    hotpink         :"#ff69b4",
+
+
+ruleId:quote-props
+message:Unquoted property 'indianred' found.
+line:997
+source:    indianred       :"#cd5c5c",
+
+
+ruleId:quote-props
+message:Unquoted property 'indigo' found.
+line:998
+source:    indigo          :"#4b0082",
+
+
+ruleId:quote-props
+message:Unquoted property 'ivory' found.
+line:999
+source:    ivory           :"#fffff0",
+
+
+ruleId:quote-props
+message:Unquoted property 'khaki' found.
+line:1000
+source:    khaki           :"#f0e68c",
+
+
+ruleId:quote-props
+message:Unquoted property 'lavender' found.
+line:1001
+source:    lavender        :"#e6e6fa",
+
+
+ruleId:quote-props
+message:Unquoted property 'lavenderblush' found.
+line:1002
+source:    lavenderblush   :"#fff0f5",
+
+
+ruleId:quote-props
+message:Unquoted property 'lawngreen' found.
+line:1003
+source:    lawngreen       :"#7cfc00",
+
+
+ruleId:quote-props
+message:Unquoted property 'lemonchiffon' found.
+line:1004
+source:    lemonchiffon    :"#fffacd",
+
+
+ruleId:quote-props
+message:Unquoted property 'lightblue' found.
+line:1005
+source:    lightblue       :"#add8e6",
+
+
+ruleId:quote-props
+message:Unquoted property 'lightcoral' found.
+line:1006
+source:    lightcoral      :"#f08080",
+
+
+ruleId:quote-props
+message:Unquoted property 'lightcyan' found.
+line:1007
+source:    lightcyan       :"#e0ffff",
+
+
+ruleId:quote-props
+message:Unquoted property 'lightgoldenrodyellow' found.
+line:1008
+source:    lightgoldenrodyellow  :"#fafad2",
+
+
+ruleId:quote-props
+message:Unquoted property 'lightgray' found.
+line:1009
+source:    lightgray       :"#d3d3d3",
+
+
+ruleId:quote-props
+message:Unquoted property 'lightgrey' found.
+line:1010
+source:    lightgrey       :"#d3d3d3",
+
+
+ruleId:quote-props
+message:Unquoted property 'lightgreen' found.
+line:1011
+source:    lightgreen      :"#90ee90",
+
+
+ruleId:quote-props
+message:Unquoted property 'lightpink' found.
+line:1012
+source:    lightpink       :"#ffb6c1",
+
+
+ruleId:quote-props
+message:Unquoted property 'lightsalmon' found.
+line:1013
+source:    lightsalmon     :"#ffa07a",
+
+
+ruleId:quote-props
+message:Unquoted property 'lightseagreen' found.
+line:1014
+source:    lightseagreen   :"#20b2aa",
+
+
+ruleId:quote-props
+message:Unquoted property 'lightskyblue' found.
+line:1015
+source:    lightskyblue    :"#87cefa",
+
+
+ruleId:quote-props
+message:Unquoted property 'lightslategray' found.
+line:1016
+source:    lightslategray  :"#778899",
+
+
+ruleId:quote-props
+message:Unquoted property 'lightslategrey' found.
+line:1017
+source:    lightslategrey  :"#778899",
+
+
+ruleId:quote-props
+message:Unquoted property 'lightsteelblue' found.
+line:1018
+source:    lightsteelblue  :"#b0c4de",
+
+
+ruleId:quote-props
+message:Unquoted property 'lightyellow' found.
+line:1019
+source:    lightyellow     :"#ffffe0",
+
+
+ruleId:quote-props
+message:Unquoted property 'lime' found.
+line:1020
+source:    lime            :"#00ff00",
+
+
+ruleId:quote-props
+message:Unquoted property 'limegreen' found.
+line:1021
+source:    limegreen       :"#32cd32",
+
+
+ruleId:quote-props
+message:Unquoted property 'linen' found.
+line:1022
+source:    linen           :"#faf0e6",
+
+
+ruleId:quote-props
+message:Unquoted property 'magenta' found.
+line:1023
+source:    magenta         :"#ff00ff",
+
+
+ruleId:quote-props
+message:Unquoted property 'maroon' found.
+line:1024
+source:    maroon          :"#800000",
+
+
+ruleId:quote-props
+message:Unquoted property 'mediumaquamarine' found.
+line:1025
+source:    mediumaquamarine:"#66cdaa",
+
+
+ruleId:quote-props
+message:Unquoted property 'mediumblue' found.
+line:1026
+source:    mediumblue      :"#0000cd",
+
+
+ruleId:quote-props
+message:Unquoted property 'mediumorchid' found.
+line:1027
+source:    mediumorchid    :"#ba55d3",
+
+
+ruleId:quote-props
+message:Unquoted property 'mediumpurple' found.
+line:1028
+source:    mediumpurple    :"#9370d8",
+
+
+ruleId:quote-props
+message:Unquoted property 'mediumseagreen' found.
+line:1029
+source:    mediumseagreen  :"#3cb371",
+
+
+ruleId:quote-props
+message:Unquoted property 'mediumslateblue' found.
+line:1030
+source:    mediumslateblue :"#7b68ee",
+
+
+ruleId:quote-props
+message:Unquoted property 'mediumspringgreen' found.
+line:1031
+source:    mediumspringgreen   :"#00fa9a",
+
+
+ruleId:quote-props
+message:Unquoted property 'mediumturquoise' found.
+line:1032
+source:    mediumturquoise :"#48d1cc",
+
+
+ruleId:quote-props
+message:Unquoted property 'mediumvioletred' found.
+line:1033
+source:    mediumvioletred :"#c71585",
+
+
+ruleId:quote-props
+message:Unquoted property 'midnightblue' found.
+line:1034
+source:    midnightblue    :"#191970",
+
+
+ruleId:quote-props
+message:Unquoted property 'mintcream' found.
+line:1035
+source:    mintcream       :"#f5fffa",
+
+
+ruleId:quote-props
+message:Unquoted property 'mistyrose' found.
+line:1036
+source:    mistyrose       :"#ffe4e1",
+
+
+ruleId:quote-props
+message:Unquoted property 'moccasin' found.
+line:1037
+source:    moccasin        :"#ffe4b5",
+
+
+ruleId:quote-props
+message:Unquoted property 'navajowhite' found.
+line:1038
+source:    navajowhite     :"#ffdead",
+
+
+ruleId:quote-props
+message:Unquoted property 'navy' found.
+line:1039
+source:    navy            :"#000080",
+
+
+ruleId:quote-props
+message:Unquoted property 'oldlace' found.
+line:1040
+source:    oldlace         :"#fdf5e6",
+
+
+ruleId:quote-props
+message:Unquoted property 'olive' found.
+line:1041
+source:    olive           :"#808000",
+
+
+ruleId:quote-props
+message:Unquoted property 'olivedrab' found.
+line:1042
+source:    olivedrab       :"#6b8e23",
+
+
+ruleId:quote-props
+message:Unquoted property 'orange' found.
+line:1043
+source:    orange          :"#ffa500",
+
+
+ruleId:quote-props
+message:Unquoted property 'orangered' found.
+line:1044
+source:    orangered       :"#ff4500",
+
+
+ruleId:quote-props
+message:Unquoted property 'orchid' found.
+line:1045
+source:    orchid          :"#da70d6",
+
+
+ruleId:quote-props
+message:Unquoted property 'palegoldenrod' found.
+line:1046
+source:    palegoldenrod   :"#eee8aa",
+
+
+ruleId:quote-props
+message:Unquoted property 'palegreen' found.
+line:1047
+source:    palegreen       :"#98fb98",
+
+
+ruleId:quote-props
+message:Unquoted property 'paleturquoise' found.
+line:1048
+source:    paleturquoise   :"#afeeee",
+
+
+ruleId:quote-props
+message:Unquoted property 'palevioletred' found.
+line:1049
+source:    palevioletred   :"#d87093",
+
+
+ruleId:quote-props
+message:Unquoted property 'papayawhip' found.
+line:1050
+source:    papayawhip      :"#ffefd5",
+
+
+ruleId:quote-props
+message:Unquoted property 'peachpuff' found.
+line:1051
+source:    peachpuff       :"#ffdab9",
+
+
+ruleId:quote-props
+message:Unquoted property 'peru' found.
+line:1052
+source:    peru            :"#cd853f",
+
+
+ruleId:quote-props
+message:Unquoted property 'pink' found.
+line:1053
+source:    pink            :"#ffc0cb",
+
+
+ruleId:quote-props
+message:Unquoted property 'plum' found.
+line:1054
+source:    plum            :"#dda0dd",
+
+
+ruleId:quote-props
+message:Unquoted property 'powderblue' found.
+line:1055
+source:    powderblue      :"#b0e0e6",
+
+
+ruleId:quote-props
+message:Unquoted property 'purple' found.
+line:1056
+source:    purple          :"#800080",
+
+
+ruleId:quote-props
+message:Unquoted property 'red' found.
+line:1057
+source:    red             :"#ff0000",
+
+
+ruleId:quote-props
+message:Unquoted property 'rosybrown' found.
+line:1058
+source:    rosybrown       :"#bc8f8f",
+
+
+ruleId:quote-props
+message:Unquoted property 'royalblue' found.
+line:1059
+source:    royalblue       :"#4169e1",
+
+
+ruleId:quote-props
+message:Unquoted property 'saddlebrown' found.
+line:1060
+source:    saddlebrown     :"#8b4513",
+
+
+ruleId:quote-props
+message:Unquoted property 'salmon' found.
+line:1061
+source:    salmon          :"#fa8072",
+
+
+ruleId:quote-props
+message:Unquoted property 'sandybrown' found.
+line:1062
+source:    sandybrown      :"#f4a460",
+
+
+ruleId:quote-props
+message:Unquoted property 'seagreen' found.
+line:1063
+source:    seagreen        :"#2e8b57",
+
+
+ruleId:quote-props
+message:Unquoted property 'seashell' found.
+line:1064
+source:    seashell        :"#fff5ee",
+
+
+ruleId:quote-props
+message:Unquoted property 'sienna' found.
+line:1065
+source:    sienna          :"#a0522d",
+
+
+ruleId:quote-props
+message:Unquoted property 'silver' found.
+line:1066
+source:    silver          :"#c0c0c0",
+
+
+ruleId:quote-props
+message:Unquoted property 'skyblue' found.
+line:1067
+source:    skyblue         :"#87ceeb",
+
+
+ruleId:quote-props
+message:Unquoted property 'slateblue' found.
+line:1068
+source:    slateblue       :"#6a5acd",
+
+
+ruleId:quote-props
+message:Unquoted property 'slategray' found.
+line:1069
+source:    slategray       :"#708090",
+
+
+ruleId:quote-props
+message:Unquoted property 'slategrey' found.
+line:1070
+source:    slategrey       :"#708090",
+
+
+ruleId:quote-props
+message:Unquoted property 'snow' found.
+line:1071
+source:    snow            :"#fffafa",
+
+
+ruleId:quote-props
+message:Unquoted property 'springgreen' found.
+line:1072
+source:    springgreen     :"#00ff7f",
+
+
+ruleId:quote-props
+message:Unquoted property 'steelblue' found.
+line:1073
+source:    steelblue       :"#4682b4",
+
+
+ruleId:quote-props
+message:Unquoted property 'tan' found.
+line:1074
+source:    tan             :"#d2b48c",
+
+
+ruleId:quote-props
+message:Unquoted property 'teal' found.
+line:1075
+source:    teal            :"#008080",
+
+
+ruleId:quote-props
+message:Unquoted property 'thistle' found.
+line:1076
+source:    thistle         :"#d8bfd8",
+
+
+ruleId:quote-props
+message:Unquoted property 'tomato' found.
+line:1077
+source:    tomato          :"#ff6347",
+
+
+ruleId:quote-props
+message:Unquoted property 'turquoise' found.
+line:1078
+source:    turquoise       :"#40e0d0",
+
+
+ruleId:quote-props
+message:Unquoted property 'violet' found.
+line:1079
+source:    violet          :"#ee82ee",
+
+
+ruleId:quote-props
+message:Unquoted property 'wheat' found.
+line:1080
+source:    wheat           :"#f5deb3",
+
+
+ruleId:quote-props
+message:Unquoted property 'white' found.
+line:1081
+source:    white           :"#ffffff",
+
+
+ruleId:quote-props
+message:Unquoted property 'whitesmoke' found.
+line:1082
+source:    whitesmoke      :"#f5f5f5",
+
+
+ruleId:quote-props
+message:Unquoted property 'yellow' found.
+line:1083
+source:    yellow          :"#ffff00",
+
+
+ruleId:quote-props
+message:Unquoted property 'yellowgreen' found.
+line:1084
+source:    yellowgreen     :"#9acd32",
+
+
+ruleId:quote-props
+message:Unquoted property 'activeBorder' found.
+line:1086
+source:    activeBorder        :"Active window border.",
+
+
+ruleId:quote-props
+message:Unquoted property 'activecaption' found.
+line:1087
+source:    activecaption       :"Active window caption.",
+
+
+ruleId:quote-props
+message:Unquoted property 'appworkspace' found.
+line:1088
+source:    appworkspace        :"Background color of multiple document interface.",
+
+
+ruleId:quote-props
+message:Unquoted property 'background' found.
+line:1089
+source:    background          :"Desktop background.",
+
+
+ruleId:quote-props
+message:Unquoted property 'buttonface' found.
+line:1090
+source:    buttonface          :"The face background color for 3-D elements that appear 3-D due to one layer of surrounding border.",
+
+
+ruleId:quote-props
+message:Unquoted property 'buttonhighlight' found.
+line:1091
+source:    buttonhighlight     :"The color of the border facing the light source for 3-D elements that appear 3-D due to one layer of surrounding border.",
+
+
+ruleId:quote-props
+message:Unquoted property 'buttonshadow' found.
+line:1092
+source:    buttonshadow        :"The color of the border away from the light source for 3-D elements that appear 3-D due to one layer of surrounding border.",
+
+
+ruleId:quote-props
+message:Unquoted property 'buttontext' found.
+line:1093
+source:    buttontext          :"Text on push buttons.",
+
+
+ruleId:quote-props
+message:Unquoted property 'captiontext' found.
+line:1094
+source:    captiontext         :"Text in caption, size box, and scrollbar arrow box.",
+
+
+ruleId:quote-props
+message:Unquoted property 'graytext' found.
+line:1095
+source:    graytext            :"Grayed (disabled) text. This color is set to #000 if the current display driver does not support a solid gray color.",
+
+
+ruleId:quote-props
+message:Unquoted property 'greytext' found.
+line:1096
+source:    greytext            :"Greyed (disabled) text. This color is set to #000 if the current display driver does not support a solid grey color.",
+
+
+ruleId:quote-props
+message:Unquoted property 'highlight' found.
+line:1097
+source:    highlight           :"Item(s) selected in a control.",
+
+
+ruleId:quote-props
+message:Unquoted property 'highlighttext' found.
+line:1098
+source:    highlighttext       :"Text of item(s) selected in a control.",
+
+
+ruleId:quote-props
+message:Unquoted property 'inactiveborder' found.
+line:1099
+source:    inactiveborder      :"Inactive window border.",
+
+
+ruleId:quote-props
+message:Unquoted property 'inactivecaption' found.
+line:1100
+source:    inactivecaption     :"Inactive window caption.",
+
+
+ruleId:quote-props
+message:Unquoted property 'inactivecaptiontext' found.
+line:1101
+source:    inactivecaptiontext :"Color of text in an inactive caption.",
+
+
+ruleId:quote-props
+message:Unquoted property 'infobackground' found.
+line:1102
+source:    infobackground      :"Background color for tooltip controls.",
+
+
+ruleId:quote-props
+message:Unquoted property 'infotext' found.
+line:1103
+source:    infotext            :"Text color for tooltip controls.",
+
+
+ruleId:quote-props
+message:Unquoted property 'menu' found.
+line:1104
+source:    menu                :"Menu background.",
+
+
+ruleId:quote-props
+message:Unquoted property 'menutext' found.
+line:1105
+source:    menutext            :"Text in menus.",
+
+
+ruleId:quote-props
+message:Unquoted property 'scrollbar' found.
+line:1106
+source:    scrollbar           :"Scroll bar gray area.",
+
+
+ruleId:quote-props
+message:Unquoted property 'threeddarkshadow' found.
+line:1107
+source:    threeddarkshadow    :"The color of the darker (generally outer) of the two borders away from the light source for 3-D elements that appear 3-D due to two concentric layers of surrounding border.",
+
+
+ruleId:quote-props
+message:Unquoted property 'threedface' found.
+line:1108
+source:    threedface          :"The face background color for 3-D elements that appear 3-D due to two concentric layers of surrounding border.",
+
+
+ruleId:quote-props
+message:Unquoted property 'threedhighlight' found.
+line:1109
+source:    threedhighlight     :"The color of the lighter (generally outer) of the two borders facing the light source for 3-D elements that appear 3-D due to two concentric layers of surrounding border.",
+
+
+ruleId:quote-props
+message:Unquoted property 'threedlightshadow' found.
+line:1110
+source:    threedlightshadow   :"The color of the darker (generally inner) of the two borders facing the light source for 3-D elements that appear 3-D due to two concentric layers of surrounding border.",
+
+
+ruleId:quote-props
+message:Unquoted property 'threedshadow' found.
+line:1111
+source:    threedshadow        :"The color of the lighter (generally inner) of the two borders away from the light source for 3-D elements that appear 3-D due to two concentric layers of surrounding border.",
+
+
+ruleId:quote-props
+message:Unquoted property 'window' found.
+line:1112
+source:    window              :"Window background.",
+
+
+ruleId:quote-props
+message:Unquoted property 'windowframe' found.
+line:1113
+source:    windowframe         :"Window frame.",
+
+
+ruleId:quote-props
+message:Unquoted property 'windowtext' found.
+line:1114
+source:    windowtext          :"Text in windows."
+
+
+ruleId:quote-props
+message:Unquoted property 'constructor' found.
+line:1275
+source:            constructor: Parser,
+
+
+ruleId:quote-props
+message:Unquoted property 'DEFAULT_TYPE' found.
+line:1278
+source:            DEFAULT_TYPE : 0,
+
+
+ruleId:quote-props
+message:Unquoted property 'COMBINATOR_TYPE' found.
+line:1279
+source:            COMBINATOR_TYPE : 1,
+
+
+ruleId:quote-props
+message:Unquoted property 'MEDIA_FEATURE_TYPE' found.
+line:1280
+source:            MEDIA_FEATURE_TYPE : 2,
+
+
+ruleId:quote-props
+message:Unquoted property 'MEDIA_QUERY_TYPE' found.
+line:1281
+source:            MEDIA_QUERY_TYPE : 3,
+
+
+ruleId:quote-props
+message:Unquoted property 'PROPERTY_NAME_TYPE' found.
+line:1282
+source:            PROPERTY_NAME_TYPE : 4,
+
+
+ruleId:quote-props
+message:Unquoted property 'PROPERTY_VALUE_TYPE' found.
+line:1283
+source:            PROPERTY_VALUE_TYPE : 5,
+
+
+ruleId:quote-props
+message:Unquoted property 'PROPERTY_VALUE_PART_TYPE' found.
+line:1284
+source:            PROPERTY_VALUE_PART_TYPE : 6,
+
+
+ruleId:quote-props
+message:Unquoted property 'SELECTOR_TYPE' found.
+line:1285
+source:            SELECTOR_TYPE : 7,
+
+
+ruleId:quote-props
+message:Unquoted property 'SELECTOR_PART_TYPE' found.
+line:1286
+source:            SELECTOR_PART_TYPE : 8,
+
+
+ruleId:quote-props
+message:Unquoted property 'SELECTOR_SUB_PART_TYPE' found.
+line:1287
+source:            SELECTOR_SUB_PART_TYPE : 9,
+
+
+ruleId:quote-props
+message:Unquoted property '_stylesheet' found.
+line:1293
+source:            _stylesheet: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:1364
+source:                                        type:       "error",
+
+
+ruleId:quote-props
+message:Unquoted property 'error' found.
+line:1365
+source:                                        error:      null,
+
+
+ruleId:quote-props
+message:Unquoted property 'message' found.
+line:1366
+source:                                        message:    "Unknown @ rule: " + tokenStream.LT(0).value + ".",
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:1367
+source:                                        line:       tokenStream.LT(0).startLine,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:1368
+source:                                        col:        tokenStream.LT(0).startCol
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:1417
+source:                                type:       "error",
+
+
+ruleId:quote-props
+message:Unquoted property 'error' found.
+line:1418
+source:                                error:      ex,
+
+
+ruleId:quote-props
+message:Unquoted property 'message' found.
+line:1419
+source:                                message:    ex.message,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:1420
+source:                                line:       ex.line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:1421
+source:                                col:        ex.col
+
+
+ruleId:quote-props
+message:Unquoted property '_charset' found.
+line:1438
+source:            _charset: function(emit){
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:1460
+source:                            type:   "charset",
+
+
+ruleId:quote-props
+message:Unquoted property 'charset' found.
+line:1461
+source:                            charset:charset,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:1462
+source:                            line:   line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:1463
+source:                            col:    col
+
+
+ruleId:quote-props
+message:Unquoted property '_import' found.
+line:1469
+source:            _import: function(emit){
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:1502
+source:                        type:   "import",
+
+
+ruleId:quote-props
+message:Unquoted property 'uri' found.
+line:1503
+source:                        uri:    uri,
+
+
+ruleId:quote-props
+message:Unquoted property 'media' found.
+line:1504
+source:                        media:  mediaList,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:1505
+source:                        line:   importToken.startLine,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:1506
+source:                        col:    importToken.startCol
+
+
+ruleId:quote-props
+message:Unquoted property '_namespace' found.
+line:1512
+source:            _namespace: function(emit){
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:1552
+source:                        type:   "namespace",
+
+
+ruleId:quote-props
+message:Unquoted property 'prefix' found.
+line:1553
+source:                        prefix: prefix,
+
+
+ruleId:quote-props
+message:Unquoted property 'uri' found.
+line:1554
+source:                        uri:    uri,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:1555
+source:                        line:   line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:1556
+source:                        col:    col
+
+
+ruleId:quote-props
+message:Unquoted property '_media' found.
+line:1562
+source:            _media: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:1586
+source:                    type:   "startmedia",
+
+
+ruleId:quote-props
+message:Unquoted property 'media' found.
+line:1587
+source:                    media:  mediaList,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:1588
+source:                    line:   line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:1589
+source:                    col:    col
+
+
+ruleId:no-constant-condition
+message:Unexpected constant condition.
+line:1592
+source:                while(true) {
+messageId:unexpected
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:1608
+source:                    type:   "endmedia",
+
+
+ruleId:quote-props
+message:Unquoted property 'media' found.
+line:1609
+source:                    media:  mediaList,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:1610
+source:                    line:   line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:1611
+source:                    col:    col
+
+
+ruleId:quote-props
+message:Unquoted property '_media_query_list' found.
+line:1617
+source:            _media_query_list: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_media_query' found.
+line:1646
+source:            _media_query: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_media_type' found.
+line:1703
+source:            _media_type: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_media_expression' found.
+line:1720
+source:            _media_expression: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_media_feature' found.
+line:1749
+source:            _media_feature: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_page' found.
+line:1763
+source:            _page: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:1800
+source:                    type:   "startpage",
+
+
+ruleId:quote-props
+message:Unquoted property 'id' found.
+line:1801
+source:                    id:     identifier,
+
+
+ruleId:quote-props
+message:Unquoted property 'pseudo' found.
+line:1802
+source:                    pseudo: pseudoPage,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:1803
+source:                    line:   line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:1804
+source:                    col:    col
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:1810
+source:                    type:   "endpage",
+
+
+ruleId:quote-props
+message:Unquoted property 'id' found.
+line:1811
+source:                    id:     identifier,
+
+
+ruleId:quote-props
+message:Unquoted property 'pseudo' found.
+line:1812
+source:                    pseudo: pseudoPage,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:1813
+source:                    line:   line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:1814
+source:                    col:    col
+
+
+ruleId:quote-props
+message:Unquoted property '_margin' found.
+line:1820
+source:            _margin: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:1836
+source:                        type: "startpagemargin",
+
+
+ruleId:quote-props
+message:Unquoted property 'margin' found.
+line:1837
+source:                        margin: marginSym,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:1838
+source:                        line:   line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:1839
+source:                        col:    col
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:1845
+source:                        type: "endpagemargin",
+
+
+ruleId:quote-props
+message:Unquoted property 'margin' found.
+line:1846
+source:                        margin: marginSym,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:1847
+source:                        line:   line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:1848
+source:                        col:    col
+
+
+ruleId:quote-props
+message:Unquoted property '_margin_sym' found.
+line:1857
+source:            _margin_sym: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_pseudo_page' found.
+line:1897
+source:            _pseudo_page: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_font_face' found.
+line:1914
+source:            _font_face: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:1933
+source:                    type:   "startfontface",
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:1934
+source:                    line:   line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:1935
+source:                    col:    col
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:1941
+source:                    type:   "endfontface",
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:1942
+source:                    line:   line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:1943
+source:                    col:    col
+
+
+ruleId:quote-props
+message:Unquoted property '_viewport' found.
+line:1947
+source:            _viewport: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:1965
+source:                        type:   "startviewport",
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:1966
+source:                        line:   line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:1967
+source:                        col:    col
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:1973
+source:                        type:   "endviewport",
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:1974
+source:                        line:   line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:1975
+source:                        col:    col
+
+
+ruleId:quote-props
+message:Unquoted property '_operator' found.
+line:1980
+source:            _operator: function(inFunction){
+
+
+ruleId:quote-props
+message:Unquoted property '_combinator' found.
+line:2002
+source:            _combinator: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_unary_operator' found.
+line:2023
+source:            _unary_operator: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_property' found.
+line:2040
+source:            _property: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_ruleset' found.
+line:2083
+source:            _ruleset: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:2107
+source:                            type:       "error",
+
+
+ruleId:quote-props
+message:Unquoted property 'error' found.
+line:2108
+source:                            error:      ex,
+
+
+ruleId:quote-props
+message:Unquoted property 'message' found.
+line:2109
+source:                            message:    ex.message,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:2110
+source:                            line:       ex.line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:2111
+source:                            col:        ex.col
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:2136
+source:                        type:       "startrule",
+
+
+ruleId:quote-props
+message:Unquoted property 'selectors' found.
+line:2137
+source:                        selectors:  selectors,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:2138
+source:                        line:       selectors[0].line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:2139
+source:                        col:        selectors[0].col
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:2145
+source:                        type:       "endrule",
+
+
+ruleId:quote-props
+message:Unquoted property 'selectors' found.
+line:2146
+source:                        selectors:  selectors,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:2147
+source:                        line:       selectors[0].line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:2148
+source:                        col:        selectors[0].col
+
+
+ruleId:quote-props
+message:Unquoted property '_selectors_group' found.
+line:2158
+source:            _selectors_group: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_selector' found.
+line:2188
+source:            _selector: function(){
+
+
+ruleId:no-constant-condition
+message:Unexpected constant condition.
+line:2258
+source:                } while(true);
+messageId:unexpected
+
+
+ruleId:quote-props
+message:Unquoted property '_simple_selector_sequence' found.
+line:2264
+source:            _simple_selector_sequence: function(){
+
+
+ruleId:no-constant-condition
+message:Unexpected constant condition.
+line:2316
+source:                while(true){
+messageId:unexpected
+
+
+ruleId:quote-props
+message:Unquoted property '_type_selector' found.
+line:2351
+source:            _type_selector: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_class' found.
+line:2387
+source:            _class: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_element_name' found.
+line:2408
+source:            _element_name: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_namespace_prefix' found.
+line:2428
+source:            _namespace_prefix: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_universal' found.
+line:2453
+source:            _universal: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_attrib' found.
+line:2477
+source:            _attrib: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_pseudo' found.
+line:2531
+source:            _pseudo: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_functional_pseudo' found.
+line:2570
+source:            _functional_pseudo: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_expression' found.
+line:2592
+source:            _expression: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_negation' found.
+line:2616
+source:            _negation: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_negation_arg' found.
+line:2649
+source:            _negation_arg: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_declaration' found.
+line:2701
+source:            _declaration: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:2752
+source:                        type:       "property",
+
+
+ruleId:quote-props
+message:Unquoted property 'property' found.
+line:2753
+source:                        property:   property,
+
+
+ruleId:quote-props
+message:Unquoted property 'value' found.
+line:2754
+source:                        value:      expr,
+
+
+ruleId:quote-props
+message:Unquoted property 'important' found.
+line:2755
+source:                        important:  prio,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:2756
+source:                        line:       property.line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:2757
+source:                        col:        property.col,
+
+
+ruleId:quote-props
+message:Unquoted property 'invalid' found.
+line:2758
+source:                        invalid:    invalid
+
+
+ruleId:quote-props
+message:Unquoted property '_prio' found.
+line:2767
+source:            _prio: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_expr' found.
+line:2781
+source:            _expr: function(inFunction){
+
+
+ruleId:no-constant-condition
+message:Unexpected constant condition.
+line:2818
+source:                    } while(true);
+messageId:unexpected
+
+
+ruleId:quote-props
+message:Unquoted property '_term' found.
+line:2829
+source:            _term: function(inFunction){
+
+
+ruleId:quote-props
+message:Unquoted property '_function' found.
+line:2936
+source:            _function: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_ie_function' found.
+line:2994
+source:            _ie_function: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_hexcolor' found.
+line:3045
+source:            _hexcolor: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_keyframes' found.
+line:3079
+source:            _keyframes: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:3105
+source:                    type:   "startkeyframes",
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:3106
+source:                    name:   name,
+
+
+ruleId:quote-props
+message:Unquoted property 'prefix' found.
+line:3107
+source:                    prefix: prefix,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:3108
+source:                    line:   token.startLine,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:3109
+source:                    col:    token.startCol
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:3123
+source:                    type:   "endkeyframes",
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:3124
+source:                    name:   name,
+
+
+ruleId:quote-props
+message:Unquoted property 'prefix' found.
+line:3125
+source:                    prefix: prefix,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:3126
+source:                    line:   token.startLine,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:3127
+source:                    col:    token.startCol
+
+
+ruleId:quote-props
+message:Unquoted property '_keyframe_name' found.
+line:3135
+source:            _keyframe_name: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_keyframe_rule' found.
+line:3150
+source:            _keyframe_rule: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:3163
+source:                    type:   "startkeyframerule",
+
+
+ruleId:quote-props
+message:Unquoted property 'keys' found.
+line:3164
+source:                    keys:   keyList,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:3165
+source:                    line:   keyList[0].line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:3166
+source:                    col:    keyList[0].col
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:3172
+source:                    type:   "endkeyframerule",
+
+
+ruleId:quote-props
+message:Unquoted property 'keys' found.
+line:3173
+source:                    keys:   keyList,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:3174
+source:                    line:   keyList[0].line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:3175
+source:                    col:    keyList[0].col
+
+
+ruleId:quote-props
+message:Unquoted property '_key_list' found.
+line:3180
+source:            _key_list: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_key' found.
+line:3206
+source:            _key: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_skipCruft' found.
+line:3246
+source:            _skipCruft: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_readDeclarations' found.
+line:3264
+source:            _readDeclarations: function(checkStart, readMargins){
+
+
+ruleId:no-constant-condition
+message:Unexpected constant condition.
+line:3288
+source:                    while(true){
+messageId:unexpected
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:3314
+source:                            type:       "error",
+
+
+ruleId:quote-props
+message:Unquoted property 'error' found.
+line:3315
+source:                            error:      ex,
+
+
+ruleId:quote-props
+message:Unquoted property 'message' found.
+line:3316
+source:                            message:    ex.message,
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:3317
+source:                            line:       ex.line,
+
+
+ruleId:quote-props
+message:Unquoted property 'col' found.
+line:3318
+source:                            col:        ex.col
+
+
+ruleId:quote-props
+message:Unquoted property '_readWhitespace' found.
+line:3349
+source:            _readWhitespace: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_unexpectedToken' found.
+line:3369
+source:            _unexpectedToken: function(token){
+
+
+ruleId:quote-props
+message:Unquoted property '_verifyEnd' found.
+line:3379
+source:            _verifyEnd: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_validateProperty' found.
+line:3388
+source:            _validateProperty: function(property, value){
+
+
+ruleId:quote-props
+message:Unquoted property 'parse' found.
+line:3396
+source:            parse: function(input){
+
+
+ruleId:quote-props
+message:Unquoted property 'parseStyleSheet' found.
+line:3401
+source:            parseStyleSheet: function(input){
+
+
+ruleId:quote-props
+message:Unquoted property 'parseMediaQuery' found.
+line:3406
+source:            parseMediaQuery: function(input){
+
+
+ruleId:quote-props
+message:Unquoted property 'parsePropertyValue' found.
+line:3423
+source:            parsePropertyValue: function(input){
+
+
+ruleId:quote-props
+message:Unquoted property 'parseRule' found.
+line:3447
+source:            parseRule: function(input){
+
+
+ruleId:quote-props
+message:Unquoted property 'parseSelector' found.
+line:3472
+source:            parseSelector: function(input){
+
+
+ruleId:quote-props
+message:Unquoted property 'parseStyleAttribute' found.
+line:3498
+source:            parseStyleAttribute: function(input){
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3535
+source:    "animation-delay"               : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3535
+source:    "animation-delay"               : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3536
+source:    "animation-direction"           : { multi: "normal | alternate", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3536
+source:    "animation-direction"           : { multi: "normal | alternate", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3537
+source:    "animation-duration"            : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3537
+source:    "animation-duration"            : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3538
+source:    "animation-fill-mode"           : { multi: "none | forwards | backwards | both", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3538
+source:    "animation-fill-mode"           : { multi: "none | forwards | backwards | both", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3539
+source:    "animation-iteration-count"     : { multi: "<number> | infinite", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3539
+source:    "animation-iteration-count"     : { multi: "<number> | infinite", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3540
+source:    "animation-name"                : { multi: "none | <ident>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3540
+source:    "animation-name"                : { multi: "none | <ident>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3541
+source:    "animation-play-state"          : { multi: "running | paused", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3541
+source:    "animation-play-state"          : { multi: "running | paused", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3545
+source:    "-moz-animation-delay"               : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3545
+source:    "-moz-animation-delay"               : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3546
+source:    "-moz-animation-direction"           : { multi: "normal | alternate", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3546
+source:    "-moz-animation-direction"           : { multi: "normal | alternate", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3547
+source:    "-moz-animation-duration"            : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3547
+source:    "-moz-animation-duration"            : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3548
+source:    "-moz-animation-iteration-count"     : { multi: "<number> | infinite", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3548
+source:    "-moz-animation-iteration-count"     : { multi: "<number> | infinite", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3549
+source:    "-moz-animation-name"                : { multi: "none | <ident>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3549
+source:    "-moz-animation-name"                : { multi: "none | <ident>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3550
+source:    "-moz-animation-play-state"          : { multi: "running | paused", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3550
+source:    "-moz-animation-play-state"          : { multi: "running | paused", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3552
+source:    "-ms-animation-delay"               : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3552
+source:    "-ms-animation-delay"               : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3553
+source:    "-ms-animation-direction"           : { multi: "normal | alternate", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3553
+source:    "-ms-animation-direction"           : { multi: "normal | alternate", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3554
+source:    "-ms-animation-duration"            : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3554
+source:    "-ms-animation-duration"            : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3555
+source:    "-ms-animation-iteration-count"     : { multi: "<number> | infinite", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3555
+source:    "-ms-animation-iteration-count"     : { multi: "<number> | infinite", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3556
+source:    "-ms-animation-name"                : { multi: "none | <ident>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3556
+source:    "-ms-animation-name"                : { multi: "none | <ident>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3557
+source:    "-ms-animation-play-state"          : { multi: "running | paused", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3557
+source:    "-ms-animation-play-state"          : { multi: "running | paused", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3559
+source:    "-webkit-animation-delay"               : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3559
+source:    "-webkit-animation-delay"               : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3560
+source:    "-webkit-animation-direction"           : { multi: "normal | alternate", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3560
+source:    "-webkit-animation-direction"           : { multi: "normal | alternate", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3561
+source:    "-webkit-animation-duration"            : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3561
+source:    "-webkit-animation-duration"            : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3562
+source:    "-webkit-animation-fill-mode"           : { multi: "none | forwards | backwards | both", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3562
+source:    "-webkit-animation-fill-mode"           : { multi: "none | forwards | backwards | both", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3563
+source:    "-webkit-animation-iteration-count"     : { multi: "<number> | infinite", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3563
+source:    "-webkit-animation-iteration-count"     : { multi: "<number> | infinite", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3564
+source:    "-webkit-animation-name"                : { multi: "none | <ident>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3564
+source:    "-webkit-animation-name"                : { multi: "none | <ident>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3565
+source:    "-webkit-animation-play-state"          : { multi: "running | paused", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3565
+source:    "-webkit-animation-play-state"          : { multi: "running | paused", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3567
+source:    "-o-animation-delay"               : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3567
+source:    "-o-animation-delay"               : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3568
+source:    "-o-animation-direction"           : { multi: "normal | alternate", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3568
+source:    "-o-animation-direction"           : { multi: "normal | alternate", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3569
+source:    "-o-animation-duration"            : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3569
+source:    "-o-animation-duration"            : { multi: "<time>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3570
+source:    "-o-animation-iteration-count"     : { multi: "<number> | infinite", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3570
+source:    "-o-animation-iteration-count"     : { multi: "<number> | infinite", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3571
+source:    "-o-animation-name"                : { multi: "none | <ident>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3571
+source:    "-o-animation-name"                : { multi: "none | <ident>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3572
+source:    "-o-animation-play-state"          : { multi: "running | paused", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3572
+source:    "-o-animation-play-state"          : { multi: "running | paused", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3609
+source:    "background-attachment"         : { multi: "<attachment>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3609
+source:    "background-attachment"         : { multi: "<attachment>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3610
+source:    "background-clip"               : { multi: "<box>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3610
+source:    "background-clip"               : { multi: "<box>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3612
+source:    "background-image"              : { multi: "<bg-image>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3612
+source:    "background-image"              : { multi: "<bg-image>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3613
+source:    "background-origin"             : { multi: "<box>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3613
+source:    "background-origin"             : { multi: "<box>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3614
+source:    "background-position"           : { multi: "<bg-position>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3614
+source:    "background-position"           : { multi: "<bg-position>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3615
+source:    "background-repeat"             : { multi: "<repeat-style>" },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3616
+source:    "background-size"               : { multi: "<bg-size>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'comma' found.
+line:3616
+source:    "background-size"               : { multi: "<bg-size>", comma: true },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3633
+source:    "border-color"                  : { multi: "<color> | inherit", max: 4 },
+
+
+ruleId:quote-props
+message:Unquoted property 'max' found.
+line:3633
+source:    "border-color"                  : { multi: "<color> | inherit", max: 4 },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3635
+source:    "border-image-outset"           : { multi: "<length> | <number>", max: 4 },
+
+
+ruleId:quote-props
+message:Unquoted property 'max' found.
+line:3635
+source:    "border-image-outset"           : { multi: "<length> | <number>", max: 4 },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3636
+source:    "border-image-repeat"           : { multi: "stretch | repeat | round", max: 2 },
+
+
+ruleId:quote-props
+message:Unquoted property 'max' found.
+line:3636
+source:    "border-image-repeat"           : { multi: "stretch | repeat | round", max: 2 },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3676
+source:    "border-image-width"            : { multi: "<length> | <percentage> | <number> | auto", max: 4 },
+
+
+ruleId:quote-props
+message:Unquoted property 'max' found.
+line:3676
+source:    "border-image-width"            : { multi: "<length> | <percentage> | <number> | auto", max: 4 },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3719
+source:    "border-spacing"                : { multi: "<length> | inherit", max: 2 },
+
+
+ruleId:quote-props
+message:Unquoted property 'max' found.
+line:3719
+source:    "border-spacing"                : { multi: "<length> | inherit", max: 2 },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3720
+source:    "border-style"                  : { multi: "<border-style>", max: 4 },
+
+
+ruleId:quote-props
+message:Unquoted property 'max' found.
+line:3720
+source:    "border-style"                  : { multi: "<border-style>", max: 4 },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3727
+source:    "border-width"                  : { multi: "<border-width>", max: 4 },
+
+
+ruleId:quote-props
+message:Unquoted property 'max' found.
+line:3727
+source:    "border-width"                  : { multi: "<border-width>", max: 4 },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3891
+source:    "margin"                        : { multi: "<margin-width> | inherit", max: 4 },
+
+
+ruleId:quote-props
+message:Unquoted property 'max' found.
+line:3891
+source:    "margin"                        : { multi: "<margin-width> | inherit", max: 4 },
+
+
+ruleId:quote-props
+message:Unquoted property 'multi' found.
+line:3934
+source:    "padding"                       : { multi: "<padding-width> | inherit", max: 4 },
+
+
+ruleId:quote-props
+message:Unquoted property 'max' found.
+line:3934
+source:    "padding"                       : { multi: "<padding-width> | inherit", max: 4 },
+
+
+ruleId:no-eval
+message:eval can be harmful.
+line:4376
+source:        this.value  = eval(text);
+messageId:unexpected
+
+
+ruleId:quote-props
+message:Unquoted property 'constructor' found.
+line:4553
+source:    constructor: Specificity,
+
+
+ruleId:quote-props
+message:Unquoted property 'compare' found.
+line:4561
+source:    compare: function(other){
+
+
+ruleId:quote-props
+message:Unquoted property 'valueOf' found.
+line:4581
+source:    valueOf: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'toString' found.
+line:4590
+source:    toString: function(){
+
+
+ruleId:quote-props
+message:Unquoted property '_getToken' found.
+line:4732
+source:    _getToken: function(channel){
+
+
+ruleId:no-multiple-empty-lines
+message:More than 3 blank lines not allowed.
+line:4926
+source:
+
+
+ruleId:quote-props
+message:Unquoted property 'createToken' found.
+line:4965
+source:    createToken: function(tt, value, startLine, startCol, options){
+
+
+ruleId:quote-props
+message:Unquoted property 'value' found.
+line:4970
+source:            value:      value,
+
+
+ruleId:quote-props
+message:Unquoted property 'type' found.
+line:4971
+source:            type:       tt,
+
+
+ruleId:quote-props
+message:Unquoted property 'channel' found.
+line:4972
+source:            channel:    options.channel,
+
+
+ruleId:quote-props
+message:Unquoted property 'endChar' found.
+line:4973
+source:            endChar:    options.endChar,
+
+
+ruleId:quote-props
+message:Unquoted property 'hide' found.
+line:4974
+source:            hide:       options.hide || false,
+
+
+ruleId:quote-props
+message:Unquoted property 'startLine' found.
+line:4975
+source:            startLine:  startLine,
+
+
+ruleId:quote-props
+message:Unquoted property 'startCol' found.
+line:4976
+source:            startCol:   startCol,
+
+
+ruleId:quote-props
+message:Unquoted property 'endLine' found.
+line:4977
+source:            endLine:    reader.getLine(),
+
+
+ruleId:quote-props
+message:Unquoted property 'endCol' found.
+line:4978
+source:            endCol:     reader.getCol()
+
+
+ruleId:quote-props
+message:Unquoted property 'atRuleToken' found.
+line:4995
+source:    atRuleToken: function(first, startLine, startCol){
+
+
+ruleId:quote-props
+message:Unquoted property 'charToken' found.
+line:5041
+source:    charToken: function(c, startLine, startCol){
+
+
+ruleId:quote-props
+message:Unquoted property 'commentToken' found.
+line:5064
+source:    commentToken: function(first, startLine, startCol){
+
+
+ruleId:quote-props
+message:Unquoted property 'comparisonToken' found.
+line:5081
+source:    comparisonToken: function(c, startLine, startCol){
+
+
+ruleId:quote-props
+message:Unquoted property 'hashToken' found.
+line:5099
+source:    hashToken: function(first, startLine, startCol){
+
+
+ruleId:quote-props
+message:Unquoted property 'htmlCommentStartToken' found.
+line:5116
+source:    htmlCommentStartToken: function(first, startLine, startCol){
+
+
+ruleId:quote-props
+message:Unquoted property 'htmlCommentEndToken' found.
+line:5141
+source:    htmlCommentEndToken: function(first, startLine, startCol){
+
+
+ruleId:quote-props
+message:Unquoted property 'identOrFunctionToken' found.
+line:5166
+source:    identOrFunctionToken: function(first, startLine, startCol){
+
+
+ruleId:quote-props
+message:Unquoted property 'importantToken' found.
+line:5207
+source:    importantToken: function(first, startLine, startCol){
+
+
+ruleId:quote-props
+message:Unquoted property 'notToken' found.
+line:5268
+source:    notToken: function(first, startLine, startCol){
+
+
+ruleId:quote-props
+message:Unquoted property 'numberToken' found.
+line:5294
+source:    numberToken: function(first, startLine, startCol){
+
+
+ruleId:quote-props
+message:Unquoted property 'stringToken' found.
+line:5340
+source:    stringToken: function(first, startLine, startCol){
+
+
+ruleId:quote-props
+message:Unquoted property 'unicodeRangeToken' found.
+line:5375
+source:    unicodeRangeToken: function(first, startLine, startCol){
+
+
+ruleId:quote-props
+message:Unquoted property 'whitespaceToken' found.
+line:5427
+source:    whitespaceToken: function(first, startLine, startCol){
+
+
+ruleId:no-multiple-empty-lines
+message:More than 3 blank lines not allowed.
+line:5432
+source:
+
+
+ruleId:quote-props
+message:Unquoted property 'readUnicodeRangePart' found.
+line:5440
+source:    readUnicodeRangePart: function(allowQuestionMark){
+
+
+ruleId:quote-props
+message:Unquoted property 'readWhitespace' found.
+line:5466
+source:    readWhitespace: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'readNumber' found.
+line:5479
+source:    readNumber: function(first){
+
+
+ruleId:quote-props
+message:Unquoted property 'readString' found.
+line:5505
+source:    readString: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'readURI' found.
+line:5539
+source:    readURI: function(first){
+
+
+ruleId:quote-props
+message:Unquoted property 'readURL' found.
+line:5578
+source:    readURL: function(){
+
+
+ruleId:quote-props
+message:Unquoted property 'readName' found.
+line:5592
+source:    readName: function(first){
+
+
+ruleId:no-constant-condition
+message:Unexpected constant condition.
+line:5597
+source:        while(true){
+messageId:unexpected
+
+
+ruleId:quote-props
+message:Unquoted property 'readEscape' found.
+line:5612
+source:    readEscape: function(first){
+
+
+ruleId:quote-props
+message:Unquoted property 'readComment' found.
+line:5635
+source:    readComment: function(first){
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5668
+source:    { name: "CDO"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5669
+source:    { name: "CDC"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5672
+source:    { name: "S", whitespace: true/*, channel: "ws"*/},
+
+
+ruleId:quote-props
+message:Unquoted property 'whitespace' found.
+line:5672
+source:    { name: "S", whitespace: true/*, channel: "ws"*/},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5673
+source:    { name: "COMMENT", comment: true, hide: true, channel: "comment" },
+
+
+ruleId:quote-props
+message:Unquoted property 'comment' found.
+line:5673
+source:    { name: "COMMENT", comment: true, hide: true, channel: "comment" },
+
+
+ruleId:quote-props
+message:Unquoted property 'hide' found.
+line:5673
+source:    { name: "COMMENT", comment: true, hide: true, channel: "comment" },
+
+
+ruleId:quote-props
+message:Unquoted property 'channel' found.
+line:5673
+source:    { name: "COMMENT", comment: true, hide: true, channel: "comment" },
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5676
+source:    { name: "INCLUDES", text: "~="},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5676
+source:    { name: "INCLUDES", text: "~="},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5677
+source:    { name: "DASHMATCH", text: "|="},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5677
+source:    { name: "DASHMATCH", text: "|="},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5678
+source:    { name: "PREFIXMATCH", text: "^="},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5678
+source:    { name: "PREFIXMATCH", text: "^="},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5679
+source:    { name: "SUFFIXMATCH", text: "$="},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5679
+source:    { name: "SUFFIXMATCH", text: "$="},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5680
+source:    { name: "SUBSTRINGMATCH", text: "*="},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5680
+source:    { name: "SUBSTRINGMATCH", text: "*="},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5683
+source:    { name: "STRING"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5684
+source:    { name: "IDENT"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5685
+source:    { name: "HASH"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5688
+source:    { name: "IMPORT_SYM", text: "@import"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5688
+source:    { name: "IMPORT_SYM", text: "@import"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5689
+source:    { name: "PAGE_SYM", text: "@page"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5689
+source:    { name: "PAGE_SYM", text: "@page"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5690
+source:    { name: "MEDIA_SYM", text: "@media"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5690
+source:    { name: "MEDIA_SYM", text: "@media"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5691
+source:    { name: "FONT_FACE_SYM", text: "@font-face"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5691
+source:    { name: "FONT_FACE_SYM", text: "@font-face"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5692
+source:    { name: "CHARSET_SYM", text: "@charset"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5692
+source:    { name: "CHARSET_SYM", text: "@charset"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5693
+source:    { name: "NAMESPACE_SYM", text: "@namespace"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5693
+source:    { name: "NAMESPACE_SYM", text: "@namespace"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5694
+source:    { name: "VIEWPORT_SYM", text: ["@viewport", "@-ms-viewport"]},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5694
+source:    { name: "VIEWPORT_SYM", text: ["@viewport", "@-ms-viewport"]},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5695
+source:    { name: "UNKNOWN_SYM" },
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5699
+source:    { name: "KEYFRAMES_SYM", text: [ "@keyframes", "@-webkit-keyframes", "@-moz-keyframes", "@-o-keyframes" ] },
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5699
+source:    { name: "KEYFRAMES_SYM", text: [ "@keyframes", "@-webkit-keyframes", "@-moz-keyframes", "@-o-keyframes" ] },
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5702
+source:    { name: "IMPORTANT_SYM"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5705
+source:    { name: "LENGTH"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5706
+source:    { name: "ANGLE"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5707
+source:    { name: "TIME"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5708
+source:    { name: "FREQ"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5709
+source:    { name: "DIMENSION"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5710
+source:    { name: "PERCENTAGE"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5711
+source:    { name: "NUMBER"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5714
+source:    { name: "URI"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5715
+source:    { name: "FUNCTION"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5718
+source:    { name: "UNICODE_RANGE"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5725
+source:    { name: "INVALID"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5728
+source:    { name: "PLUS", text: "+" },
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5728
+source:    { name: "PLUS", text: "+" },
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5729
+source:    { name: "GREATER", text: ">"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5729
+source:    { name: "GREATER", text: ">"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5730
+source:    { name: "COMMA", text: ","},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5730
+source:    { name: "COMMA", text: ","},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5731
+source:    { name: "TILDE", text: "~"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5731
+source:    { name: "TILDE", text: "~"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5734
+source:    { name: "NOT"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5739
+source:    { name: "TOPLEFTCORNER_SYM", text: "@top-left-corner"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5739
+source:    { name: "TOPLEFTCORNER_SYM", text: "@top-left-corner"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5740
+source:    { name: "TOPLEFT_SYM", text: "@top-left"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5740
+source:    { name: "TOPLEFT_SYM", text: "@top-left"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5741
+source:    { name: "TOPCENTER_SYM", text: "@top-center"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5741
+source:    { name: "TOPCENTER_SYM", text: "@top-center"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5742
+source:    { name: "TOPRIGHT_SYM", text: "@top-right"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5742
+source:    { name: "TOPRIGHT_SYM", text: "@top-right"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5743
+source:    { name: "TOPRIGHTCORNER_SYM", text: "@top-right-corner"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5743
+source:    { name: "TOPRIGHTCORNER_SYM", text: "@top-right-corner"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5744
+source:    { name: "BOTTOMLEFTCORNER_SYM", text: "@bottom-left-corner"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5744
+source:    { name: "BOTTOMLEFTCORNER_SYM", text: "@bottom-left-corner"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5745
+source:    { name: "BOTTOMLEFT_SYM", text: "@bottom-left"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5745
+source:    { name: "BOTTOMLEFT_SYM", text: "@bottom-left"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5746
+source:    { name: "BOTTOMCENTER_SYM", text: "@bottom-center"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5746
+source:    { name: "BOTTOMCENTER_SYM", text: "@bottom-center"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5747
+source:    { name: "BOTTOMRIGHT_SYM", text: "@bottom-right"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5747
+source:    { name: "BOTTOMRIGHT_SYM", text: "@bottom-right"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5748
+source:    { name: "BOTTOMRIGHTCORNER_SYM", text: "@bottom-right-corner"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5748
+source:    { name: "BOTTOMRIGHTCORNER_SYM", text: "@bottom-right-corner"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5749
+source:    { name: "LEFTTOP_SYM", text: "@left-top"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5749
+source:    { name: "LEFTTOP_SYM", text: "@left-top"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5750
+source:    { name: "LEFTMIDDLE_SYM", text: "@left-middle"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5750
+source:    { name: "LEFTMIDDLE_SYM", text: "@left-middle"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5751
+source:    { name: "LEFTBOTTOM_SYM", text: "@left-bottom"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5751
+source:    { name: "LEFTBOTTOM_SYM", text: "@left-bottom"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5752
+source:    { name: "RIGHTTOP_SYM", text: "@right-top"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5752
+source:    { name: "RIGHTTOP_SYM", text: "@right-top"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5753
+source:    { name: "RIGHTMIDDLE_SYM", text: "@right-middle"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5753
+source:    { name: "RIGHTMIDDLE_SYM", text: "@right-middle"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5754
+source:    { name: "RIGHTBOTTOM_SYM", text: "@right-bottom"},
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5754
+source:    { name: "RIGHTBOTTOM_SYM", text: "@right-bottom"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5762
+source:    { name: "RESOLUTION", state: "media"},
+
+
+ruleId:quote-props
+message:Unquoted property 'state' found.
+line:5762
+source:    { name: "RESOLUTION", state: "media"},
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5769
+source:    { name: "IE_FUNCTION" },
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5772
+source:    { name: "CHAR" },
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5777
+source:        name: "PIPE",
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5778
+source:        text: "|"
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5781
+source:        name: "SLASH",
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5782
+source:        text: "/"
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5785
+source:        name: "MINUS",
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5786
+source:        text: "-"
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5789
+source:        name: "STAR",
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5790
+source:        text: "*"
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5794
+source:        name: "LBRACE",
+
+
+ruleId:quote-props
+message:Unquoted property 'endChar' found.
+line:5795
+source:        endChar: "}",
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5796
+source:        text: "{"
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5799
+source:        name: "RBRACE",
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5800
+source:        text: "}"
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5803
+source:        name: "LBRACKET",
+
+
+ruleId:quote-props
+message:Unquoted property 'endChar' found.
+line:5804
+source:        endChar: "]",
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5805
+source:        text: "["
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5808
+source:        name: "RBRACKET",
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5809
+source:        text: "]"
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5812
+source:        name: "EQUALS",
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5813
+source:        text: "="
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5816
+source:        name: "COLON",
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5817
+source:        text: ":"
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5820
+source:        name: "SEMICOLON",
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5821
+source:        text: ";"
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5825
+source:        name: "LPAREN",
+
+
+ruleId:quote-props
+message:Unquoted property 'endChar' found.
+line:5826
+source:        endChar: ")",
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5827
+source:        text: "("
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5830
+source:        name: "RPAREN",
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5831
+source:        text: ")"
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5834
+source:        name: "DOT",
+
+
+ruleId:quote-props
+message:Unquoted property 'text' found.
+line:5835
+source:        text: "."
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:5845
+source:    Tokens.unshift({name:"EOF"});
+
+
+ruleId:quote-props
+message:Unquoted property 'validate' found.
+line:5876
+source:    validate: function(property, value){
+
+
+ruleId:quote-props
+message:Unquoted property 'singleProperty' found.
+line:5916
+source:    singleProperty: function(types, expression, max, partial) {
+
+
+ruleId:quote-props
+message:Unquoted property 'multiProperty' found.
+line:5945
+source:    multiProperty: function (types, expression, comma, max) {
+
+
+ruleId:quote-props
+message:Unquoted property 'groupProperty' found.
+line:5992
+source:    groupProperty: function (types, expression, comma) {
+
+
+ruleId:quote-props
+message:Unquoted property 'count' found.
+line:5997
+source:            groups      = { count: 0 },
+
+
+ruleId:quote-props
+message:Unquoted property 'isLiteral' found.
+line:6079
+source:    isLiteral: function (part, literals) {
+
+
+ruleId:quote-props
+message:Unquoted property 'isSimple' found.
+line:6093
+source:    isSimple: function(type) {
+
+
+ruleId:quote-props
+message:Unquoted property 'isComplex' found.
+line:6097
+source:    isComplex: function(type) {
+
+
+ruleId:quote-props
+message:Unquoted property 'isAny' found.
+line:6105
+source:    isAny: function (expression, types) {
+
+
+ruleId:quote-props
+message:Unquoted property 'isAnyOfGroup' found.
+line:6120
+source:    isAnyOfGroup: function(expression, types) {
+
+
+ruleId:quote-props
+message:Unquoted property 'isType' found.
+line:6135
+source:    isType: function (expression, type) {
+
+
+ruleId:quote-props
+message:Unquoted property 'simple' found.
+line:6158
+source:    simple: {
+
+
+ruleId:quote-props
+message:Unquoted property 'complex' found.
+line:6290
+source:    complex: {
+
+
+ruleId:quote-props
+message:Unquoted property 'Colors' found.
+line:6506
+source:Colors              :Colors,
+
+
+ruleId:quote-props
+message:Unquoted property 'Combinator' found.
+line:6507
+source:Combinator          :Combinator,
+
+
+ruleId:quote-props
+message:Unquoted property 'Parser' found.
+line:6508
+source:Parser              :Parser,
+
+
+ruleId:quote-props
+message:Unquoted property 'PropertyName' found.
+line:6509
+source:PropertyName        :PropertyName,
+
+
+ruleId:quote-props
+message:Unquoted property 'PropertyValue' found.
+line:6510
+source:PropertyValue       :PropertyValue,
+
+
+ruleId:quote-props
+message:Unquoted property 'PropertyValuePart' found.
+line:6511
+source:PropertyValuePart   :PropertyValuePart,
+
+
+ruleId:quote-props
+message:Unquoted property 'MediaFeature' found.
+line:6512
+source:MediaFeature        :MediaFeature,
+
+
+ruleId:quote-props
+message:Unquoted property 'MediaQuery' found.
+line:6513
+source:MediaQuery          :MediaQuery,
+
+
+ruleId:quote-props
+message:Unquoted property 'Selector' found.
+line:6514
+source:Selector            :Selector,
+
+
+ruleId:quote-props
+message:Unquoted property 'SelectorPart' found.
+line:6515
+source:SelectorPart        :SelectorPart,
+
+
+ruleId:quote-props
+message:Unquoted property 'SelectorSubPart' found.
+line:6516
+source:SelectorSubPart     :SelectorSubPart,
+
+
+ruleId:quote-props
+message:Unquoted property 'Specificity' found.
+line:6517
+source:Specificity         :Specificity,
+
+
+ruleId:quote-props
+message:Unquoted property 'TokenStream' found.
+line:6518
+source:TokenStream         :TokenStream,
+
+
+ruleId:quote-props
+message:Unquoted property 'Tokens' found.
+line:6519
+source:Tokens              :Tokens,
+
+
+ruleId:quote-props
+message:Unquoted property 'ValidationError' found.
+line:6520
+source:ValidationError     :ValidationError
+
+
+ruleId:no-undef
+message:'exports' is not defined.
+line:6526
+source:exports[prop] = parserlib[prop];
+
+

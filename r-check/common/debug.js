@@ -1,4 +1,5 @@
 function debug(obj) {
+    // global.debug && console.log(arguments.length,typeof obj);
     if (!global.debug) {
         return;
     }
@@ -14,20 +15,23 @@ function debug(obj) {
         console.log(`[DEBUG]:  ${obj}`);
         console.log("");
     } else if (typeof obj == "object") {
+
         console.log("");
         console.dir("[DEBUG]:");
-        logObj(obj);
+        Array.isArray(obj) ? console.log(obj.join(",")) : logObj(obj);
         console.log("");
+    } else {
+        console.log(obj.toString());
     }
 }
 
-function logObj(obj){
+function logObj(obj) {
     console.log("{");
-    for(let prop in obj){
-        if(obj.hasOwnProperty(prop)){
-            if(typeof obj[prop] == "object"){
+    for (let prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+            if (typeof obj[prop] == "object") {
                 logObj(obj[prop]);
-            }else{
+            } else {
                 console.log(`${prop} : ${obj[prop]}`);
             }
         }

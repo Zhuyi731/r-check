@@ -1,0 +1,12 @@
+ruleId:no-undef
+message:'console' is not defined.
+line:7
+source:        console.log(JSON.stringify(event.arrAllMessages));
+
+
+ruleId:no-undef
+message:'module' is not defined.
+line:10
+source:module.exports = jsonFormatter;
+
+

@@ -1,0 +1,173 @@
+ruleId:no-undef
+message:'require' is not defined.
+line:1
+source:var excel = require('xlsx');
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:2
+source:var fs = require('fs');
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:3
+source:var path = require('path');
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:16
+source:            dir = path.join(process.cwd(), dir);
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:31
+source:        console.log(e);
+
+
+ruleId:quote-props
+message:Unquoted property 'cellFormula' found.
+line:37
+source:        cellFormula: false
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:45
+source:	console.log("file=" + file);
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:57
+source:              for (var col in ws[row]) { //遍历表格列,ws[row]表示一行的内容, col表示列头
+messageId:outOfScope
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:59
+source:				if (!(col in langObj)) {
+messageId:outOfScope
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:60
+source:                    langObj[col] = {};
+messageId:outOfScope
+
+
+ruleId:no-cond-assign
+message:Expected a conditional expression and instead saw an assignment.
+line:63
+source:				if(fileRelArr = rel.exec(ws[row][key])) {
+messageId:missing
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:67
+source:				if (col != value) {
+messageId:outOfScope
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:71
+source:					 if(typeof langObj[col][fileJSON] == "undefined") {
+messageId:outOfScope
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:72
+source:						 langObj[col][fileJSON] = {};
+messageId:outOfScope
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:74
+source:					langObj[col][fileJSON][ws[row][key]] = ws[row][col];
+messageId:outOfScope
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:74
+source:					langObj[col][fileJSON][ws[row][key]] = ws[row][col];
+messageId:outOfScope
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:76
+source:					  langObj[col][ws[row][key]] = ws[row][col];
+messageId:outOfScope
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:76
+source:					  langObj[col][ws[row][key]] = ws[row][col];
+messageId:outOfScope
+
+
+ruleId:no-redeclare
+message:'col' is already defined.
+line:81
+source:                  var col = langArr[index];
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:81
+source:                  var col = langArr[index];
+messageId:outOfScope
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:83
+source:                  if (col === key) {
+messageId:outOfScope
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:86
+source:                  if (!(col in langObj)) {
+messageId:outOfScope
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:87
+source:                      langObj[col] = {};
+messageId:outOfScope
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:89
+source:                  langObj[col][ws[row][key]] = ws[row][col];
+messageId:outOfScope
+
+
+ruleId:block-scoped-var
+message:'col' used outside of binding context.
+line:89
+source:                  langObj[col][ws[row][key]] = ws[row][col];
+messageId:outOfScope
+
+
+ruleId:no-undef
+message:'exports' is not defined.
+line:100
+source:exports.parse = parse;
+
+

@@ -1,0 +1,120 @@
+ruleId:no-undef
+message:'require' is not defined.
+line:5
+source:var xml = require('xml');
+
+
+ruleId:quote-props
+message:Unquoted property 'testcase' found.
+line:15
+source:                testcase: [
+
+
+ruleId:quote-props
+message:Unquoted property '_attr' found.
+line:17
+source:                      _attr: {
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:18
+source:                        name: fileInfo.file,
+
+
+ruleId:quote-props
+message:Unquoted property 'time' found.
+line:19
+source:                        time: (fileInfo.time / 1000).toFixed(3)
+
+
+ruleId:quote-props
+message:Unquoted property 'failure' found.
+line:23
+source:                        failure: {
+
+
+ruleId:quote-props
+message:Unquoted property '_attr' found.
+line:24
+source:                            _attr: {
+
+
+ruleId:quote-props
+message:Unquoted property 'message' found.
+line:25
+source:                                message: 'Found '+arrMessages.length+' errors'
+
+
+ruleId:quote-props
+message:Unquoted property '_cdata' found.
+line:27
+source:                            _cdata: arrLogs.join('\r\n')
+
+
+ruleId:quote-props
+message:Unquoted property 'testsuites' found.
+line:34
+source:            testsuites: [
+
+
+ruleId:quote-props
+message:Unquoted property 'testsuite' found.
+line:36
+source:                    testsuite: [
+
+
+ruleId:quote-props
+message:Unquoted property '_attr' found.
+line:38
+source:                          _attr: {
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:39
+source:                            name: 'HTMLHint Tests',
+
+
+ruleId:quote-props
+message:Unquoted property 'time' found.
+line:40
+source:                            time: (event.time / 1000).toFixed(3),
+
+
+ruleId:quote-props
+message:Unquoted property 'tests' found.
+line:41
+source:                            tests: event.allFileCount,
+
+
+ruleId:quote-props
+message:Unquoted property 'failures' found.
+line:42
+source:                            failures: arrAllMessages.length
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:49
+source:        console.log(xml(objXml, {
+
+
+ruleId:quote-props
+message:Unquoted property 'declaration' found.
+line:50
+source:            declaration: true,
+
+
+ruleId:quote-props
+message:Unquoted property 'indent' found.
+line:51
+source:            indent: '    '
+
+
+ruleId:no-undef
+message:'module' is not defined.
+line:55
+source:module.exports = junitFormatter;
+
+

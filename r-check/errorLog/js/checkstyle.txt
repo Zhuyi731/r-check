@@ -1,0 +1,108 @@
+ruleId:no-undef
+message:'require' is not defined.
+line:5
+source:var xml = require('xml');
+
+
+ruleId:quote-props
+message:Unquoted property 'error' found.
+line:16
+source:                    error: {
+
+
+ruleId:quote-props
+message:Unquoted property '_attr' found.
+line:17
+source:                        _attr: {
+
+
+ruleId:quote-props
+message:Unquoted property 'line' found.
+line:18
+source:                            line: message.line,
+
+
+ruleId:quote-props
+message:Unquoted property 'column' found.
+line:19
+source:                            column: message.col,
+
+
+ruleId:quote-props
+message:Unquoted property 'severity' found.
+line:20
+source:                            severity: message.type,
+
+
+ruleId:quote-props
+message:Unquoted property 'message' found.
+line:21
+source:                            message: message.message,
+
+
+ruleId:quote-props
+message:Unquoted property 'source' found.
+line:22
+source:                            source: 'htmlhint.'+message.rule.id
+
+
+ruleId:quote-props
+message:Unquoted property 'file' found.
+line:28
+source:                file: [
+
+
+ruleId:quote-props
+message:Unquoted property '_attr' found.
+line:30
+source:                        _attr: {
+
+
+ruleId:quote-props
+message:Unquoted property 'name' found.
+line:31
+source:                            name: fileInfo.file
+
+
+ruleId:quote-props
+message:Unquoted property 'checkstyle' found.
+line:38
+source:            checkstyle: [
+
+
+ruleId:quote-props
+message:Unquoted property '_attr' found.
+line:40
+source:                  _attr: {
+
+
+ruleId:quote-props
+message:Unquoted property 'version' found.
+line:41
+source:                    version: '4.3'
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:46
+source:        console.log(xml(objXml, {
+
+
+ruleId:quote-props
+message:Unquoted property 'declaration' found.
+line:47
+source:            declaration: true,
+
+
+ruleId:quote-props
+message:Unquoted property 'indent' found.
+line:48
+source:            indent: '    '
+
+
+ruleId:no-undef
+message:'module' is not defined.
+line:52
+source:module.exports = checkstyleFormatter;
+
+

@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Pragma" content="no-cache,no-store">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" href="/common/css/bootstrap.css">
+    <link rel="stylesheet" href="/common/css/reasy-ui.css">
+    <link rel="stylesheet" href="/behavior/css/behavior.css">  
+    <!-- 打开以下链接为Tenda页面风格；注释掉为IP-COM页面风格 -->
+    <link rel="stylesheet" href="/common/css/tenda-ex.css">
+    <script src="/common/lang/b28n.js"></script>
+    <!--[if lte IE 8]>
+      <script src="/common/js/lteIE8.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">IP Group & Time Group</div>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <label class="title-left">Time Group Settings</label>
+            <div class="content-right">
+                <form class="form-horizontal" role="form" id="timeGroupContainer">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <button type="button" id="addTime" class="btn btn-default">+<span>Add</span></button>
+                            <button type="button" id="delTime" class="btn btn-default btn-del">Delete</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover" data-bind="timeGroupTable">
+                                    <thead>
+                                        <tr>
+                                            <th class="th-checkbox">
+                                                <input type="checkbox" name="choseTime" id="choseTime">
+                                            </th>
+                                            <th data-lang="groupName">Name</th>
+                                            <th>Day</th>
+                                            <th>Time</th>
+                                            <th>Operation</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <label class="title-left">IP Group Settings</label>
+            <div class="content-right">
+                <form class="form-horizontal" role="form" id="IPGroupContainer">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <button type="button" id="addIP" class="btn btn-default">+<span>Add</span></button>
+                            <button type="button" id="delIP" class="btn btn-default btn-del">Delete</button>
+                            <br class="visible-xs">
+                            <!-- <span class="text-warning">Note: The IP excluded from the IP group will be forbidden from accessing the Internet.</span> -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover" data-bind="ipGroupTable">
+                                    <thead>
+                                        <tr>
+                                            <th class="th-checkbox">
+                                                <input type="checkbox" name="choseIP" id="choseIP">
+                                            </th>
+                                            <th data-lang="groupName">Name</th>
+                                            <th>IP info</th>
+                                            <th>Operation</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="timeGroup-modal">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <span>Add</span>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="/goform/setTimeGroup">
+                    <input type="hidden" name="timeGroupIndex">
+                    <div class="form-group">
+                        <label class="control-label col-xs-4" data-lang="groupName2">Name:</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control validatebox" name="timeGroupName" maxlength="16" required="" data-options="{&quot;type&quot;: &quot;username&quot;, &quot;args&quot;: [1,16]}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-xs-4">Time:</label>
+                        <div class="col-xs-8" id="timeGroupInput">
+                            <span>
+                                <input type="text" class="form-control control-xs validatebox" name="timeGroupStartHour" required="" data-options="{&quot;type&quot;: &quot;tNum&quot;, &quot;args&quot;: [0,23]}" maxlength="2">:<input type="text" class="form-control control-xs validatebox" name="timeGroupStartMinute" required="" data-options="{&quot;type&quot;: &quot;tNum&quot;, &quot;args&quot;: [0,59]}" maxlength="2">~</span>
+                            <span class="control-br">
+                              <input type="text" class="form-control control-xs validatebox" name="timeGroupEndHour" required="" data-options="{&quot;type&quot;: &quot;tNum&quot;, &quot;args&quot;: [0,23]}" maxlength="2">:<input type="text" class="form-control control-xs validatebox" name="timeGroupEndMinute" required="" data-options="{&quot;type&quot;: &quot;tNum&quot;, &quot;args&quot;: [0,59]}" maxlength="2">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-xs-4">Day:</label>
+                        <div class="col-xs-8">
+                            <div class="control-week">
+                                <input type="checkbox" id="allDays">
+                                <span>Everyday</span>
+                            </div>
+                            <div class="control-week">
+                                <input type="checkbox" group-index="0" name="timeGroupWeekday">
+                                <span>Sun.</span>
+                            </div>
+                            <div class="control-week">
+                                <input type="checkbox" group-index="1" name="timeGroupWeekday">
+                                <span>Mon.</span>
+                            </div>
+                            <div class="control-week">
+                                <input type="checkbox" group-index="2" name="timeGroupWeekday">
+                                <span>Tue.</span>
+                            </div>
+                            <div class="control-week">
+                                <input type="checkbox" group-index="3" name="timeGroupWeekday">
+                                <span>Wed.</span>
+                            </div>
+                            <div class="control-week">
+                                <input type="checkbox" group-index="4" name="timeGroupWeekday">
+                                <span>Thur.</span>
+                            </div>
+                            <div class="control-week">
+                                <input type="checkbox" group-index="5" name="timeGroupWeekday">
+                                <span>Fri.</span>
+                            </div>
+                            <div class="control-week">
+                                <input type="checkbox" group-index="6" name="timeGroupWeekday">
+                                <span>Sat.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-action">
+                        <input type="submit" class="btn btn-static-sm btn-primary" id="timeGroup-save" value="OK">
+                        <input type="reset" class="btn btn-static-sm btn-default" id="timeGroup-cancel" data-dismiss="modal" value="Cancel">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="IPGroup-modal">
+    <div class="modal-dialog" style="width: 510px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"> <span>×</span> <span class="sr-only">Close</span> </button>
+                <span>Add</span> </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="/goform/setIPGroup">
+                    <input type="hidden" name="IPGroupIndex">
+                    <div class="form-group">
+                        <label class="control-label col-xs-5 col-sm-3" data-lang="groupName2">Name:</label>
+                        <div class="col-xs-7 col-sm-9">
+                            <input type="text" class="form-control control-fit validatebox" name="IPGroupName" maxlength="16" required="" data-options="{&quot;type&quot;: &quot;username&quot;, &quot;args&quot;: [1,16]}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-xs-5 col-sm-3">IP Range:</label>
+                        <div class="col-xs-7 col-sm-9">
+                            <span>
+                                <input type="text" class="form-control control-fit validatebox" maxlength="15" name="IPGroupStartIP" required="" data-options="{&quot;type&quot;: &quot;ip&quot;}">~</span>
+                            <span class="control-br">
+                                <input type="text" class="form-control control-fit validatebox" maxlength="15" name="IPGroupEndIP" required="" data-options="{&quot;type&quot;: &quot;ip&quot;}">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-action">
+                        <input type="submit" class="btn btn-static-sm btn-primary" id="IPGroup-save" value="OK">
+                        <input type="reset" class="btn btn-static-sm btn-default" id="IPGroup-cancel" data-dismiss="modal" value="Cancel">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>    
+    <script src="/common/js/libs.js"></script>
+    <script src="/common/js/common.js"></script>
+    <script src="/common/js/macro_config.js"></script>
+
+    <script src="/behavior/js/ipTimeGroup.js"></script>
+
+</body>
+</html>

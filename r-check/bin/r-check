@@ -9,6 +9,7 @@ const run = require("../index");
 const fs = require("fs");
 const path = require("path");
 const initConfigFile = require("../libs/initConfig/initConfig");
+const debug = require("../common/debug");
 
 /**
  * 当输入r-check -h是会显示下列帮助信息
@@ -22,7 +23,9 @@ program.version(require('../package').version)
     .option("-J, --close-js", "Close js check.")
     .option("-E, --close-encode", "Close encode check.")
     .option("-T, --check-translate", "Open translate check.")
-    .option("-D, --debug,", "run in debug mode.");
+    .option("-D, --debug,", "Run in debug mode.")
+    .option("-M, --multifile", "Output the results as a single log for each file checked");
+// .option("-F, --check-folder,","the folder or file you want to check");
 
 //生成配置文件
 program.command("init")
@@ -41,6 +44,7 @@ program.command("init-eslint")
 program.parse(args);
 
 let options = generateOptions(args);
+
 checkOptionsValid(options);
 run(process.cwd(), options);
 
@@ -69,15 +73,12 @@ function generateOptions() {
         "checkHtml": program.closeHtml ? false : true,
         "checkJs": program.closeJs ? false : true,
         "checkTranslate": program.checkTranslate ? true : false,
-        "optionsPath": "r.config.js",
-        "checkEncode": program.closeEncode ? false : true
+        "optionsPath": program.path || "r.config.js",
+        "checkEncode": program.closeEncode ? false : true,
+        "multifile": program.multifile ? true :false
     };
 
-    if (program.debug) {
-        global.debug = true;
-    } else {
-        global.debug = false;
-    }
+    global.debug = program.debug ? true : false;
 
     if (defaultOptions.optionsPath == "r.config.js") {
         if (!fs.existsSync(path.join(process.cwd(), "r.config.js"))) {
@@ -91,7 +92,7 @@ function generateOptions() {
     return defaultOptions;
 }
 
-//生产配置文件
+//生产配置文件  包括r.config.js  .eslintrc .eslintignore
 function generateConfigFile(name) {
     console.log("");
     console.log("/***************************生成配置文件中***************************/");
@@ -104,6 +105,8 @@ function generateConfigFile(name) {
     console.log("");
     process.exit(1);
 }
+
+
 //只生成ESLint配置文件
 function generateEslint(name) {
     console.log("");

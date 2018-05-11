@@ -1,0 +1,66 @@
+ruleId:no-undef
+message:'console' is not defined.
+line:8
+source:        console.log('');
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:12
+source:        console.log('   Config loaded: %s', nocolor ? configPath : configPath.cyan);
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:13
+source:        console.log('');
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:16
+source:        console.log('   '+event.file.white);
+
+
+ruleId:quote-props
+message:Unquoted property 'colors' found.
+line:18
+source:            colors: nocolor ? false : true,
+
+
+ruleId:quote-props
+message:Unquoted property 'indent' found.
+line:19
+source:            indent: 6
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:22
+source:            console.log(str);
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:24
+source:        console.log('');
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:34
+source:            console.log(nocolor ? message : message.red, allFileCount, allHintCount, allHintFileCount, time);
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:38
+source:            console.log(nocolor ? message : message.green, allFileCount, time);
+
+
+ruleId:no-undef
+message:'module' is not defined.
+line:43
+source:module.exports = defaultFormatter;
+
+

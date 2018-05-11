@@ -1,0 +1,48 @@
+ruleId:no-undef
+message:'require' is not defined.
+line:1
+source:var ChildProcess = require('child_process');
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:2
+source:var path = require('path');
+
+
+ruleId:no-undef
+message:'__dirname' is not defined.
+line:4
+source:var c = ChildProcess.spawn('node', [path.resolve(__dirname,'./bin/htmlhint'),'--format', 'json', path.resolve(__dirname+'/test.html')]);
+
+
+ruleId:no-undef
+message:'__dirname' is not defined.
+line:4
+source:var c = ChildProcess.spawn('node', [path.resolve(__dirname,'./bin/htmlhint'),'--format', 'json', path.resolve(__dirname+'/test.html')]);
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:17
+source:    console.log(text.toString())
+
+
+ruleId:semi
+message:Missing semicolon.
+line:17
+source:    console.log(text.toString())
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:18
+source:    console.log(stdoutEnd, processEnd)
+
+
+ruleId:semi
+message:Missing semicolon.
+line:18
+source:    console.log(stdoutEnd, processEnd)
+
+

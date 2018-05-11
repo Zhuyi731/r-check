@@ -1,0 +1,18 @@
+ruleId:no-undef
+message:'module' is not defined.
+line:1
+source:module.exports = {
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:17
+source:    "no-console": process.env.NODE_ENV !== 'publish' ? 0 : 2, //不允许console  建议调试环境关闭 
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:23
+source:    "no-debugger": process.env.NODE_ENV !== 'publish' ? 0 : 2, //禁止使用debugger  建议调试环境关闭
+
+

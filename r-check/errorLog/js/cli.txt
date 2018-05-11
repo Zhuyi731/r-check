@@ -1,0 +1,90 @@
+ruleId:no-undef
+message:'require' is not defined.
+line:371
+source:var fs      = require("fs"),
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:372
+source:    path    = require("path"),
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:373
+source:    CSSLint = require("./lib/csslint-node").CSSLint;
+
+
+ruleId:quote-props
+message:Unquoted property 'args' found.
+line:376
+source:    args: process.argv.slice(2),
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:376
+source:    args: process.argv.slice(2),
+
+
+ruleId:quote-props
+message:Unquoted property 'print' found.
+line:378
+source:    print: function(message){
+
+
+ruleId:quote-props
+message:Unquoted property 'quit' found.
+line:382
+source:    quit: function(code){
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:383
+source:        process.exit(code || 0);
+
+
+ruleId:quote-props
+message:Unquoted property 'isDirectory' found.
+line:386
+source:    isDirectory: function(name){
+
+
+ruleId:quote-props
+message:Unquoted property 'getFiles' found.
+line:394
+source:    getFiles: function(dir){
+
+
+ruleId:quote-props
+message:Unquoted property 'getWorkingDirectory' found.
+line:425
+source:    getWorkingDirectory: function() {
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:426
+source:        return process.cwd();
+
+
+ruleId:quote-props
+message:Unquoted property 'getFullPath' found.
+line:429
+source:    getFullPath: function(filename){
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:430
+source:        return path.resolve(process.cwd(), filename);
+
+
+ruleId:quote-props
+message:Unquoted property 'readFile' found.
+line:433
+source:    readFile: function(filename){
+
+

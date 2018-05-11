@@ -1,0 +1,24 @@
+ruleId:no-undef
+message:'console' is not defined.
+line:9
+source:            console.log('%s: line %d, col %d, %s - %s (%s)',
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:22
+source:            console.log('');
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:24
+source:            console.log(nocolor ? message : message.red, event.allHintCount);
+
+
+ruleId:no-undef
+message:'module' is not defined.
+line:28
+source:module.exports = compactFormatter;
+
+

@@ -1,6 +1,7 @@
+const fs = require("fs");
+
 function RUtil() {
     var that = this;
-
     //log中需要过滤的信息key值
     // this.logFilter = {
     //     "link": "link",
@@ -10,13 +11,16 @@ function RUtil() {
     // };
 
     this.logFilter = ["link", "col", "url", "init", "fix", "severity", "column", "nodeType", "endLine", "endColumn"];
-
-
+    that.logExist = [];
     //处理html css保存信息log
     this.dealErrLog = function (messages) {
         var logString = "";
         for (var i = 0; i < messages.length; i++) {
-            logString += that.objToString(messages[i]);
+            if (typeof messages[i] === "object") {
+                logString += that.objToString(messages[i]);
+            } else {
+                logString += messages[i] + "\n\n";
+            }
         }
         return logString;
     };
@@ -45,7 +49,17 @@ function RUtil() {
             }
         }
         return st;
-    }
+    };
+    this.isLogExist = function () {
+        let args = [].slice.call(arguments);
+        args.forEach((dir) => {
+            !that.logExist[dir] && !fs.existsSync(dir) && fs.mkdirSync(dir);
+            that.logExist[dir] = true;
+        });
+    };
+    this.creatEmptyFile = function (filePath) {
+        fs.writeFileSync(filePath, "", "utf-8");
+    };
 }
-Rutil = new RUtil();
+const Rutil = new RUtil();
 module.exports = Rutil;

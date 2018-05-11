@@ -1,0 +1,18 @@
+ruleId:no-undef
+message:'require' is not defined.
+line:1
+source:var minimatch = require('minimatch');
+
+
+ruleId:no-undef
+message:'module' is not defined.
+line:3
+source:module.exports = function(pattern, str, options) {
+
+
+ruleId:quote-props
+message:Unquoted property 'matchBase' found.
+line:19
+source:        matchBase: true,
+
+

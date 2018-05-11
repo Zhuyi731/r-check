@@ -1,0 +1,54 @@
+ruleId:no-undef
+message:'require' is not defined.
+line:1
+source:var path = require('path');
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:2
+source:var events = require('events');
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:3
+source:var glob = require('glob');
+
+
+ruleId:no-undef
+message:'__dirname' is not defined.
+line:22
+source:        'cwd': __dirname,
+
+
+ruleId:no-undef
+message:'__dirname' is not defined.
+line:31
+source:        var formatterPath = path.resolve(__dirname, file);
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:32
+source:        mapFormatters[fileInfo.name] = require(formatterPath);
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:48
+source:        console.log('No supported formatter, supported formatters: %s'.red, arrSupportedFormatters.join(', '));
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:49
+source:        process.exit(1);
+
+
+ruleId:no-undef
+message:'module' is not defined.
+line:56
+source:module.exports = formatter;
+
+

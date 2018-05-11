@@ -1,0 +1,72 @@
+ruleId:no-undef
+message:'require' is not defined.
+line:1
+source:const path = require("path");
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:2
+source:const fs = require("fs");
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:11
+source:        !fs.existsSync(path.join(process.cwd(), name)) && copy(path.join(__dirname, "r.config.js"), path.join(process.cwd(), name));
+
+
+ruleId:no-undef
+message:'__dirname' is not defined.
+line:11
+source:        !fs.existsSync(path.join(process.cwd(), name)) && copy(path.join(__dirname, "r.config.js"), path.join(process.cwd(), name));
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:11
+source:        !fs.existsSync(path.join(process.cwd(), name)) && copy(path.join(__dirname, "r.config.js"), path.join(process.cwd(), name));
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:15
+source:    !fs.existsSync(path.join(process.cwd(), ".eslintrc.js")) && copy(path.join(__dirname, "eslintrc.js"), path.join(process.cwd(), ".eslintrc.js"));
+
+
+ruleId:no-undef
+message:'__dirname' is not defined.
+line:15
+source:    !fs.existsSync(path.join(process.cwd(), ".eslintrc.js")) && copy(path.join(__dirname, "eslintrc.js"), path.join(process.cwd(), ".eslintrc.js"));
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:15
+source:    !fs.existsSync(path.join(process.cwd(), ".eslintrc.js")) && copy(path.join(__dirname, "eslintrc.js"), path.join(process.cwd(), ".eslintrc.js"));
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:18
+source:    !fs.existsSync(path.join(process.cwd(), ".eslintignore")) && copy(path.join(__dirname, ".eslintignore"), path.join(process.cwd(), ".eslintignore"));
+
+
+ruleId:no-undef
+message:'__dirname' is not defined.
+line:18
+source:    !fs.existsSync(path.join(process.cwd(), ".eslintignore")) && copy(path.join(__dirname, ".eslintignore"), path.join(process.cwd(), ".eslintignore"));
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:18
+source:    !fs.existsSync(path.join(process.cwd(), ".eslintignore")) && copy(path.join(__dirname, ".eslintignore"), path.join(process.cwd(), ".eslintignore"));
+
+
+ruleId:no-undef
+message:'module' is not defined.
+line:26
+source:module.exports = initFile;
+
+

@@ -1,0 +1,54 @@
+ruleId:no-undef
+message:'require' is not defined.
+line:1
+source:const xlsx = require("xlsx");
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:2
+source:const fs = require("fs");
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:3
+source:const path = require("path");
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:4
+source:const nodeGlob = require("glob");
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:5
+source:const console = require("../utils/console");
+
+
+ruleId:semi
+message:Missing semicolon.
+line:56
+source:        errorDatas.push(`/********************Language === ${checkLang}********************/`)
+
+
+ruleId:semi
+message:Missing semicolon.
+line:64
+source:        errorDatas.push(`/********************Language === ${checkLang}********************/`)
+
+
+ruleId:semi
+message:Missing semicolon.
+line:98
+source:    })
+
+
+ruleId:no-undef
+message:'module' is not defined.
+line:180
+source:module.exports = checkJsonAndExcel;
+
+

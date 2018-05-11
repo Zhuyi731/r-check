@@ -1,0 +1,96 @@
+ruleId:no-undef
+message:'require' is not defined.
+line:2
+source:var fs = require('fs');
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:3
+source:var path = require('path');
+
+
+ruleId:no-undef
+message:'require' is not defined.
+line:4
+source:var file = require('./file');
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:6
+source:var IS_WIN = process.platform.toLowerCase().indexOf('win') !== -1 ? true : false;
+
+
+ruleId:no-undef
+message:'exports' is not defined.
+line:9
+source:exports.createFolder = function(folder, callback) {
+
+
+ruleId:no-undef
+message:'process' is not defined.
+line:14
+source:            folder = path.join(process.cwd(), folder);
+
+
+ruleId:no-undef
+message:'console' is not defined.
+line:29
+source:        console.log(e);
+
+
+ruleId:semi
+message:Missing semicolon.
+line:31
+source:}
+
+
+ruleId:no-undef
+message:'exports' is not defined.
+line:33
+source:exports.relative = function(dir1, dir2) {
+
+
+ruleId:semi
+message:Missing semicolon.
+line:35
+source:}
+
+
+ruleId:no-undef
+message:'exports' is not defined.
+line:37
+source:exports.scanFolder = function(folder) {
+
+
+ruleId:semi
+message:Missing semicolon.
+line:62
+source:    }
+
+
+ruleId:no-undef
+message:'exports' is not defined.
+line:67
+source:exports.isAbsolute = function(path) {
+
+
+ruleId:semi
+message:Missing semicolon.
+line:84
+source:}
+
+
+ruleId:no-undef
+message:'exports' is not defined.
+line:86
+source:exports.cp = function(src, dst) {
+
+
+ruleId:semi
+message:Missing semicolon.
+line:88
+source:}
+
+

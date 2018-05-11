@@ -16,7 +16,7 @@ module.exports = {
     "semi": [1, "always"], //语句强制分号结尾
     "no-console": process.env.NODE_ENV !== 'publish' ? 0 : 2, //不允许console  建议调试环境关闭 
     //TODO 不清楚什么意思 by pjl
-    "no-alert": 1, //禁止使用alert confirm prompt
+    "no-alert": 0, //禁止使用alert confirm prompt
     "no-cond-assign": 2, //禁止在条件表达式中使用赋值语句
     //TODO 2->0 by pjl
     "no-constant-condition": 1, //禁止在条件中使用常量表达式 if(true) if(1)
@@ -77,34 +77,34 @@ module.exports = {
     "vars-on-top": 0, //var必须放在作用域顶部
     //以下规则与 Js 代码中可能的语法错误或逻辑错误有关
     // 禁止 for 循环出现方向错误的循环，比如 for (i = 0; i < 10; i--)
-    'for-direction': '2',
+    'for-direction': 2,
     // 禁止与负零进行比较
-    'no-compare-neg-zero': '2',
+    'no-compare-neg-zero': 2,
     // 将 var 定义的变量视为块作用域，禁止在块外使用
-    'block-scoped-var': '2',
+    'block-scoped-var': 2,
     // switch 的 case 内必须有 break, return 或 throw
     // by pjl 之前遇到过未写break导致下面那个case也执行了
-    'no-fallthrough': '2',
+    'no-fallthrough': 2,
  
     // @变量申明 以下规则与变量申明有关
     // 禁止重复定义变量
     // TODO 我们的代码中存在重复定义变量的现象，且之前遇到过因重复定义变量导致的bug
-    'no-redeclare': '2',
+    'no-redeclare': 2,
     // 禁止使用保留字作为变量名
-    'no-shadow-restricted-names': '2',
+    'no-shadow-restricted-names': 2,
     // 禁止使用未定义的变量
     'no-undef': [
-      '2', {
+      2, {
         "typeof": false
       }
     ],
     // ECMAScript 6
     // 这些规则与 ES6有关 
     // 禁止对定义过的 class 重新赋值
-    'no-class-assign': '2',
+    'no-class-assign': 2,
     // 禁止对使用 const 定义的常量重新赋值
-    'no-const-assign': '2',
+    'no-const-assign': 2,
     // 禁止重复定义类
-    'no-dupe-class-members': '2'
+    'no-dupe-class-members': 2
   }
 };
