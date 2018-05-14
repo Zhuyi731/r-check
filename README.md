@@ -32,7 +32,7 @@
 	│  ├─encode-check     
 	│  │  └─ checkEncode.js //检查编码格式  	
 	│  │  	
-	│  ├─encode-check   
+	│  ├─initConfig   
 	│  │  └─ initConfig.js //用于执行 init指令生成配置文件  	
 	│  └─translate-check   //用于翻译检查  
 	│  
