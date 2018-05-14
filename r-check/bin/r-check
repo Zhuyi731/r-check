@@ -29,16 +29,25 @@ program.version(require('../package').version)
 
 //生成配置文件
 program.command("init")
+    .option("-F,--force", "force to generate config files even the older files exist")
     .description("generate eslint config file and r.config.js.")
-    .action((name) => {
-        generateConfigFile(name);
+    .action((name, cmd) => {
+        if (cmd) {
+            generateConfigFile(name, cmd.force);
+        } else {
+            generateConfigFile("r.config.js", name.force);
+        }
     });
 
 //生成ESLint
 program.command("init-eslint")
     .description("generate eslint config file only.")
-    .action(() => {
-        generateEslint();
+    .action((name,cmd) => {
+        if (cmd) {
+            generateEslint("", cmd.force);
+        } else {
+            generateEslint("", name.force);
+        }
     });
 
 program.parse(args);
@@ -75,7 +84,7 @@ function generateOptions() {
         "checkTranslate": program.checkTranslate ? true : false,
         "optionsPath": program.path || "r.config.js",
         "checkEncode": program.closeEncode ? false : true,
-        "multifile": program.multifile ? true :false
+        "multifile": program.multifile ? true : false
     };
 
     global.debug = program.debug ? true : false;
@@ -93,11 +102,11 @@ function generateOptions() {
 }
 
 //生产配置文件  包括r.config.js  .eslintrc .eslintignore
-function generateConfigFile(name) {
+function generateConfigFile(name, force) {
     console.log("");
     console.log("/***************************生成配置文件中***************************/");
     console.log("");
-    initConfigFile(name, "all");
+    initConfigFile(name, "all", force);
     console.log("");
     console.log("/***************************配置文件已生成***************************/");
     console.log("");
@@ -108,11 +117,11 @@ function generateConfigFile(name) {
 
 
 //只生成ESLint配置文件
-function generateEslint(name) {
+function generateEslint(name, force) {
     console.log("");
     console.log("/***************************生成ESLint配置文件中***************************/");
     console.log("");
-    initConfigFile(name, "eslint");
+    initConfigFile(name, "eslint", force);
     console.log("");
     console.log("/***************************配置文件已生成***************************/");
     console.log("");

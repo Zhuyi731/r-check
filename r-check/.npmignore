@@ -1,0 +1,5 @@
+test/
+errorLog/
+.eslintignore
+.eslintrc.js
+r.config.js

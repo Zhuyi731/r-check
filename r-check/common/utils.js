@@ -2,14 +2,6 @@ const fs = require("fs");
 
 function RUtil() {
     var that = this;
-    //log中需要过滤的信息key值
-    // this.logFilter = {
-    //     "link": "link",
-    //     "col": "col",
-    //     "url": "url",
-    //     "init": "init"
-    // };
-
     this.logFilter = ["link", "col", "url", "init", "fix", "severity", "column", "nodeType", "endLine", "endColumn"];
     that.logExist = [];
     //处理html css保存信息log
@@ -25,9 +17,11 @@ function RUtil() {
         return logString;
     };
     this.dealJsMessage = function (messages) {
+        let jsErrNum = 0;
         var prop,
             st = "";
         messages.forEach(function (msg) {
+            st += "No." + ++jsErrNum;
             st += that.objToString(msg) + "\n\n";
         }, this);
         return st;
@@ -61,5 +55,4 @@ function RUtil() {
         fs.writeFileSync(filePath, "", "utf-8");
     };
 }
-const Rutil = new RUtil();
-module.exports = Rutil;
+module.exports = new RUtil();

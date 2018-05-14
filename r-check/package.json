@@ -1,7 +1,7 @@
 {
   "name": "r-check",
-  "version": "1.2.2",
-  "description": "Added github repository to access github homepage",
+  "version": "1.2.5",
+  "description": "change init file name to avoid npmignore file check",
   "main": "index.js",
   "dependencies": {
     "commander": "^2.15.1",

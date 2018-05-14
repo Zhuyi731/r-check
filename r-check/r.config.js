@@ -67,10 +67,10 @@ var options = {
         //自定义的规则 
         //opacity属性需要做兼容性处理 
         //TODO false->true by pjl
-        //"opacity": true,
+        "opacity": true,
         //不能只有前缀属性，没有通用属性  -moz-border-radius  并且通用属性必须在最后 
         //TODO false->true by pjl
-        //"vendor-prefix": true,
+        "vendor-prefix": true,
 
         //是否检测 !important 
         "important": false,
