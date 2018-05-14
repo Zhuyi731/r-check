@@ -1,7 +1,7 @@
 {
   "name": "r-check",
-  "version": "1.2.5",
-  "description": "change init file name to avoid npmignore file check",
+  "version": "1.2.6",
+  "description": "update usage in npm readme",
   "main": "index.js",
   "dependencies": {
     "commander": "^2.15.1",
