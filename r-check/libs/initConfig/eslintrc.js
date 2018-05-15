@@ -2,6 +2,19 @@ module.exports = {
   "parserOptions": {
     "ecmaVersion": 6 //兼容ES6
   },
+  "env":{
+    "browser": true,
+    "node": true,
+    "es6":true,
+    "jquery ":true
+  },
+  //为了使no-undef能支持一些全局变量
+  "globals":{
+    "_":true,
+    "XMLHttpRequest":true,
+    "R":true,
+    "G":true
+  },
   "rules": {
      /*
      *以下的 off||0代表关闭
@@ -14,13 +27,13 @@ module.exports = {
     //详细文档       http://eslint.cn/docs/rules
     "quotes": [0, "double"], //引号类型  强制 "" '' 
     "semi": [1, "always"], //语句强制分号结尾
-    "no-console": process.env.NODE_ENV !== 'publish' ? 0 : 2, //不允许console  建议调试环境关闭 
+    "no-console": 2, //不允许console  建议调试环境关闭 
     //TODO 不清楚什么意思 by pjl
     "no-alert": 0, //禁止使用alert confirm prompt
     "no-cond-assign": 2, //禁止在条件表达式中使用赋值语句
     //TODO 2->0 by pjl
     "no-constant-condition": 1, //禁止在条件中使用常量表达式 if(true) if(1)
-    "no-debugger": process.env.NODE_ENV !== 'publish' ? 0 : 2, //禁止使用debugger  建议调试环境关闭
+    "no-debugger":  2, //禁止使用debugger  建议调试环境关闭
     "no-div-regex": 1, //不能使用看起来像除法的正则表达式/=foo/
     "no-dupe-keys": 2, //在创建对象字面量时不允许键重复 {a:1,a:1}
     "no-dupe-args": 2, //函数参数不能重复

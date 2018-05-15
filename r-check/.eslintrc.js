@@ -2,6 +2,10 @@ module.exports = {
   "parserOptions": {
     "ecmaVersion": 6 //兼容ES6
   },
+  "globals":{
+	  "_":true,
+	  "__dirname":true
+  },
   "rules": {
      /*
      *以下的 off||0代表关闭
