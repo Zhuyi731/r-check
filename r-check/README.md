@@ -1,18 +1,35 @@
-# reasy-html-hint-node
-扩展于htmlHint&&csslint  
-用于Node环境下检查css和html的语法规范
+# r-check
+r-check是一个组内用于一些基本检查的一个工具。  
+能够预防一些基本的错误。  
+主要的检查内容有：  
+
+- 语法规范检查
+- 翻译检查  
+- 编码格式检查  
+
+
+1.语法规范扩展于htmlHint&&csslint&&ESLint    
+2.翻译检查主要检查： 
+
+- 代码中的词条是否都在语言包中  
+- 代码中是否存在中文这种没有翻译的词条  
+- 检查语言包json文件与资料部给出的excel文件是否一一对应  
+- 检查资料部给出的excel文件是否有重复词条(一对多的情况)  
+
+3.编码格式检查主要检查所有文件格式是否为UTF-8格式(有无BOM均可)。来避免因为编码异常改变导致的错误。  
+
 
 #安装
-1.npm install reasy-html-hint-node -g (记得加入-g命令全局安装，安装时会自动生成r-check.cmd脚本文件)  
+1.npm install r-check -g (记得加入-g命令全局安装，安装时会自动生成r-check.cmd脚本文件)  
 2.下载完成后输入r-check -V（大写）来检查是否安装成功    
 3.进入需要检查的项目根目录  
 4.在cmd黑色窗口里运行r-check即可检查  
-5.检查之后会在更目录多出一个errorLog文件夹，errorLog文件夹下有html及css两个子文件夹，分别保存两者的错误信息  
+5.检查之后会在更目录多出一个errorLog文件夹，errorLog文件夹下有html及css和js三个子文件夹，分别保存三者的错误信息  
 6.在cmd中，可以输入r-check -V查看当前版本  
 7.在cmd中,输入r-check -h查看其他配置参数，配置参数具体用法参考[CLI参数](#CLI参数)  
 
 
-#目录结构
+#项目目录结构
 
 	r-check:   
 	├─bin   //二进制文件,用于生成r-check.cmd  并解析输入的配置参数    
