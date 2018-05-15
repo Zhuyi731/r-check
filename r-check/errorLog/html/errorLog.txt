@@ -1,46 +1,6 @@
 /****************appFilter.html********************/
 
 type:warning
-message:The empty tag : [ meta ] must be self closed.
-raw:<meta charset="UTF-8">
-evidence:    <meta charset="UTF-8">
-line:4
-rule:{
-id:tag-self-close
-description:Empty tags must be self closed.
-}
-
-type:warning
-message:The empty tag : [ meta ] must be self closed.
-raw:<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-evidence:    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-line:5
-rule:{
-id:tag-self-close
-description:Empty tags must be self closed.
-}
-
-type:warning
-message:The empty tag : [ meta ] must be self closed.
-raw:<meta http-equiv="Pragma" content="no-cache,no-store">
-evidence:    <meta http-equiv="Pragma" content="no-cache,no-store">
-line:6
-rule:{
-id:tag-self-close
-description:Empty tags must be self closed.
-}
-
-type:warning
-message:The empty tag : [ meta ] must be self closed.
-raw:<meta name="renderer" content="webkit">
-evidence:    <meta name="renderer" content="webkit">
-line:8
-rule:{
-id:tag-self-close
-description:Empty tags must be self closed.
-}
-
-type:warning
 message:The empty tag : [ link ] must be self closed.
 raw:<link rel="stylesheet" href="/common/css/bootstrap.css">
 evidence:    <link rel="stylesheet" href="/common/css/bootstrap.css">
@@ -216,26 +176,6 @@ description:Empty tags must be self closed.
 /****************index.html********************/
 
 type:warning
-message:The empty tag : [ meta ] must be self closed.
-raw:<meta charset="utf-8">
-evidence:    <meta charset="utf-8">
-line:3
-rule:{
-id:tag-self-close
-description:Empty tags must be self closed.
-}
-
-type:warning
-message:The empty tag : [ meta ] must be self closed.
-raw:<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-evidence:    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-line:4
-rule:{
-id:tag-self-close
-description:Empty tags must be self closed.
-}
-
-type:warning
 message:The empty tag : [ img ] must be self closed.
 raw:<img src="/common/img/logo.png">
 evidence:                <img src="/common/img/logo.png">
@@ -249,46 +189,6 @@ description:Empty tags must be self closed.
 /****************index.html********************/
 
 /****************ipFilter.html********************/
-
-type:warning
-message:The empty tag : [ meta ] must be self closed.
-raw:<meta charset="UTF-8">
-evidence:    <meta charset="UTF-8">
-line:4
-rule:{
-id:tag-self-close
-description:Empty tags must be self closed.
-}
-
-type:warning
-message:The empty tag : [ meta ] must be self closed.
-raw:<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-evidence:    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-line:5
-rule:{
-id:tag-self-close
-description:Empty tags must be self closed.
-}
-
-type:warning
-message:The empty tag : [ meta ] must be self closed.
-raw:<meta http-equiv="Pragma" content="no-cache,no-store">
-evidence:    <meta http-equiv="Pragma" content="no-cache,no-store">
-line:6
-rule:{
-id:tag-self-close
-description:Empty tags must be self closed.
-}
-
-type:warning
-message:The empty tag : [ meta ] must be self closed.
-raw:<meta name="renderer" content="webkit">
-evidence:    <meta name="renderer" content="webkit">
-line:8
-rule:{
-id:tag-self-close
-description:Empty tags must be self closed.
-}
 
 type:warning
 message:The empty tag : [ link ] must be self closed.
@@ -421,16 +321,6 @@ description:Empty tags must be self closed.
 }
 
 type:warning
-message:标签[placeholder]中包含placeholder属性，IE8及以下版本不兼容placeholderOptional
-raw: placeholder="Optional"
-evidence:                            <input type="text" class="form-control controls-sm validatebox" name="ipFilterRuleDesc" placeholder="Optional" data-options="{&quot;type&quot;: &quot;remarkTxt&quot;, &quot;args&quot;: [1, 16]}">
-line:123
-rule:{
-id:placeholder
-description:IE8及以下不支持placeholder属性，请使用公共库或组件的实现
-}
-
-type:warning
 message:The empty tag : [ input ] must be self closed.
 raw:<input type="submit" class="btn btn-static-sm btn-primary" id="ipFilterRule-save" value="OK">
 evidence:                        <input type="submit" class="btn btn-static-sm btn-primary" id="ipFilterRule-save" value="OK">
@@ -454,46 +344,6 @@ description:Empty tags must be self closed.
 /****************ipFilter.html********************/
 
 /****************ipTimeGroup.html********************/
-
-type:warning
-message:The empty tag : [ meta ] must be self closed.
-raw:<meta charset="UTF-8">
-evidence:    <meta charset="UTF-8">
-line:4
-rule:{
-id:tag-self-close
-description:Empty tags must be self closed.
-}
-
-type:warning
-message:The empty tag : [ meta ] must be self closed.
-raw:<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-evidence:    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-line:5
-rule:{
-id:tag-self-close
-description:Empty tags must be self closed.
-}
-
-type:warning
-message:The empty tag : [ meta ] must be self closed.
-raw:<meta http-equiv="Pragma" content="no-cache,no-store">
-evidence:    <meta http-equiv="Pragma" content="no-cache,no-store">
-line:6
-rule:{
-id:tag-self-close
-description:Empty tags must be self closed.
-}
-
-type:warning
-message:The empty tag : [ meta ] must be self closed.
-raw:<meta name="renderer" content="webkit">
-evidence:    <meta name="renderer" content="webkit">
-line:8
-rule:{
-id:tag-self-close
-description:Empty tags must be self closed.
-}
 
 type:warning
 message:The empty tag : [ link ] must be self closed.

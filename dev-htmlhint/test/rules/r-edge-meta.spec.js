@@ -15,10 +15,9 @@ ruleOptions[ruldId] = true;
 
 describe('Rules: '+ruldId, function(){
 
-    it('头部没有meta标签应该产生121212error', function(){
+    it('头部没有meta标签应该产生error', function(){
         var code = '<head><link href="./css/index.css"><title></title></head>';
         var messages = HTMLHint.verify(code, ruleOptions);
-        console.log(messages,123123);
       
         expect(messages.length).to.be(1);
         expect(messages[0].rule.id).to.be(ruldId);
