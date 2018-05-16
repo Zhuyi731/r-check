@@ -22,6 +22,9 @@ function cssTest(cssList, checkOptions, cliOptions) {
         code,
         errNum = 0,
         multifile = cliOptions.multifile;
+   
+        //如果错误日志文件路径不存在，则创建
+    util.isLogExist(errLogPath, cssLogPath);
 
     cssList.forEach(function (el) {
         //过滤goform和npm包里的不检查,exclude配置内的不检查
@@ -38,8 +41,7 @@ function cssTest(cssList, checkOptions, cliOptions) {
 
         errNum += result.length;
 
-        //如果错误日志文件路径不存在，则创建
-        util.isLogExist(errLogPath, cssLogPath);
+
 
         if (multifile && result.length) {
             //写入错误日志

@@ -27,6 +27,8 @@ function htmlTest(htmlList, checkOptions, cliOptions) {
         multifile = cliOptions.multifile;
 
 
+        //如果错误日志文件路径不存在，则创建
+        util.isLogExist(errLogPath, htmlLogPath);
 
     /**
      * 遍历所有文件,读取文件信息，然后注入HTMLHint中进行验证
@@ -45,8 +47,6 @@ function htmlTest(htmlList, checkOptions, cliOptions) {
         !multifile && messages.push("/****************" + el.split("/").pop() + "********************/\n");
 
         errNum += result.length;
-        //如果错误日志文件路径不存在，则创建
-        util.isLogExist(errLogPath, htmlLogPath);
 
         if (multifile && result.length) {
             //写入错误日志

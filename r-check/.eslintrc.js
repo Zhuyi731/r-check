@@ -2,6 +2,9 @@ module.exports = {
   "parserOptions": {
     "ecmaVersion": 6 //兼容ES6
   },
+  "env":{
+    "node":true
+  },
   "globals":{
 	  "_":true,
 	  "__dirname":true
