@@ -6,7 +6,8 @@ module.exports = {
     "browser": true,
     "node": true,
     "es6":true,
-    "jquery ":true
+    "jquery":true,
+    "amd":true
   },
   //为了使no-undef能支持一些全局变量
   "globals":{
@@ -76,7 +77,7 @@ module.exports = {
     "operator-linebreak": [0, "after"], //换行时运算符在行尾还是行首
     "padded-blocks": 0, //块语句内行首行尾是否要空行
     //TODO 2修改为1
-    "quote-props": [1, "always"], //对象字面量中的属性名是否强制双引号     consistent-as-needed：如果有属性名称要求使用引号，则所有的属性名称都要使用引号；否则，禁止所有的属性名称使用引号
+    "quote-props": [0, "always"], //对象字面量中的属性名是否强制双引号     consistent-as-needed：如果有属性名称要求使用引号，则所有的属性名称都要使用引号；否则，禁止所有的属性名称使用引号
     "radix": 0, //parseInt必须指定第二个参数
     "id-match": 0, //命名检测
     "semi-spacing": [0, {
