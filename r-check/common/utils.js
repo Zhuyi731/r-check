@@ -4,7 +4,9 @@ const path = require("path");
 function RUtil() {
     var that = this;
     this.logFilter = ["link", "col", "url", "init", "fix", "severity", "column", "nodeType", "endLine", "endColumn"];
-    that.logExist = [];
+    this.logExist = [];
+
+    this.errRecord = {};
 
     //处理html css保存信息log
     this.dealErrLog = function (messages) {
@@ -19,14 +21,30 @@ function RUtil() {
         return logString;
     };
 
-    this.dealJsMessage = function (messages) {
-        let jsErrNum = 0;
-        var prop,
-            st = "";
+    this.dealJsMessage = function (messages, file) {
+        if (messages.length == 0) return "";
+
+        let jsErrNum = 0,
+            st = !!file ? `/******************${file}.js start*******************/\n` : "";
+
         messages.forEach(function (msg) {
-            st += "No." + ++jsErrNum;
+            st += "No." + ++jsErrNum + "\n";
+            // console.log(msg);
+            // console.log("/*****************/");
+            if (typeof that.errRecord[msg.ruleId] == "undefined") {
+                that.errRecord[msg.ruleId] = 1;
+            }
+            that.errRecord[msg.ruleId]++;
+            if (that.errRecord[msg.ruleId] == 50) {
+                console.log("");
+                console.warn("/***********警告！检测到当前" + msg.ruleId + "规则错误过多********************/");
+            }
+
             st += that.objToString(msg) + "\n\n";
+
         }, this);
+
+        !!file && (st += `/******************${file}.js end*******************/\n`);
         return st;
     };
 
@@ -40,7 +58,7 @@ function RUtil() {
                 if (that.logFilter.indexOf(prop) == -1) {
                     st += prop + ":" + obj[prop] + "\n";
                 }
-            } else { 
+            } else {
                 //迭代弄出信息
                 if (that.logFilter.indexOf(prop) == -1) {
                     st += prop + ":{\n" + that.objToString(obj[prop]) + "}\n\n";
@@ -62,7 +80,7 @@ function RUtil() {
             }
         });
     };
-    
+
     this.cleanFolder = function (dir, reg) {
         let files = fs.readdirSync(dir),
             expression = reg || /\.txt$/;
@@ -72,7 +90,7 @@ function RUtil() {
             expression.test(file) && fs.unlinkSync(path.join(dir, file));
         })
     };
-    
+
     this.creatEmptyFile = function (filePath) {
         fs.writeFileSync(filePath, "", "utf-8");
     };

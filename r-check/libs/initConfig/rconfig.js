@@ -65,9 +65,7 @@ var options = {
         //不允许 0px  0% 0em 
         "zero-units": true,
         //自定义的规则 
-        //opacity属性需要做兼容性处理 
-        //TODO false->true by pjl
-        "opacity": true,
+       
         //不能只有前缀属性，没有通用属性  -moz-border-radius  并且通用属性必须在最后 
         //TODO false->true by pjl
         "vendor-prefix": true,

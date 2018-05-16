@@ -34,10 +34,10 @@ function test(opt, cliOptions) {
     json.forEach(function (error) {
         errorNum += error.errorCount;
         warnNum += error.warningCount;
-
+        let file = error.filePath.split("\\").pop().split(".")[0];
         //当需要写入到多个文件时,用writeFileSync
         if (!!multifile) {
-            filename = path.join(cwd, logPath, "/js/", error.filePath.split("\\").pop().split(".")[0]) + ".txt";
+            filename = path.join(cwd, logPath, "/js/", file) + ".txt";
             fs.writeFileSync(filename, util.dealJsMessage(error.messages), "utf8", (err) => {
                 console.log(`写入log文件${filename}出现错误`);
                 if (err) throw err;
@@ -46,8 +46,8 @@ function test(opt, cliOptions) {
             //写入到一个文件时用append
             filename = path.join(cwd, logPath, "/js/errorLog.txt");
             // util.creatEmptyFile(filename);
-            fs.appendFileSync(filename, util.dealJsMessage(error.messages), "utf-8", (err) => {
-                console.log(`写入log文件${filename}出现错误`,err);
+            fs.appendFileSync(filename, util.dealJsMessage(error.messages, file), "utf-8", (err) => {
+                console.log(`写入log文件${filename}出现错误`, err);
                 if (err) throw err;
             });
         }
