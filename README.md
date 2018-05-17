@@ -1,9 +1,4 @@
 # r-check
-![](https://img.shields.io/npm/v/r-check.svg?style=flat)
-![](https://img.shields.io/npm/dt/r-check.svg)
-![](https://img.shields.io/npm/l/r-check.svg)
-
-
 r-check是一个组内用于一些基本检查的一个工具。  
 能够预防一些基本的错误。  
 主要的检查内容有：  
@@ -59,6 +54,11 @@ r-check是一个组内用于一些基本检查的一个工具。
 	├─test          //用于测试的代码    
 	└─index.js      //入口文件     
 
+##配置文件生成
+输入r-check init按步骤选择即可  
+1. 第一步会提示生成的配置文件类型，有三种：生成所有配置文件 && 仅生成ESLint相关配置文件 && 仅生成r.config.js  
+2. 第二步需要使用者选择是否为老代码，因为很多老代码不是SPA，没有经过打包，会有许多错误。如果不是老代码直接回车，默认为否。  
+3. 如果配置文件已经存在于当前目录中，则会询问是否覆盖配置文件。选择是，则会覆盖所有配置文件。选择否，则不会覆盖配置文件，但没有的配置文件仍会生成。
 
 ## CLI参数 
 使用r-check -v 查看版本号(当前版本@1.2.5)  
@@ -81,17 +81,17 @@ r-check是一个组内用于一些基本检查的一个工具。
 	
 	Options:  
 	
-	-P, --path [configfile path]  The path of your config file which should follow with the -P or --path option.
-	-S, --close-check             Close source code check.
-	-C, --close-css               Close css check.
-	-H, --close-html              Close html check.
-	-J, --close-js                Close js check.
-	-E, --close-encode            Close encode check.
-	-T, --check-translate         Open translate check.
-	-D, --debug,                  Run in debug mode.
-	-M, --multifile               Output the results as a single log for each file checked
-	-Q, --question                Run immidiately without config any options
-	-h, --help                    output usage information
+		-P, --path [configfile path]  The path of your config file which should follow with the -P or --path option.
+		-S, --close-check             Close source code check.
+		-C, --close-css               Close css check.
+		-H, --close-html              Close html check.
+		-J, --close-js                Close js check.
+		-E, --close-encode            Close encode check.
+		-T, --check-translate         Open translate check.
+		-D, --debug,                  Run in debug mode.
+		-M, --multifile               Output the results as a single log for each file checked
+		-Q, --question                Run immidiately without config any options
+		-h, --help                    output usage information
 
 当使用r-check run -Q时，CLI中就不会出现询问配置的显示。而是根据-Q后的参数直接运行  
 	
