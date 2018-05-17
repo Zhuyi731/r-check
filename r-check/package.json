@@ -1,7 +1,7 @@
 {
   "name": "r-check",
-  "version": "1.3.4",
-  "description": "Add a feature to notice user when some rules warn over 50 times",
+  "version": "2.0.0",
+  "description": "version@2.0.0 Better Interactive Interface,and tidier code",
   "main": "index.js",
   "dependencies": {
     "commander": "^2.15.1",
@@ -9,10 +9,15 @@
     "eslint": "^4.19.1",
     "glob": "^7.1.2",
     "htmlhint": "^0.9.13",
+    "inquirer": "^5.2.0",
     "jschardet": "^1.6.0",
     "jsdom": "^11.6.2",
     "minimatch": "^3.0.4",
     "xlsx": "^0.12.5"
+  },
+  "engines": {
+    "node": ">=6.11.0",
+    "npm": "~3.10.0"
   },
   "scripts": {
     "test": "node index.js"
@@ -20,9 +25,7 @@
   "bin": {
     "r-check": "./bin/r-check"
   },
-  
-  "repository":"https://github.com/Zhuyi731/r-check",
+  "repository": "https://github.com/Zhuyi731/r-check",
   "author": "zhuyi",
   "license": "ISC"
 }
-
