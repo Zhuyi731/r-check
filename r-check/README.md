@@ -23,10 +23,10 @@ r-check是一个组内用于一些基本检查的一个工具。
 1.npm install r-check -g (记得加入-g命令全局安装，安装时会自动生成r-check.cmd脚本文件)  
 2.下载完成后输入r-check -V（大写）来检查是否安装成功    
 3.进入需要检查的项目根目录  
-4.在cmd黑色窗口里运行r-check即可检查  
+4.在cmd黑色窗口里运行r-check run根据步骤选择即可检查  
 5.检查之后会在更目录多出一个errorLog文件夹，errorLog文件夹下有html及css和js三个子文件夹，分别保存三者的错误信息  
 6.在cmd中，可以输入r-check -V查看当前版本  
-7.在cmd中,输入r-check -h查看其他配置参数，配置参数具体用法参考[CLI参数](#CLI参数)  
+7.在cmd中,输入r-check run -h查看其他配置参数，配置参数具体用法参考[CLI参数](#CLI参数)  
 
 
 #项目目录结构
@@ -58,43 +58,43 @@ r-check是一个组内用于一些基本检查的一个工具。
 ## CLI参数 
 使用r-check -v 查看版本号(当前版本@1.2.5)  
 使用r-check -h 可以查看帮助信息  
-运行r-check 检查目录下编码规范及翻译检查。
+运行r-check run检查目录下编码规范及翻译检查。 
+运行r-check init生成配置文件
+
+###检查参数
+检查参数是为了让使用者进行快速的配置，而不用一步步选择。  
+参数用法r-check run -<参数>  
 帮助信息显示如下  
 
- Usage: r-check <command> [options]
+	Hello r-check
+	Current Vertion:2.0.0
+	
+	
+	Usage: run [options]
+	
+	check your folder with different options.
+	
+	Options:  
+	
+	-P, --path [configfile path]  The path of your config file which should follow with the -P or --path option.
+	-S, --close-check             Close source code check.
+	-C, --close-css               Close css check.
+	-H, --close-html              Close html check.
+	-J, --close-js                Close js check.
+	-E, --close-encode            Close encode check.
+	-T, --check-translate         Open translate check.
+	-D, --debug,                  Run in debug mode.
+	-M, --multifile               Output the results as a single log for each file checked
+	-Q, --question                Run immidiately without config any options
+	-h, --help                    output usage information
 
-  Options:
+当使用r-check run -Q时，CLI中就不会出现询问配置的显示。而是根据-Q后的参数直接运行  
+	
+	e.g:  
+	r-check run -QSJ //这样配置的话呢，就会关闭代码规范检查，开启翻译检查。
+	r-check run -QHCE //这样配置的话，就会关闭html检查css检查编码检查，从而只检查js
 
-    -V, --version                 output the version number  
-    -P, --path [configfile path]  The path of your config file which should follow with the -P or --path option.  
-    -S, --close-check             Close source code check.  
-    -C, --close-css               Close css check.  
-    -H, --close-html              Close html check.    
-    -J, --close-js                Close js check.  
-    -E, --close-encode            Close encode check.  
-    -T, --check-translate         Open translate check.  
-    -D, --debug,                  run in debug mode.  
-    -h, --help                    output usage information  
-
-  Commands:
-
-    init                          generate eslint config file and r.config.js.  
-    init-eslint                   generate eslint config file only.  
-
-# r-check 配置文件生成方法  
-
-1. 使用指令 r-check init  
-   该指令将会生成3个文件，分别是r.config.js  &&  .eslintrc.js  &&  .eslintignore  
-2. 使用指令 r-check init-eslint  
-   该指令会生成两个文件，分别是.eslintrc.js  &&  .eslintignore  
-3. 如果这三个文件已经存在于当前目录，r-check init不会重新生成配置文件。如果你需要更新这些文件的话，请使用r-check init --force来强制生成。
-
-这三个文件的作用  
-  r.config.js:用于配置翻译检查的参数以及html、css语法规范的检查配置。  
-  .eslintrc.js:用于配置ESLint插件的语法规范检查规则(组内统一)。此规则同时也将应用于你的IDE（如果你装了ESLint插件的话）  
-  .eslintignore:用于配置ESLint应该忽略的文件(比如node_modules)  
-
-
+下面有更加详细的介绍
 # r-check **&lt;options&gt;** 
 r-check指令后可以跟上一些选项来选择关闭某些检查  
 
@@ -103,14 +103,14 @@ r-check指令后可以跟上一些选项来选择关闭某些检查
 >  如果你偏好每个错误日志对应其错误的文件，请使用-M参数
 
 e.g:
->  r-check -M
+>  r-check run -QM
 
 ### -S or --close-check 关闭代码规范检查  
 >  输入此指令后将不会检查代码规范    
 >  包括html,css,js代码规范   
 
 e.g:
->  r-check -S 
+>  r-check -QS 
 
 或者  
 
@@ -122,15 +122,15 @@ e.g:
 **注意：**所有的短指令是可以组合起来的  
 但是长指令不可以  
 e.g:
->  例如 r-check -CHJ
+>  例如 r-check -QCHJ
 
 等价于
 
->  r-check -C -H -J
+>  r-check -Q -C -H -J
 
 等价于
 
->  r-check --close-css --close-html --close-js  
+>  r-check -Q --close-css --close-html --close-js  
 
 
 ### -E or --close-encode **关闭编码检查**  
@@ -181,7 +181,7 @@ e.g:
 	
 
 #开发及扩展  
-npm install 安装的是压缩版本  
+npm install 安装的是发布版本  
 开发版本请到[github](https://github.com/Zhuyi731/r-check.git)下载 
  
 或者使用git bash下载至本地  

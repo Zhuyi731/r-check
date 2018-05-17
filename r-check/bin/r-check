@@ -73,29 +73,27 @@ program.command("init")
                 name: "3.仅生成r.config.js",
                 value: "rconfig"
             }],
-            q2: "需要检测的代码为老代码吗？(老代码关闭no-undef检查)（默认：n）(y/n)",
-            q3: "检测到相关配置文件已经存在，是否需要覆盖生成新文件？（默认：n）(y/n)"
+            q2: "需要检测的代码为老代码吗？(老代码关闭no-undef,block-scoped-var检查)(默认：n)",
+            q3: "检测到相关配置文件已经存在，是否需要覆盖生成新文件？(默认：n)"
         };
-
-        console.log("fileExist:", fileExist);
 
         inquirer.prompt([{
             type: "list",
             message: "需要生成的配置文件类型",
             choices: questions.q1,
+            default:"all",
             name: "fileType"
         }, {
-            type: "comfirm",
-            default: "n",
+            type: "confirm",
+            default: false,
             message: questions.q2,
             name: "oldCode"
         }, {
-            type: "comfirm",
-            default: "n",
+            type: "confirm",
+            default: false,
             message: questions.q3,
             name: "force",
             when: answer => {
-                console.log(answer);
                 switch (answer.fileType) {
                     case "all":
                         {
@@ -127,7 +125,7 @@ program.command("init")
     });
 
 program.command("run")
-    .description("check your folder with different options")
+    .description("check your folder with different options.")
     .option("-P, --path [configfile path]", "The path of your config file which should follow with the -P or --path option.")
     .option("-S, --close-check", "Close source code check.")
     .option("-C, --close-css", "Close css check.")
@@ -180,12 +178,12 @@ program.command("run")
                 name: "checkEncode"
             }, {
                 type: "confirm",
-                message: "是否开启翻译检查(默认:n)(y/n)",
+                message: "是否开启翻译检查(默认:n)",
                 default: false,
                 name: "checkTranslate"
             }, {
                 type: "confirm",
-                message: "错误日志采用单文件(n表示多文件)(默认:y)(y/n)",
+                message: "错误日志采用单文件(n表示多文件)(默认:y)",
                 default: true,
                 name: "multifile"
             }]).then(answer => {

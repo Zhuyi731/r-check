@@ -3,7 +3,7 @@ const fs = require("fs");
 let argsMap = {
     "all": "生成全部配置文件",
     "eslint": "仅生成ESLint相关配置文件",
-    "rconfigjs": "仅生成r.config.js"
+    "rconfig": "仅生成r.config.js"
 };
 
 function initFile(options, cwd, exist) {
@@ -11,7 +11,7 @@ function initFile(options, cwd, exist) {
     console.log("/****************************生成配置文件中*****************************/")
     console.log("");
     console.log(`参数:${argsMap[options.fileType]}`);
-    console.log(`是否覆盖:${options.force}`);
+    !!options.force && console.log(`是否覆盖:${options.force}`);
     console.log("");
     console.log("");
 
@@ -19,12 +19,17 @@ function initFile(options, cwd, exist) {
         case "all":
             {
                 //只有不强制生成并且 三个文件中有存在的情况下才不生成
-                if (options.force.toLowerCase() == "n") {
-                    !exist.eslintrc && copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js"));
+                if (!options.force) {
+                    if (!exist.eslintrc) {
+                        !options.oldCode ? copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js")) :
+                            copy(path.join(__dirname, "eslintrc-old.js"), path.join(cwd, ".eslintrc.js"));
+                    }
+
                     !exist.eslintignore && copy(path.join(__dirname, "eslintignore"), path.join(cwd, ".eslintignore"));
                     !exist.rconfigjs && copy(path.join(__dirname, "rconfig.js"), path.join(cwd, "r.config.js"));
                 } else {
-                    copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js"));
+                    !options.oldCode ? copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js")) :
+                        copy(path.join(__dirname, "eslintrc-old.js"), path.join(cwd, ".eslintrc.js"));
                     copy(path.join(__dirname, "eslintignore"), path.join(cwd, ".eslintignore"));
                     copy(path.join(__dirname, "rconfig.js"), path.join(cwd, "r.config.js"));
                 }
@@ -32,25 +37,31 @@ function initFile(options, cwd, exist) {
             break;
         case "eslint":
             {
-                if (options.force.toLowerCase() == "n") {
-                    !exist.eslintrc && copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js"));
+                if (!options.force) {
+                    if (!exist.eslintrc) {
+                        !options.oldCode ? copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js")) :
+                            copy(path.join(__dirname, "eslintrc-old.js"), path.join(cwd, ".eslintrc.js"));
+                    }
+
                     !exist.eslintignore && copy(path.join(__dirname, "eslintignore"), path.join(cwd, ".eslintignore"));
                 } else {
-                    copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js"));
+                    !options.oldCode ? copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js")) :
+                        copy(path.join(__dirname, "eslintrc-old.js"), path.join(cwd, ".eslintrc.js"));
                     copy(path.join(__dirname, "eslintignore"), path.join(cwd, ".eslintignore"));
                 }
             }
             break;
-        case "rconfigjs":{
-            if (options.force.toLowerCase() == "n") {
-                !exist.rconfigjs && copy(path.join(__dirname, "r.config.js"), path.join(cwd, "r.config.js"));
-            } else {
-                copy(path.join(__dirname, "rconfig.js"), path.join(cwd, "r.config.js"));
-            }
-        };
+        case "rconfig":
+            {
+                if (!options.force) {
+                    !exist.rconfigjs && copy(path.join(__dirname, "rconfig.js"), path.join(cwd, "r.config.js"));
+                } else {
+                    copy(path.join(__dirname, "rconfig.js"), path.join(cwd, "r.config.js"));
+                }
+            };
     }
 
-    setTimeout(()=>{
+    setTimeout(() => {
         console.log("/****************************生成配置文件生成完毕*****************************/")
     }, 500);
 }
