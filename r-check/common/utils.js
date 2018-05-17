@@ -29,19 +29,8 @@ function RUtil() {
 
         messages.forEach(function (msg) {
             st += "No." + ++jsErrNum + "\n";
-            // console.log(msg);
-            // console.log("/*****************/");
-            if (typeof that.errRecord[msg.ruleId] == "undefined") {
-                that.errRecord[msg.ruleId] = 1;
-            }
-            that.errRecord[msg.ruleId]++;
-            if (that.errRecord[msg.ruleId] == 50) {
-                console.log("");
-                console.warn("/***********警告！检测到当前" + msg.ruleId + "规则错误过多********************/");
-            }
-
+            checkMultiError(msg);
             st += that.objToString(msg) + "\n\n";
-
         }, this);
 
         !!file && (st += `/******************${file}.js end*******************/\n`);
@@ -94,5 +83,25 @@ function RUtil() {
     this.creatEmptyFile = function (filePath) {
         fs.writeFileSync(filePath, "", "utf-8");
     };
+
+    /**
+     * 检查某一错误是否过多 > 50条
+     * @param {*错误信息} msg 
+     */
+    function checkMultiError(msg){
+        const UP_LIMIT = 50;
+
+        if (typeof that.errRecord[msg.ruleId] == "undefined") {
+            that.errRecord[msg.ruleId] = 0;
+        }
+
+        that.errRecord[msg.ruleId]++;
+
+        if (that.errRecord[msg.ruleId] == UP_LIMIT) {
+            console.log("");
+            console.warn(`/***********警告！检测到JS检查 ${msg.ruleId} 规则错误过多********************/`);
+        }
+    }
+
 }
 module.exports = new RUtil();

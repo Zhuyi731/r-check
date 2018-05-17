@@ -1,7 +1,7 @@
 {
   "name": "r-check",
-  "version": "1.3.2",
-  "description": "Fiexed the bug js error log doesn't show filename",
+  "version": "1.3.4",
+  "description": "Add a feature to notice user when some rules warn over 50 times",
   "main": "index.js",
   "dependencies": {
     "commander": "^2.15.1",

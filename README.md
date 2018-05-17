@@ -1,4 +1,7 @@
 # r-check
+![](https://img.shields.io/npm/v/r-check.svg?style=flat)
+
+
 r-check是一个组内用于一些基本检查的一个工具。  
 能够预防一些基本的错误。  
 主要的检查内容有：  
