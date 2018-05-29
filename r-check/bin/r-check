@@ -43,7 +43,7 @@ const fileExist = {
 program.version(require('../package').version)
     .usage('<command> [options],use order(r-check run -h) for help information');
 
-    //Old code  droped
+//Old code  droped
 // .option("-P, --path [configfile path]", "The path of your config file which should follow with the -P or --path option.")
 // .option("-S, --close-check", "Close source code check.")
 // .option("-C, --close-css", "Close css check.")
@@ -60,8 +60,10 @@ HelloWorld();
 
 //when enter <r-check init> in CLI the function in action method will be triggered 
 program.command("init")
+    .option("-y, --yes", "Use default options")
+    .option("-o, --old", "Is old code (must use with --yes,otherwise it will not work)")
     .description("generate config file by init order")
-    .action(() => {
+    .action((args) => {
         let questions = {
             q1: [{
                 name: "1.生成所有配置文件(r.config.js 和 eslint相关配置文件)",
@@ -81,19 +83,28 @@ program.command("init")
             type: "list",
             message: "需要生成的配置文件类型",
             choices: questions.q1,
-            default:"all",
-            name: "fileType"
+            default: "all",
+            name: "fileType",
+            when: () => {
+                return !args.yes;
+            }
         }, {
             type: "confirm",
             default: false,
             message: questions.q2,
-            name: "oldCode"
+            name: "oldCode",
+            when: () => {
+                return !args.yes;
+            }
         }, {
             type: "confirm",
             default: false,
             message: questions.q3,
             name: "force",
             when: answer => {
+                if (!!args.yes) {
+                    return false;
+                }
                 switch (answer.fileType) {
                     case "all":
                         {
@@ -117,7 +128,16 @@ program.command("init")
                 return false;
             }
         }]).then(answer => {
-            initConfigFile(answer, cwd, fileExist);
+            if (!!args.yes) {
+                let opt = {
+                    fileType: "all",
+                    isOld: !!args.old ? true : false,
+                    force: true
+                }
+                initConfigFile(opt, cwd, fileExist);
+            } else {
+                initConfigFile(answer, cwd, fileExist);
+            }
         }).catch(err => {
             console.log(err)
         });
@@ -141,13 +161,15 @@ program.command("run")
             scb = ans => {
                 return !ans.closeCheck;
             };
-        if (!args.question) {
-            console.log("可以使用r-check run -Q指令来配置相关检查哦！");
-            console.log("");
-            console.log("也可以通过配置参数来快速配置");
+        if (args.question) {
             debug("参数:", options);
             run(cwd, options);
         } else {
+            console.log("可以使用r-check run -Q指令来配置相关检查哦！");
+            console.log("也可以通过配置参数来快速配置");
+            console.log("");
+            console.log("");
+
             inquirer.prompt([{
                 type: "confirm",
                 message: "是否关闭代码规范检查(HTML、CSS、JS)(默认:n)",

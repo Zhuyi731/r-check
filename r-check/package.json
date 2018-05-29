@@ -1,7 +1,7 @@
 {
   "name": "r-check",
-  "version": "2.0.1",
-  "description": "add old-eslint config file to suit old codes && fixed some bugs",
+  "version": "2.0.6",
+  "description": "fix old code generator problem",
   "main": "index.js",
   "dependencies": {
     "commander": "^2.15.1",

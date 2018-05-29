@@ -11,7 +11,8 @@ function initFile(options, cwd, exist) {
     console.log("/****************************生成配置文件中*****************************/")
     console.log("");
     console.log(`参数:${argsMap[options.fileType]}`);
-    !!options.force && console.log(`是否覆盖:${options.force}`);
+    console.log("是否覆盖:" + options.force);
+    console.log("是否为老代码:" + options.isOld);
     console.log("");
     console.log("");
 
