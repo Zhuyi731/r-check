@@ -26,7 +26,7 @@ function checkEncode(fPath, options) {
         if (data.toString("utf8").indexOf('�') > -1) {
             if (fileType == null || (fileType.toLowerCase() != "utf-8" && fileType.toLowerCase() != "ascii" && fileType.toLowerCase() != "windows-2312")) {
                 errorDatas++;
-                console.log(`检测到文件${file}的编码格式为${fileType}。确信度：${confidence}`);
+                console.warn(`检测到文件${file}的编码格式为${fileType}。确信度：${confidence}  @tag:encode`);
                 console.log("造成这种原因可能是:");
                 console.log("1.编码格式不正确");
                 console.log("2.文件被压缩");

@@ -83,56 +83,49 @@ function checkOptionsValid(fPath, opt) {
 }
 
 function checkJs() {
-    console.log("");
-    console.log("");
-    console.info("/***************开始JS检查********************/");
-
+    message("开始JS检查");
     let res = jsCheck(checkOptions, cliOptions);
-    debug(res);
-
-    console.log("");
-    console.info(`共发现${res.errorNum}个错误`);
-    console.log("");
-
-    console.log("");
-    console.warn(`共发现${res.warnNum}个警告`);
-    console.log("");
-
-    console.info("/***************JS检查结束********************/");
+    messageWarn("JS",res.errorNum,"error");
+    messageWarn("JS",res.warnNum,"warn");
+    message("JS检查结束");
 }
 
 function checkCss() {
-    console.log("");
-    console.log("");
-    console.info("/***************开始CSS检查********************/");
+    message("开始CSS检查");
     let errors = cssCheck(cssList, checkOptions, cliOptions);
-    if (errors) {
-        console.log("");
-        console.warn(`共发现${errors}个错误`);
-        console.log("");
-    } else {
-        console.log("");
-        console.info(`共发现${errors}个错误`);
-        console.log("");
-    }
-    console.info("/***************CSS检查结束********************/");
+    messageWarn("CSS",errors,"error");
+    message("CSS检查结束");
 }
 
 function checkHtml() {
-    console.log("");
-    console.log("");
-    console.info("/***************开始HTML检查********************/");
+    message("开始HTML检查");
     let errors = htmlCheck(htmlList, checkOptions, cliOptions);
-    if (errors) {
-        console.log("");
-        console.warn(`共发现${errors}个错误`);
-        console.log("");
-    } else {
-        console.log("");
-        console.info(`共发现${errors}个错误`);
-        console.log("");
-    }
-    console.info("/***************HTML检查结束********************/");
+    messageWarn("HTML",errors,"error");
+    message("HTML检查结束");
 }
+
+function message(mes){
+    console.log("");
+    console.log("");
+    console.log(`/***************${mes}********************/`);
+    console.log("");
+    console.log("");
+}
+function messageWarn(check,errors,type){
+    let typeMap = {
+        warn:"警告",
+        error:"错误"
+    };
+    console.log("");
+    
+    if(errors){
+        console.warn(`${check}检查共发现${errors}个${typeMap[type]} @tag:${check}`);
+    }else{
+        console.log(`${check}检查共发现${errors}个${typeMap[type]}  @tag:${check}`);
+    }
+
+    console.log("");
+}
+
 
 module.exports = souceCode;
