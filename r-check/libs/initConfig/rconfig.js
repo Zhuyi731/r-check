@@ -11,7 +11,7 @@ var options = {
         //标签配对     
         "tag-pair": true,
         //标签自闭     
-        "tag-self-close": true,
+        "tag-self-close": false,
         //id唯一 
         "id-unique": true,
         //src非空 

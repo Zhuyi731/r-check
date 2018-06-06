@@ -6,11 +6,10 @@ const cssCheck = require("./cssTest");
 const jsCheck = require("./jsTest");
 const debug = require("../../common/debug");
 
-let htmlCheckOptions,
-    cssCheckOptions,
-    jsCheckOptions,
-    checkOptions = require("../../common/checkConfig"),
-    cliOptions;
+let checkOptions = require("../../common/checkConfig"),
+    cliOptions,
+    htmlCheckOptions = checkOptions.htmlCheckOptions,
+    cssCheckOptions = checkOptions.cssCheckOptions;
 
 let htmlList,
     cssList,
@@ -71,56 +70,53 @@ function checkOptionsValid(fPath, opt) {
 
         checkOptions = data;
 
-    } else {
-        console.info("/******************使用默认配置********************/");
     }
 
     checkOptions.originPath = checkOptions.errorLogPath;
     checkOptions.errorLogPath = path.join(fPath, checkOptions.errorLogPath);
 
-    htmlCheckOptions = checkOptions.htmlCheckOptions;
-    cssCheckOptions = checkOptions.cssCheckOptions;
 }
 
 function checkJs() {
     message("开始JS检查");
     let res = jsCheck(checkOptions, cliOptions);
-    messageWarn("JS",res.errorNum,"error");
-    messageWarn("JS",res.warnNum,"warn");
+    messageWarn("JS", res.errorNum, "error");
+    messageWarn("JS", res.warnNum, "warn");
     message("JS检查结束");
 }
 
 function checkCss() {
     message("开始CSS检查");
     let errors = cssCheck(cssList, checkOptions, cliOptions);
-    messageWarn("CSS",errors,"error");
+    messageWarn("CSS", errors, "error");
     message("CSS检查结束");
 }
 
 function checkHtml() {
     message("开始HTML检查");
     let errors = htmlCheck(htmlList, checkOptions, cliOptions);
-    messageWarn("HTML",errors,"error");
+    messageWarn("HTML", errors, "error");
     message("HTML检查结束");
 }
 
-function message(mes){
+function message(mes) {
     console.log("");
     console.log("");
     console.log(`/***************${mes}********************/`);
     console.log("");
     console.log("");
 }
-function messageWarn(check,errors,type){
+
+function messageWarn(check, errors, type) {
     let typeMap = {
-        warn:"警告",
-        error:"错误"
+        warn: "警告",
+        error: "错误"
     };
     console.log("");
-    
-    if(errors){
+
+    if (errors) {
         console.warn(`${check}检查共发现${errors}个${typeMap[type]} @tag:${check}`);
-    }else{
+    } else {
         console.log(`${check}检查共发现${errors}个${typeMap[type]}  @tag:${check}`);
     }
 

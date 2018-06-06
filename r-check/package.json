@@ -1,19 +1,19 @@
 {
   "name": "r-check",
-  "version": "2.0.7",
-  "description": "change the format of output stream",
+  "version": "2.0.9",
+  "description": "Closed some rules to suit MR9 project",
   "main": "index.js",
   "dependencies": {
-    "commander": "^2.15.1",
-    "csslint": "^1.0.5",
-    "eslint": "^4.19.1",
-    "glob": "^7.1.2",
-    "htmlhint": "^0.9.13",
-    "inquirer": "^5.2.0",
-    "jschardet": "^1.6.0",
-    "jsdom": "^11.6.2",
-    "minimatch": "^3.0.4",
-    "xlsx": "^0.12.5"
+    "commander": "2.15.1",
+    "csslint": "1.0.5",
+    "eslint": "4.19.1",
+    "glob": "7.1.2",
+    "htmlhint": "0.9.13",
+    "inquirer": "5.2.0",
+    "jschardet": "1.6.0",
+    "jsdom": "11.6.2",
+    "minimatch": "3.0.4",
+    "xlsx": "0.12.5"
   },
   "engines": {
     "node": ">=6.11.0",

@@ -26,7 +26,7 @@ function checkEncode(fPath, options) {
         if (data.toString("utf8").indexOf('�') > -1) {
             if (fileType == null || (fileType.toLowerCase() != "utf-8" && fileType.toLowerCase() != "ascii" && fileType.toLowerCase() != "windows-2312")) {
                 errorDatas++;
-                console.warn(`检测到文件${file}的编码格式为${fileType}。确信度：${confidence}  @tag:encode`);
+                console.warn(`Encode check error,检测到文件${file}的编码格式为${fileType}。确信度：${confidence}  @tag:encode`);
                 console.log("造成这种原因可能是:");
                 console.log("1.编码格式不正确");
                 console.log("2.文件被压缩");
@@ -44,6 +44,12 @@ function checkEncode(fPath, options) {
     console.log(" ");
 }
 
+/**
+ * 
+ * @param {*需要检查的文件路径} fList 
+ * @param {*配置的需要忽略的regexp} rConfig
+ * 删除那些不需要检查的文件 
+ */
 function filterFiles(fList, rConfig) {
     if (!rConfig.exclude) {
         rConfig.exclude = /(node_modules|goform)/g;
