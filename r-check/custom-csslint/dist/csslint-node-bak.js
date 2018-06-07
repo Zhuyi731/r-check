@@ -1,6 +1,6 @@
 /*!
-CSSLint v1.0.4
-Copyright (c) 2016 Nicole Sullivan and Nicholas C. Zakas. All rights reserved.
+CSSLint v1.0.5
+Copyright (c) 2018 Nicole Sullivan and Nicholas C. Zakas. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the 'Software'), to deal
@@ -41,7 +41,7 @@ var CSSLint = (function() {
         embeddedRuleset = /\/\*\s*csslint([^\*]*)\*\//,
         api             = new parserlib.util.EventTarget();
 
-    api.version = "1.0.4";
+    api.version = "1.0.5";
 
     //-------------------------------------------------------------------------
     // Rule Management
@@ -162,7 +162,7 @@ var CSSLint = (function() {
      * @method format
      */
     api.format = function(results, filename, formatId, options) {
-        var formatter = this.getFormatter(formatId),
+        var formatter = api.getFormatter(formatId),
             result = null;
 
         if (formatter) {
@@ -255,7 +255,7 @@ var CSSLint = (function() {
         }
 
         if (!ruleset) {
-            ruleset = this.getRuleset();
+            ruleset = api.getRuleset();
         }
 
         if (embeddedRuleset.test(text)) {
@@ -322,7 +322,7 @@ var CSSLint = (function() {
  * @param {Object} ruleset The set of rules to work with, including if
  *      they are errors or warnings.
  * @param {Object} explicitly allowed lines
- * @param {[][]} ingore list of line ranges to be ignored
+ * @param {[][]} ignore list of line ranges to be ignored
  */
 function Reporter(lines, ruleset, allow, ignore) {
     "use strict";
@@ -433,13 +433,7 @@ Reporter.prototype = {
             return;
         }
 
-        var ignore = false;
-        CSSLint.Util.forEach(this.ignore, function (range) {
-            if (range[0] <= line && line <= range[1]) {
-                ignore = true;
-            }
-        });
-        if (ignore) {
+        if (this.isIgnored(line)) {
             return;
         }
 
@@ -514,6 +508,23 @@ Reporter.prototype = {
     stat: function(name, value) {
         "use strict";
         this.stats[name] = value;
+    },
+
+    /**
+     * Helper function to check if a line is ignored
+     * @param {int} line Line to check for ignore-status
+     * @method isIgnored
+     * @return {Boolean} True if the line is ignored, else false
+    */
+    isIgnored: function(line) {
+        "use strict";
+        var ignore = false;
+        CSSLint.Util.forEach(this.ignore, function (range) {
+            if (range[0] <= line && line <= range[1]) {
+                ignore = true;
+            }
+        });
+        return ignore;
     }
 };
 
@@ -888,13 +899,13 @@ CSSLint.addRule({
             "border-start-color"         : "webkit moz",
             "border-start-style"         : "webkit moz",
             "border-start-width"         : "webkit moz",
-            "box-align"                  : "webkit moz ms",
-            "box-direction"              : "webkit moz ms",
-            "box-flex"                   : "webkit moz ms",
-            "box-lines"                  : "webkit ms",
-            "box-ordinal-group"          : "webkit moz ms",
-            "box-orient"                 : "webkit moz ms",
-            "box-pack"                   : "webkit moz ms",
+            "box-align"                  : "webkit moz",
+            "box-direction"              : "webkit moz",
+            "box-flex"                   : "webkit moz",
+            "box-lines"                  : "webkit",
+            "box-ordinal-group"          : "webkit moz",
+            "box-orient"                 : "webkit moz",
+            "box-pack"                   : "webkit moz",
             "box-sizing"                 : "",
             "box-shadow"                 : "",
             "column-count"               : "webkit moz ms",
@@ -904,6 +915,12 @@ CSSLint.addRule({
             "column-rule-style"          : "webkit moz ms",
             "column-rule-width"          : "webkit moz ms",
             "column-width"               : "webkit moz ms",
+            "flex"                       : "webkit ms",
+            "flex-basis"                 : "webkit",
+            "flex-direction"             : "webkit ms",
+            "flex-flow"                  : "webkit",
+            "flex-grow"                  : "webkit",
+            "flex-shrink"                : "webkit",
             "hyphens"                    : "epub moz",
             "line-break"                 : "webkit ms",
             "margin-end"                 : "webkit moz",
@@ -1024,6 +1041,52 @@ CSSLint.addRule({
             }
         });
     }
+});
+
+/*
+ * Rule: When using a vendor-prefixed gradient, make sure to use them all.
+ */
+
+CSSLint.addRule({
+
+    // rule information
+    id: "opacity",
+    name: "opacity-deal",
+    desc: "opacity必须做相应的兼容性出来来适应",
+    url: "https://github.com/CSSLint/csslint/wiki/Require-all-gradient-definitions",
+    browsers: "All",
+
+    // initialization
+    init: function(parser, reporter) {
+        "use strict";
+        var rule = this,
+            hasOpacity = false,
+            hasFilter = false;
+
+        parser.addListener("startrule", function() {
+            
+        });
+
+        parser.addListener("property", function(event) {
+            
+            if (event.value.indexOf("opacity") > -1) {//有opacity属性
+                hasOpacity = true;
+            }
+            if(event.value.indexOf("filter") > -1){
+                hasFilter = true;
+            }
+        });
+
+        parser.addListener("endrule", function(event) {
+        
+            if(hasOpacity && !hasFilter){
+                reporter.report("opacity属性没有做兼容性处理", event.selectors[0].line, event.selectors[0].col, rule);
+            }
+
+        });
+
+    }
+
 });
 
 /*
@@ -1270,6 +1333,7 @@ CSSLint.addRule({
 
         parser.addListener("endrule", function(event) {
             var selectors = event.selectors;
+
             if (count === 0) {
                 reporter.report("Rule is empty.", selectors[0].line, selectors[0].col, rule);
             }
@@ -1402,9 +1466,11 @@ CSSLint.addRule({
 
         // count how many times "float" is used
         parser.addListener("property", function(event) {
-            if (event.property.text.toLowerCase() === "float" &&
-                    event.value.text.toLowerCase() !== "none") {
-                count++;
+            if (!reporter.isIgnored(event.property.line)) {
+              if (event.property.text.toLowerCase() === "float" &&
+                      event.value.text.toLowerCase() !== "none") {
+                  count++;
+              }
             }
         });
 
@@ -1439,8 +1505,10 @@ CSSLint.addRule({
             count = 0;
 
 
-        parser.addListener("startfontface", function() {
-            count++;
+        parser.addListener("startfontface", function(event) {
+            if (!reporter.isIgnored(event.line)) {
+                count++;
+            }
         });
 
         parser.addListener("endstylesheet", function() {
@@ -1473,8 +1541,10 @@ CSSLint.addRule({
 
         // check for use of "font-size"
         parser.addListener("property", function(event) {
-            if (event.property.toString() === "font-size") {
-                count++;
+            if (!reporter.isIgnored(event.property.line)) {
+                if (event.property.toString() === "font-size") {
+                    count++;
+                }
             }
         });
 
@@ -1701,9 +1771,11 @@ CSSLint.addRule({
 
         // warn that important is used and increment the declaration counter
         parser.addListener("property", function(event) {
-            if (event.important === true) {
-                count++;
-                reporter.report("Use of !important", event.line, event.col, rule);
+            if (!reporter.isIgnored(event.line)) {
+                if (event.important === true) {
+                    count++;
+                    reporter.report("Use of !important", event.line, event.col, rule);
+                }
             }
         });
 
@@ -1949,6 +2021,45 @@ CSSLint.addRule({
         });
     }
 
+});
+
+CSSLint.addRule({
+  id: "performant-transitions",
+  name: "Allow only performant transisitons",
+  desc: "Only allow transitions that trigger compositing for performant, 60fps transformations.",
+  url: "",
+  browsers: "All",
+
+  init: function(parser, reporter){
+    "use strict";
+    var rule = this;
+
+    var transitionProperties = ["transition-property", "transition", "-webkit-transition", "-o-transition"];
+    var allowedTransitions = [/-webkit-transform/g, /-ms-transform/g, /transform/g, /opacity/g];
+
+    parser.addListener("property", function(event) {
+      var propertyName    = event.property.toString().toLowerCase(),
+          propertyValue           = event.value.toString(),
+          line            = event.line,
+          col             = event.col;
+
+      var values = propertyValue.split(",");
+      if (transitionProperties.indexOf(propertyName) !== -1) {
+        var reportValues = values.filter(function(value) {
+          var didMatch = [];
+          for (var i = 0; i < allowedTransitions.length; i++) {
+            if(value.match(allowedTransitions[i])) {
+              didMatch.push(i);
+            }
+          }
+          return didMatch.length === 0;
+        });
+        if(reportValues.length > 0) {
+            reporter.report("Unexpected transition property '"+reportValues.join(",").trim()+"'", line, col, rule);
+        }
+      }
+    });
+  }
 });
 
 /*
@@ -2415,6 +2526,10 @@ CSSLint.addRule({
             for (i=0; i < selectors.length; i++) {
                 selector = selectors[i];
                 part = selector.parts[selector.parts.length-1];
+
+                if (reporter.isIgnored(part.line)) {
+                    continue;
+                }
 
                 if (part.elementName && /(h[1-6])/i.test(part.elementName.toString())) {
 

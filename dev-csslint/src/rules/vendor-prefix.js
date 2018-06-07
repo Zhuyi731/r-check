@@ -13,11 +13,12 @@ CSSLint.addRule({
     browsers: "All",
 
     // initialization
-    init: function(parser, reporter) {
+    init: function (parser, reporter) {
         "use strict";
         var rule = this,
             properties,
             num,
+            hasBrowserPrefix = false,
             propertiesToCheck = {
                 "-webkit-border-radius": "border-radius",
                 "-webkit-border-top-left-radius": "border-top-left-radius",
@@ -79,9 +80,22 @@ CSSLint.addRule({
             };
 
         // event handler for beginning of rules
-        function startRule() {
+        function startRule(event) {
+            var selectors = event.selectors,
+                selector,
+                i;
             properties = {};
             num = 1;
+            if (!selectors) return;
+            hasBrowserPrefix = false;
+            for (i = 0; i < selectors.length; i++) {
+                selector = selectors[i];
+                if ((/::-webkit|::-moz|::-o|::-ms/).test(selector.text)) {
+                    hasBrowserPrefix = true;
+                    break;
+                }
+            }
+
         }
 
         // event handler for end of rules
@@ -93,6 +107,11 @@ CSSLint.addRule({
                 actual,
                 needsStandard = [];
 
+            //If there exists browser prefix such as -webkit-,they may just want to define a browser specical style
+            if (hasBrowserPrefix) {
+                return;
+            }
+
             for (prop in properties) {
                 if (propertiesToCheck[prop]) {
                     needsStandard.push({
@@ -102,7 +121,7 @@ CSSLint.addRule({
                 }
             }
 
-            for (i=0, len=needsStandard.length; i < len; i++) {
+            for (i = 0, len = needsStandard.length; i < len; i++) {
                 needed = needsStandard[i].needed;
                 actual = needsStandard[i].actual;
 
@@ -125,7 +144,8 @@ CSSLint.addRule({
         parser.addListener("startkeyframerule", startRule);
         parser.addListener("startviewport", startRule);
 
-        parser.addListener("property", function(event) {
+        parser.addListener("property", function (event) {
+
             var name = event.property.text.toLowerCase();
 
             if (!properties[name]) {

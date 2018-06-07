@@ -8,7 +8,7 @@ CSSLint.addRule({
     browsers: "IE6,IE7,IE8",
 
     // initialization
-    init: function(parser, reporter) {
+    init: function (parser, reporter) {
         "use strict";
         var rule = this,
             lastProperty,
@@ -26,10 +26,24 @@ CSSLint.addRule({
                 "border-bottom": 1,
                 "border-left": 1,
                 "background-color": 1
-            };
+            },
+            hasBrowserPrefix;
 
-        function startRule() {
+        function startRule(event) {
             lastProperty = null;
+            var selectors = event.selectors,
+                selector,
+                i;
+            if (!selectors) return;
+            hasBrowserPrefix = false;
+            //If have webkit prefix it support this colors
+            for (i = 0; i < selectors.length; i++) {
+                selector = selectors[i];
+                if ((/::-webkit|::-moz|::-o/).test(selector.text)) {
+                    hasBrowserPrefix = true;
+                    break;
+                }
+            }
         }
 
         parser.addListener("startrule", startRule);
@@ -39,13 +53,14 @@ CSSLint.addRule({
         parser.addListener("startkeyframerule", startRule);
         parser.addListener("startviewport", startRule);
 
-        parser.addListener("property", function(event) {
+        parser.addListener("property", function (event) {
             var property = event.property,
                 name = property.text.toLowerCase(),
                 parts = event.value.parts,
                 i = 0,
                 colorType = "",
                 len = parts.length;
+            if (hasBrowserPrefix) return;
 
             if (propertiesToCheck[name]) {
                 while (i < len) {

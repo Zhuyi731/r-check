@@ -55,7 +55,7 @@ function filterFiles(fList, rConfig) {
         rConfig.exclude = /(node_modules|goform)/g;
     }
     let testReg = rConfig.exclude;
-    let testReg2 = /\.(txt|png|jpg|gif|eot|svg|ttf|woff|xlsx|doc|md)$/
+    let testReg2 = /\.(txt|png|jpg|gif|eot|svg|ttf|woff|xlsx|doc|md|ico)$/
     for (let i = 0; i < fList.length; i++) {
         if (testReg.test(fList[i]) || testReg2.test(fList[i])) {
             fList.splice(i, 1);

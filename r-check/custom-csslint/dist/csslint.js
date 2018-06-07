@@ -8602,52 +8602,6 @@ CSSLint.addRule({
 });
 
 /*
- * Rule: When using a vendor-prefixed gradient, make sure to use them all.
- */
-
-CSSLint.addRule({
-
-    // rule information
-    id: "opacity",
-    name: "opacity-deal",
-    desc: "opacity必须做相应的兼容性出来来适应",
-    url: "https://github.com/CSSLint/csslint/wiki/Require-all-gradient-definitions",
-    browsers: "All",
-
-    // initialization
-    init: function(parser, reporter) {
-        "use strict";
-        var rule = this,
-            hasOpacity = false,
-            hasFilter = false;
-
-        parser.addListener("startrule", function() {
-            
-        });
-
-        parser.addListener("property", function(event) {
-            
-            if (event.value.indexOf("opacity") > -1) {//有opacity属性
-                hasOpacity = true;
-            }
-            if(event.value.indexOf("filter") > -1){
-                hasFilter = true;
-            }
-        });
-
-        parser.addListener("endrule", function(event) {
-        
-            if(hasOpacity && !hasFilter){
-                reporter.report("opacity属性没有做兼容性处理", event.selectors[0].line, event.selectors[0].col, rule);
-            }
-
-        });
-
-    }
-
-});
-
-/*
  * Rule: Certain properties don't play well with certain display values.
  * - float should not be used with inline-block
  * - height, width, margin-top, margin-bottom, float should not be used with inline
@@ -8935,7 +8889,7 @@ CSSLint.addRule({
     browsers: "IE6,IE7,IE8",
 
     // initialization
-    init: function(parser, reporter) {
+    init: function (parser, reporter) {
         "use strict";
         var rule = this,
             lastProperty,
@@ -8953,10 +8907,23 @@ CSSLint.addRule({
                 "border-bottom": 1,
                 "border-left": 1,
                 "background-color": 1
-            };
+            },
+            hasBrowserPrefix;
 
-        function startRule() {
+        function startRule(event) {
             lastProperty = null;
+            var selectors = event.selectors,
+                selector,
+                i;
+            hasBrowserPrefix = false;
+            //If have webkit prefix it support this colors
+            for (i = 0; i < selectors.length; i++) {
+                selector = selectors[i];
+                if ((/::-webkit|::-moz|::-o/).test(selector.text)) {
+                    hasBrowserPrefix = true;
+                    break;
+                }
+            }
         }
 
         parser.addListener("startrule", startRule);
@@ -8966,13 +8933,16 @@ CSSLint.addRule({
         parser.addListener("startkeyframerule", startRule);
         parser.addListener("startviewport", startRule);
 
-        parser.addListener("property", function(event) {
+        parser.addListener("property", function (event) {
             var property = event.property,
                 name = property.text.toLowerCase(),
                 parts = event.value.parts,
                 i = 0,
                 colorType = "",
                 len = parts.length;
+
+                console.log(hasBrowserPrefix)
+            if (hasBrowserPrefix) return;
 
             if (propertiesToCheck[name]) {
                 while (i < len) {
@@ -10238,11 +10208,12 @@ CSSLint.addRule({
     browsers: "All",
 
     // initialization
-    init: function(parser, reporter) {
+    init: function (parser, reporter) {
         "use strict";
         var rule = this,
             properties,
             num,
+            hasBrowserPrefix = false,
             propertiesToCheck = {
                 "-webkit-border-radius": "border-radius",
                 "-webkit-border-top-left-radius": "border-top-left-radius",
@@ -10304,7 +10275,18 @@ CSSLint.addRule({
             };
 
         // event handler for beginning of rules
-        function startRule() {
+        function startRule(event) {
+            var selectors = event.selectors,
+                selector,
+                i;
+            hasBrowserPrefix = false;
+            for (i = 0; i < selectors.length; i++) {
+                selector = selectors[i];
+                if ((/::-webkit|::-moz|::-o|::-ms/).test(selector.text)) {
+                    hasBrowserPrefix = true;
+                    break;
+                }
+            }
             properties = {};
             num = 1;
         }
@@ -10318,6 +10300,11 @@ CSSLint.addRule({
                 actual,
                 needsStandard = [];
 
+            //If there exists browser prefix such as -webkit-,they may just want to define a browser specical style
+            if (hasBrowserPrefix) {
+                return;
+            }
+
             for (prop in properties) {
                 if (propertiesToCheck[prop]) {
                     needsStandard.push({
@@ -10327,7 +10314,7 @@ CSSLint.addRule({
                 }
             }
 
-            for (i=0, len=needsStandard.length; i < len; i++) {
+            for (i = 0, len = needsStandard.length; i < len; i++) {
                 needed = needsStandard[i].needed;
                 actual = needsStandard[i].actual;
 
@@ -10350,7 +10337,8 @@ CSSLint.addRule({
         parser.addListener("startkeyframerule", startRule);
         parser.addListener("startviewport", startRule);
 
-        parser.addListener("property", function(event) {
+        parser.addListener("property", function (event) {
+
             var name = event.property.text.toLowerCase();
 
             if (!properties[name]) {
@@ -10966,4 +10954,3 @@ CSSLint.addFormatter({
 
 return CSSLint;
 })();
-module.exports = CSSLint;

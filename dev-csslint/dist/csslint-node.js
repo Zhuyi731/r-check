@@ -1,6 +1,6 @@
 /*!
 CSSLint v1.0.5
-Copyright (c) 2017 Nicole Sullivan and Nicholas C. Zakas. All rights reserved.
+Copyright (c) 2018 Nicole Sullivan and Nicholas C. Zakas. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the 'Software'), to deal
@@ -322,7 +322,7 @@ var CSSLint = (function() {
  * @param {Object} ruleset The set of rules to work with, including if
  *      they are errors or warnings.
  * @param {Object} explicitly allowed lines
- * @param {[][]} ingore list of line ranges to be ignored
+ * @param {[][]} ignore list of line ranges to be ignored
  */
 function Reporter(lines, ruleset, allow, ignore) {
     "use strict";
@@ -433,13 +433,7 @@ Reporter.prototype = {
             return;
         }
 
-        var ignore = false;
-        CSSLint.Util.forEach(this.ignore, function (range) {
-            if (range[0] <= line && line <= range[1]) {
-                ignore = true;
-            }
-        });
-        if (ignore) {
+        if (this.isIgnored(line)) {
             return;
         }
 
@@ -514,6 +508,23 @@ Reporter.prototype = {
     stat: function(name, value) {
         "use strict";
         this.stats[name] = value;
+    },
+
+    /**
+     * Helper function to check if a line is ignored
+     * @param {int} line Line to check for ignore-status
+     * @method isIgnored
+     * @return {Boolean} True if the line is ignored, else false
+    */
+    isIgnored: function(line) {
+        "use strict";
+        var ignore = false;
+        CSSLint.Util.forEach(this.ignore, function (range) {
+            if (range[0] <= line && line <= range[1]) {
+                ignore = true;
+            }
+        });
+        return ignore;
     }
 };
 
@@ -1276,6 +1287,7 @@ CSSLint.addRule({
 
         parser.addListener("endrule", function(event) {
             var selectors = event.selectors;
+
             if (count === 0) {
                 reporter.report("Rule is empty.", selectors[0].line, selectors[0].col, rule);
             }
@@ -1319,7 +1331,7 @@ CSSLint.addRule({
     browsers: "IE6,IE7,IE8",
 
     // initialization
-    init: function(parser, reporter) {
+    init: function (parser, reporter) {
         "use strict";
         var rule = this,
             lastProperty,
@@ -1337,10 +1349,24 @@ CSSLint.addRule({
                 "border-bottom": 1,
                 "border-left": 1,
                 "background-color": 1
-            };
+            },
+            hasBrowserPrefix;
 
-        function startRule() {
+        function startRule(event) {
             lastProperty = null;
+            var selectors = event.selectors,
+                selector,
+                i;
+            if (!selectors) return;
+            hasBrowserPrefix = false;
+            //If have webkit prefix it support this colors
+            for (i = 0; i < selectors.length; i++) {
+                selector = selectors[i];
+                if ((/::-webkit|::-moz|::-o/).test(selector.text)) {
+                    hasBrowserPrefix = true;
+                    break;
+                }
+            }
         }
 
         parser.addListener("startrule", startRule);
@@ -1350,13 +1376,14 @@ CSSLint.addRule({
         parser.addListener("startkeyframerule", startRule);
         parser.addListener("startviewport", startRule);
 
-        parser.addListener("property", function(event) {
+        parser.addListener("property", function (event) {
             var property = event.property,
                 name = property.text.toLowerCase(),
                 parts = event.value.parts,
                 i = 0,
                 colorType = "",
                 len = parts.length;
+            if (hasBrowserPrefix) return;
 
             if (propertiesToCheck[name]) {
                 while (i < len) {
@@ -1408,9 +1435,11 @@ CSSLint.addRule({
 
         // count how many times "float" is used
         parser.addListener("property", function(event) {
-            if (event.property.text.toLowerCase() === "float" &&
-                    event.value.text.toLowerCase() !== "none") {
-                count++;
+            if (!reporter.isIgnored(event.property.line)) {
+              if (event.property.text.toLowerCase() === "float" &&
+                      event.value.text.toLowerCase() !== "none") {
+                  count++;
+              }
             }
         });
 
@@ -1445,8 +1474,10 @@ CSSLint.addRule({
             count = 0;
 
 
-        parser.addListener("startfontface", function() {
-            count++;
+        parser.addListener("startfontface", function(event) {
+            if (!reporter.isIgnored(event.line)) {
+                count++;
+            }
         });
 
         parser.addListener("endstylesheet", function() {
@@ -1479,8 +1510,10 @@ CSSLint.addRule({
 
         // check for use of "font-size"
         parser.addListener("property", function(event) {
-            if (event.property.toString() === "font-size") {
-                count++;
+            if (!reporter.isIgnored(event.property.line)) {
+                if (event.property.toString() === "font-size") {
+                    count++;
+                }
             }
         });
 
@@ -1707,9 +1740,11 @@ CSSLint.addRule({
 
         // warn that important is used and increment the declaration counter
         parser.addListener("property", function(event) {
-            if (event.important === true) {
-                count++;
-                reporter.report("Use of !important", event.line, event.col, rule);
+            if (!reporter.isIgnored(event.line)) {
+                if (event.important === true) {
+                    count++;
+                    reporter.report("Use of !important", event.line, event.col, rule);
+                }
             }
         });
 
@@ -2461,6 +2496,10 @@ CSSLint.addRule({
                 selector = selectors[i];
                 part = selector.parts[selector.parts.length-1];
 
+                if (reporter.isIgnored(part.line)) {
+                    continue;
+                }
+
                 if (part.elementName && /(h[1-6])/i.test(part.elementName.toString())) {
 
                     for (j=0; j < part.modifiers.length; j++) {
@@ -2610,11 +2649,12 @@ CSSLint.addRule({
     browsers: "All",
 
     // initialization
-    init: function(parser, reporter) {
+    init: function (parser, reporter) {
         "use strict";
         var rule = this,
             properties,
             num,
+            hasBrowserPrefix = false,
             propertiesToCheck = {
                 "-webkit-border-radius": "border-radius",
                 "-webkit-border-top-left-radius": "border-top-left-radius",
@@ -2676,9 +2716,22 @@ CSSLint.addRule({
             };
 
         // event handler for beginning of rules
-        function startRule() {
+        function startRule(event) {
+            var selectors = event.selectors,
+                selector,
+                i;
             properties = {};
             num = 1;
+            if (!selectors) return;
+            hasBrowserPrefix = false;
+            for (i = 0; i < selectors.length; i++) {
+                selector = selectors[i];
+                if ((/::-webkit|::-moz|::-o|::-ms/).test(selector.text)) {
+                    hasBrowserPrefix = true;
+                    break;
+                }
+            }
+
         }
 
         // event handler for end of rules
@@ -2690,6 +2743,11 @@ CSSLint.addRule({
                 actual,
                 needsStandard = [];
 
+            //If there exists browser prefix such as -webkit-,they may just want to define a browser specical style
+            if (hasBrowserPrefix) {
+                return;
+            }
+
             for (prop in properties) {
                 if (propertiesToCheck[prop]) {
                     needsStandard.push({
@@ -2699,7 +2757,7 @@ CSSLint.addRule({
                 }
             }
 
-            for (i=0, len=needsStandard.length; i < len; i++) {
+            for (i = 0, len = needsStandard.length; i < len; i++) {
                 needed = needsStandard[i].needed;
                 actual = needsStandard[i].actual;
 
@@ -2722,7 +2780,8 @@ CSSLint.addRule({
         parser.addListener("startkeyframerule", startRule);
         parser.addListener("startviewport", startRule);
 
-        parser.addListener("property", function(event) {
+        parser.addListener("property", function (event) {
+
             var name = event.property.text.toLowerCase();
 
             if (!properties[name]) {

@@ -4,9 +4,8 @@
 const fs = require("fs");
 const path = require("path");
 const util = require("./../../common/utils");
-const csslint = require("../../custom-csslint/dist/csslint");
+const csslint = require("../../custom-csslint/dist/csslint-node").CSSLint;
 const debug = require("../../common/debug");
-
 /**
  * @param {*css文件列表} cssList 
  * @param {*css检查选项} checkOptions 
