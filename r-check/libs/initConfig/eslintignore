@@ -1,8 +1,8 @@
-/node_modules/*
-/goform/*
-/common/*
-/lang/*
-/component/*
+node_modules/
+goform/
+common/
+lang/
+component/
 .eslintrc.js
 r.config.js
 webpack.config.js
@@ -15,6 +15,9 @@ highcharts.js
 oldie.js
 h5shiv.js
 jquery.js
+jquery-*.js
+jquery.min.js
+jquery-*.min.js
 j.js
 gulpfile.js
 gruntfile.js
@@ -23,4 +26,6 @@ reasy-ui.js
 b28n.js
 common.js
 util.js
+html5shiv.js
+html5shiv.min.js
 

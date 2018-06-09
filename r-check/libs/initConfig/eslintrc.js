@@ -15,7 +15,10 @@ module.exports = {
     "_":true,
     "XMLHttpRequest":true,
     "R":true,
-    "G":true
+    "G":true,
+    "undefined":true,
+    "Highcharts":true,
+    "Highchart":true
   },
   "rules": {
      /*

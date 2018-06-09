@@ -12,23 +12,13 @@ const path = require("path");
 const initConfigFile = require("../libs/initConfig/initConfig");
 const debug = require("../common/debug");
 const run = require("../index");
+const fixBug = require("../common/fixBug.js");
 const cwd = process.cwd();
 const args = process.argv;
 
 
 //options after parse
-let options,
-    //default options when there is no configuration
-    defaultOptions = {
-        "closeCheck": false,
-        "checkCss": true,
-        "checkHtml": true,
-        "checkJs": true,
-        "checkTranslate": false,
-        "optionsPath": "r.config.js",
-        "checkEncode": true,
-        "multifile": false
-    };
+let options;
 //check whether config files exist already
 const fileExist = {
     eslintrc: fs.existsSync(path.join(cwd, ".eslintrc.js")),
@@ -43,26 +33,14 @@ const fileExist = {
 program.version(require('../package').version)
     .usage('<command> [options],use order(r-check run -h) for help information');
 
-//Old code  droped
-// .option("-P, --path [configfile path]", "The path of your config file which should follow with the -P or --path option.")
-// .option("-S, --close-check", "Close source code check.")
-// .option("-C, --close-css", "Close css check.")
-// .option("-H, --close-html", "Close html check.")
-// .option("-J, --close-js", "Close js check."
-// .option("-E, --close-encode", "Close encode check.")
-// .option("-T, --check-translate", "Open translate check.")
-// .option("-D, --debug,", "Run in debug mode.")
-// .option("-M, --multifile", "Output the results as a single log for each file checked");
-//TODO 配置检查路径
-// .option("-F, --check-folder,","the folder or file you want to check");
-
 HelloWorld();
 
 //when enter <r-check init> in CLI the function in action method will be triggered 
 program.command("init")
     .option("-y, --yes", "Use default options")
     .option("-o, --old", "Is old code (must use with --yes,otherwise it will not work)")
-    .description("generate config file by init order")
+    .option("-f, --force", "Force to generate config files")
+    .description("Generate config file by init order")
     .action((args) => {
         let questions = {
             q1: [{
@@ -131,8 +109,8 @@ program.command("init")
             if (!!args.yes) {
                 let opt = {
                     fileType: "all",
-                    isOld: !!args.old ? true : false,
-                    force: true
+                    isOld: !!args.old,
+                    force: !!args.force
                 }
                 initConfigFile(opt, cwd, fileExist);
             } else {
@@ -145,7 +123,7 @@ program.command("init")
     });
 
 program.command("run")
-    .description("check your folder with different options.")
+    .description("Check your folder with different options.")
     .option("-P, --path [configfile path]", "The path of your config file which should follow with the -P or --path option.")
     .option("-S, --close-check", "Close source code check.")
     .option("-C, --close-css", "Close css check.")
@@ -157,13 +135,12 @@ program.command("run")
     .option("-M, --multifile", "Output the results as a single log for each file checked")
     .option("-Q, --question", "Run immidiately without config any options")
     .action((args) => {
-        let options = defaultOptions,
-            scb = ans => {
-                return !ans.closeCheck;
-            };
+        let scb = ans => {
+            return !ans.closeCheck;
+        };
         if (args.question) {
-            debug("参数:", options);
-            run(cwd, options);
+            debug("参数:", args);
+            run(cwd, parseOpt(args));
         } else {
             console.log("可以使用r-check run -Q指令来配置相关检查哦！");
             console.log("也可以通过配置参数来快速配置");
@@ -216,6 +193,12 @@ program.command("run")
             });
         }
     });
+
+program.command("fix")
+    .description("Fix some simple js bugs")
+    .action(() => {
+        fixBug(cwd);
+    })
 program.parse(args);
 
 /**
@@ -228,6 +211,20 @@ function checkOptionsValid(options) {
         return false;
     }
     return true;
+}
+
+function parseOpt(opt) {
+    return {
+        closeCheck: !!opt.closeCheck,
+        checkHtml: !opt.closeHtml,
+        checkCss: !opt.closeCss,
+        checkJs: !opt.closeJs,
+        checkEncode: !opt.closeEncode,
+        checkTranslate: !!opt.checkTranslate,
+        debug: !!opt.debug,
+        multifile: !!opt.multifile,
+        optionsPath: "r.config.js"
+    }
 }
 
 /**

@@ -1,7 +1,7 @@
 {
   "name": "r-check",
-  "version": "2.1.1",
-  "description": "处理编码检查会去检查ICON的问题",
+  "version": "2.2.0",
+  "description": "添加了自动修复功能 修改了eslintignore部分不生效的问题",
   "main": "index.js",
   "dependencies": {
     "commander": "2.15.1",
