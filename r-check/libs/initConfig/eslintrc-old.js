@@ -1,6 +1,7 @@
 module.exports = {
   "parserOptions": {
-    "ecmaVersion": 6 //兼容ES6
+    "ecmaVersion": 6, //兼容ES6
+    "sourceType": "module" 
   },
   "env":{
     "browser": true,
@@ -14,7 +15,10 @@ module.exports = {
     "_":true,
     "XMLHttpRequest":true,
     "R":true,
-    "G":true
+    "G":true,
+    "undefined":true,
+    "Highcharts":true,
+    "Highchart":true
   },
   "rules": {
      /*

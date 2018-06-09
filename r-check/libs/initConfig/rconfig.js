@@ -65,7 +65,7 @@ var options = {
         //不允许 0px  0% 0em 
         "zero-units": true,
         //自定义的规则 
-       
+
         //不能只有前缀属性，没有通用属性  -moz-border-radius  并且通用属性必须在最后 
         //TODO false->true by pjl
         "vendor-prefix": true,
@@ -124,7 +124,7 @@ var options = {
         "defaultLang": "en", //***必填   默认的语言，excel文件中以这种语言为基准
         "logPath": "./errorLog" //***选填   错误日志的路径，不填默认为 ./errorLo
     },
-    "errorLogPath": "./errorLog",        //错误日志存放的文件夹
-    "exclude": /(node_modules|goform)/g  //不检查的文件夹 
+    "errorLogPath": "./errorLog", //错误日志存放的文件夹
+    "exclude": /(node_modules|goform|reasy|reasy-ui)/g //不检查的文件夹 
 };
 module.exports = options;

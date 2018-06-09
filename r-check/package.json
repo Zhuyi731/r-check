@@ -1,7 +1,7 @@
 {
   "name": "r-check",
-  "version": "2.2.0",
-  "description": "添加了自动修复功能 修改了eslintignore部分不生效的问题",
+  "version": "2.2.4",
+  "description": "修复后会删除错误日志",
   "main": "index.js",
   "dependencies": {
     "commander": "2.15.1",

@@ -22,14 +22,14 @@ function initFile(options, cwd, exist) {
                 //只有不强制生成并且 三个文件中有存在的情况下才不生成
                 if (!options.force) {
                     if (!exist.eslintrc) {
-                        !options.oldCode ? copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js")) :
+                        !options.isOld ? copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js")) :
                             copy(path.join(__dirname, "eslintrc-old.js"), path.join(cwd, ".eslintrc.js"));
                     }
 
                     !exist.eslintignore && copy(path.join(__dirname, "eslintignore"), path.join(cwd, ".eslintignore"));
                     !exist.rconfigjs && copy(path.join(__dirname, "rconfig.js"), path.join(cwd, "r.config.js"));
                 } else {
-                    !options.oldCode ? copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js")) :
+                    !options.isOld ? copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js")) :
                         copy(path.join(__dirname, "eslintrc-old.js"), path.join(cwd, ".eslintrc.js"));
                     copy(path.join(__dirname, "eslintignore"), path.join(cwd, ".eslintignore"));
                     copy(path.join(__dirname, "rconfig.js"), path.join(cwd, "r.config.js"));
@@ -40,13 +40,13 @@ function initFile(options, cwd, exist) {
             {
                 if (!options.force) {
                     if (!exist.eslintrc) {
-                        !options.oldCode ? copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js")) :
+                        !options.isOld ? copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js")) :
                             copy(path.join(__dirname, "eslintrc-old.js"), path.join(cwd, ".eslintrc.js"));
                     }
 
                     !exist.eslintignore && copy(path.join(__dirname, "eslintignore"), path.join(cwd, ".eslintignore"));
                 } else {
-                    !options.oldCode ? copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js")) :
+                    !options.isOld ? copy(path.join(__dirname, "eslintrc.js"), path.join(cwd, ".eslintrc.js")) :
                         copy(path.join(__dirname, "eslintrc-old.js"), path.join(cwd, ".eslintrc.js"));
                     copy(path.join(__dirname, "eslintignore"), path.join(cwd, ".eslintignore"));
                 }

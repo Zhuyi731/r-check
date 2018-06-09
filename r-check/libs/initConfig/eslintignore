@@ -28,4 +28,5 @@ common.js
 util.js
 html5shiv.js
 html5shiv.min.js
-
+respond.js
+respond.min.js
