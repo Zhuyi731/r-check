@@ -1,7 +1,7 @@
 {
   "name": "r-check",
-  "version": "2.2.4",
-  "description": "修复后会删除错误日志",
+  "version": "2.2.5",
+  "description": "修复下载错误问题",
   "main": "index.js",
   "dependencies": {
     "commander": "2.15.1",
