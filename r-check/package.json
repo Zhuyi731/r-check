@@ -1,7 +1,7 @@
 {
   "name": "r-check",
-  "version": "2.2.5",
-  "description": "修复下载错误问题",
+  "version": "2.3.0",
+  "description": "重构代码，更改检查器的实现，通过继承统一检查器风格，便于扩展",
   "main": "index.js",
   "dependencies": {
     "commander": "2.15.1",

@@ -17,16 +17,6 @@ const cwd = process.cwd();
 const args = process.argv;
 
 
-//options after parse
-let options;
-//check whether config files exist already
-const fileExist = {
-    eslintrc: fs.existsSync(path.join(cwd, ".eslintrc.js")),
-    eslintignore: fs.existsSync(path.join(cwd, ".eslintignore")),
-    rconfigjs: fs.existsSync(path.join(cwd, "r.config.js"))
-};
-
-
 /**
  * 当输入r-check -h时会显示下列帮助信息
  */
@@ -42,6 +32,13 @@ program.command("init")
     .option("-f, --force", "Force to generate config files")
     .description("Generate config file by init order")
     .action((args) => {
+        //check whether config files exist already
+        const fileExist = {
+            eslintrc: fs.existsSync(path.join(cwd, ".eslintrc.js")),
+            eslintignore: fs.existsSync(path.join(cwd, ".eslintignore")),
+            rconfigjs: fs.existsSync(path.join(cwd, "r.config.js"))
+        };
+
         let questions = {
             q1: [{
                 name: "1.生成所有配置文件(r.config.js 和 eslint相关配置文件)",
@@ -58,70 +55,76 @@ program.command("init")
         };
 
         inquirer.prompt([{
-            type: "list",
-            message: "需要生成的配置文件类型",
-            choices: questions.q1,
-            default: "all",
-            name: "fileType",
-            when: () => {
-                return !args.yes;
-            }
-        }, {
-            type: "confirm",
-            default: false,
-            message: questions.q2,
-            name: "oldCode",
-            when: () => {
-                return !args.yes;
-            }
-        }, {
-            type: "confirm",
-            default: false,
-            message: questions.q3,
-            name: "force",
-            when: answer => {
-                if (!!args.yes) {
+                type: "list",
+                message: "需要生成的配置文件类型",
+                choices: questions.q1,
+                default: "all",
+                name: "fileType",
+                when: () => {
+                    return !args.yes;
+                }
+            }, {
+                type: "confirm",
+                default: false,
+                message: questions.q2,
+                name: "oldCode",
+                when: () => {
+                    return !args.yes;
+                }
+            }, {
+                type: "confirm",
+                default: false,
+                message: questions.q3,
+                name: "force",
+                when: answer => {
+                    if (!!args.yes) {
+                        return false;
+                    }
+                    switch (answer.fileType) {
+                        case "all":
+                            {
+                                if (!fileExist.eslintignore && !fileExist.eslintrc && !fileExist.rconfigjs) return false;
+                                return true;
+                            }
+                            break;
+                        case "eslint":
+                            {
+                                if (!fileExist.eslintignore && !fileExist.eslintrc) return false;
+                                return true
+                            }
+                            break;
+                        case "rconfig":
+                            {
+                                if (!fileExist.rconfigjs) return false;
+                                return true
+                            }
+                            break;
+                    }
                     return false;
                 }
-                switch (answer.fileType) {
-                    case "all":
-                        {
-                            if (!fileExist.eslintignore && !fileExist.eslintrc && !fileExist.rconfigjs) return false;
-                            return true;
-                        }
-                        break;
-                    case "eslint":
-                        {
-                            if (!fileExist.eslintignore && !fileExist.eslintrc) return false;
-                            return true
-                        }
-                        break;
-                    case "rconfig":
-                        {
-                            if (!fileExist.rconfigjs) return false;
-                            return true
-                        }
-                        break;
-                }
-                return false;
-            }
-        }]).then(answer => {
-            if (!!args.yes) {
-                let opt = {
+            }])
+            .then(answer => {
+                let options = {
                     fileType: "all",
                     isOld: !!args.old,
                     force: !!args.force
+                };
+                if (!args.yes) {
+                    options = {
+                        fileType: answer.fileType,
+                        isOld: !!answer.oldCode,
+                        force: !!answer.force
+                    }
                 }
-                initConfigFile(opt, cwd, fileExist);
-            } else {
-                initConfigFile(answer, cwd, fileExist);
-            }
-        }).catch(err => {
-            console.log(err)
-        });
+                initConfigFile(options, cwd, fileExist);
+            })
+            .catch(err => {
+                console.log(err)
+            });
 
     });
 
+//run指令，用于检查当前目录下的所有代码
 program.command("run")
     .description("Check your folder with different options.")
     .option("-P, --path [configfile path]", "The path of your config file which should follow with the -P or --path option.")
@@ -134,7 +137,7 @@ program.command("run")
     .option("-D, --debug,", "Run in debug mode.")
     .option("-M, --multifile", "Output the results as a single log for each file checked")
     .option("-Q, --question", "Run immidiately without config any options")
-    .action((args) => {
+    .action(args => {
         let scb = ans => {
             return !ans.closeCheck;
         };
@@ -160,7 +163,7 @@ program.command("run")
                 when: scb
             }, {
                 type: "confirm",
-                message: "是否开启Css检查(默认:y)",
+                message: "是否开启CSS检查(默认:y)",
                 default: true,
                 name: "checkCss",
                 when: scb
@@ -185,20 +188,35 @@ program.command("run")
                 message: "错误日志采用单文件(n表示多文件)(默认:y)",
                 default: true,
                 name: "multifile"
-            }]).then(answer => {
+            }])
+            .then(answer => {
                 answer.optionsPath = "r.config.js";
                 checkOptionsValid(answer) && run(cwd, answer);
-            }).catch(err => {
+            })
+            .catch(err => {
                 console.log(err)
             });
         }
     });
-
+//r-check fix 指令，用于修复ESLint检查出来的错误
 program.command("fix")
-    .description("Fix some simple js bugs")
+    .description("Fix some simple javascipt bugs discovered by ESlint")
     .action(() => {
         fixBug(cwd);
     })
+//r-check oem-watch指令，当开发OEM项目时，使用该指令来监视当前文件目录
+program.command("oem-watch")
+    .description("Watch the files blow your current working directory while doing oem test")
+    .option("-S, --silent", "Disable all console")
+    .action(args => {
+        let debug = !!args.silent;
+        //监听当前目录的状态
+
+        fs.watch(process.cwd(), (event, filename) => {
+
+        });
+    });
+
 program.parse(args);
 
 /**
@@ -236,3 +254,22 @@ function HelloWorld() {
     console.log("Current Vertion:" + require('../package').version);
     console.log("");
 }
+
+
+
+// //DEBUG: r-check run DEBUG start
+// let debug_cwd = path.join(__dirname,"../test");
+// let opt =  {
+//     closeCheck: true,
+//     checkHtml: true,
+//     checkCss: true,
+//     checkJs: true,
+//     checkEncode: false,
+//     checkTranslate: true,
+//     debug: true,
+//     multifile: true,
+//     optionsPath: "r.config.js"
+// }
+// run(debug_cwd, opt);
+
+//DEBUG: r-check run DEBUG end 

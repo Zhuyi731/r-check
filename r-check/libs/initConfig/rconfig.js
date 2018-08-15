@@ -23,7 +23,6 @@ var options = {
         "placeholder": true,
         //<!DOCTYPE>检查 
         "doctype-html5": true,
-
         //title必须     
         "title-require": false,
         //alt必须     
@@ -65,11 +64,9 @@ var options = {
         //不允许 0px  0% 0em 
         "zero-units": true,
         //自定义的规则 
-
         //不能只有前缀属性，没有通用属性  -moz-border-radius  并且通用属性必须在最后 
         //TODO false->true by pjl
         "vendor-prefix": true,
-
         //是否检测 !important 
         "important": false,
         //是否允许 .bar.foo 这种两个连在一起的选择器 
@@ -109,18 +106,17 @@ var options = {
     },
     "jsonAndCode": { //检查源码中每条翻译是否在json中都由对应的词条
         "jsonPath": "./app/common/lang", //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况
-        "codePath": "./app", //***必填  代码的路径，如果就是本地  输入./即可
+        "codePath": "./", //***必填  代码的路径，如果就是本地  输入./即可
         "logPath": "./errorLog" //***选填  错误日志的路径，不填默认为 ./errorLog
     },
     "jsonAndExcel": { //检查json文件和excel文件的词条是否一一对应
         "jsonPath": "./app/common/lang", //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况
-        "excelPath": "./docs/O3.xlsx", //***必填   语言包的路径
+        "excelPath": "./ci_excel/lang.xlsx", //***必填   语言包的路径
         "logPath": "./errorLog", //***选填   错误日志的路径，不填默认为 ./errorLog
-        "defaultLang": "en", //***必填   默认的语言，excel文件中以这种语言为基准
-        "langToCheck": ["cn"] //***必填   需要检查的语言项，必须要能在excel文件中找到
+        "defaultLang": "en" //***必填   默认的语言，excel文件中以这种语言为基准
     },
     "checkDuplicate": { //检查excel中是否有重复的词条。重复词条会导致翻译的一对多问题
-        "excelPath": "./test/O3.xlsx", //***必填   语言包的路径、
+        "excelPath": "./ci_excel/lang.xlsx", //***必填   语言包的路径、
         "defaultLang": "en", //***必填   默认的语言，excel文件中以这种语言为基准
         "logPath": "./errorLog" //***选填   错误日志的路径，不填默认为 ./errorLo
     },

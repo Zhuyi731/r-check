@@ -1,31 +1,35 @@
 const console = require("./utils/console");
 const fs = require("fs");
 const path = require("path");
-const checkJsonCode = require("./node_b28");
-const checkJsonExcel = require("./jsonAndExcel/excelCheck");
-const checkDup = require("./checkDuplicate/checkDup");
+const ExcelJsonValidator = require("./jsonAndExcel/JsonExcelValidator");
+const DupValidator = require("./checkDuplicate/DuplicateCheckValidator");
+const JsonCodeValidator = require("./jsonAndCode/JsonCodeValidator");
 const debug = require("../../common/debug");
 
 function translateCheck(filePath, options) {
     //首先检查配置项是否合法，非法则抛出错误
     let configOptions = checkOptionsValid(filePath, options);
-    
+
+    //TODO:可以优化checkOptions到各个Validator中验证
+
     if (configOptions.jsonAndCode) {
-        console.log("检查语言包与代码翻译中");
-        checkJsonCode(configOptions.jsonAndCode.codePath, configOptions.jsonAndCode.jsonPath, configOptions.jsonAndCode.logPath, "json与代码中未对应项错误日志.txt");
-        console.log("语言包与代码翻译检查完毕");
+        let jc = new JsonCodeValidator({
+            src: configOptions.jsonAndCode.codePath,
+            jsonPath: configOptions.jsonAndCode.jsonPath,
+            logPath: configOptions.jsonAndCode.logPath,
+            fileName: "json与代码中未对应项错误日志.txt"
+        });
+        jc.run();
     }
 
     if (configOptions.jsonAndExcel) {
-        console.log("检查语言包与excel是否对应");
-        checkJsonExcel(configOptions.jsonAndExcel);
-        console.log("语言包与excel检查完毕");
+        let va = new ExcelJsonValidator(configOptions.jsonAndExcel);
+        va.run();
     }
 
     if (configOptions.checkDuplicate) {
-        console.log("检查excel中的重复词条");
-        checkDup(configOptions.checkDuplicate);
-        console.log("重复词条检查完毕");
+        let dupVa = new DupValidator(configOptions.checkDuplicate);
+        dupVa.run();
     }
 
 }
@@ -40,12 +44,8 @@ function checkOptionsValid(filePath, options) {
         configPath = path.join(filePath, "r.config.js");
 
     //检查是否有配置文件，没有配置文件则不能继续进行下去
-    if (options.optionsPath === null) {
-        if (!isFileExists(path.join(filePath, "r.config.js"))) {
-            throw new Error("开启了翻译检测但是没有配置检测文件，请使用-P <filePath>来配置配置文件路径")
-        }
-    } else {
-        configPath = path.join(filePath, options.optionsPath);
+    if (!isFileExists(path.join(filePath, "r.config.js"))) {
+        throw new Error("没有检测到r.config.js");
     }
     //获取文件内部的配置信息
     configOptions = require(configPath);
@@ -66,9 +66,8 @@ function checkOptionsValid(filePath, options) {
         if (!configOptions.jsonAndCode.codePath || !configOptions.jsonAndCode.jsonPath) {
             throw new Error("jsonAndCode的codePath属性和jsonPath属性必须配置");
         } else {
-            debug("codePath", configOptions.jsonAndCode.codePath, !isFileExists(configOptions.jsonAndCode.codePath));
-            debug("jsonPath", configOptions.jsonAndCode.jsonPath, !isFileExists(configOptions.jsonAndCode.jsonPath));
-
+            configOptions.jsonAndCode.codePath = path.join(filePath, configOptions.jsonAndCode.codePath);
+            configOptions.jsonAndCode.jsonPath = path.join(filePath, configOptions.jsonAndCode.jsonPath)
             if (!isFileExists(configOptions.jsonAndCode.codePath) || !isFileExists(configOptions.jsonAndCode.jsonPath)) {
                 throw new Error("jsonAndCode路径配置有错误");
             }
@@ -77,12 +76,14 @@ function checkOptionsValid(filePath, options) {
                 console.info("jsonAndCode没有配置错误日志路径，使用默认路径");
                 configOptions.jsonAndCode.logPath = "./errorLog"
             }
+            configOptions.jsonAndCode.logPath = path.join(filePath, configOptions.jsonAndCode.logPath);
         }
         //判断错误日志文件夹是否存在，不存在则创建
         if (!isFileExists(configOptions.jsonAndCode.logPath)) {
             console.info("错误日志文件夹不存在，创建......");
             fs.mkdirSync(configOptions.jsonAndCode.logPath);
         }
+
     }
 
     /**
@@ -97,10 +98,11 @@ function checkOptionsValid(filePath, options) {
      *8.检查需要检查的语言项是否为数组
      */
     if (configOptions.jsonAndExcel) {
-        if (!configOptions.jsonAndExcel.jsonPath || !configOptions.jsonAndExcel.excelPath || !configOptions.jsonAndExcel.defaultLang || !configOptions.jsonAndExcel.langToCheck) {
-            throw new Error("jsonAndExcel中的jsonPath、excelPath、defaultLang、langToCheck属性必须配置");
+        if (!configOptions.jsonAndExcel.jsonPath || !configOptions.jsonAndExcel.excelPath || !configOptions.jsonAndExcel.defaultLang ) {
+            throw new Error("jsonAndExcel中的jsonPath、excelPath、defaultLang属性必须配置");
         } else {
-
+            configOptions.jsonAndExcel.jsonPath = path.join(filePath, configOptions.jsonAndExcel.jsonPath);
+            configOptions.jsonAndExcel.excelPath = path.join(filePath, configOptions.jsonAndExcel.excelPath);
             if (!isFileExists(configOptions.jsonAndExcel.jsonPath) || !isFileExists(configOptions.jsonAndExcel.excelPath)) {
                 throw new Error("jsonAndExcel路径配置有错误");
             }
@@ -113,14 +115,11 @@ function checkOptionsValid(filePath, options) {
                 throw new Error("defaultLang配置错误");
             }
 
-            if (!Array.isArray(configOptions.jsonAndExcel.langToCheck)) {
-                throw new Error("langToCheck属性应该为数组");
-            }
-
             if (!configOptions.jsonAndExcel.logPath) {
                 console.info("jsonAndExcel没有配置错误日志路径，使用默认路径");
                 configOptions.jsonAndExcel.logPath = "./errorLog";
             }
+            configOptions.jsonAndExcel.logPath = path.join(filePath, configOptions.jsonAndExcel.logPath);
         }
         //判断错误日志文件夹是否存在，不存在则创建
         if (!isFileExists(configOptions.jsonAndExcel.logPath)) {
@@ -140,10 +139,11 @@ function checkOptionsValid(filePath, options) {
         if (typeof configOptions.checkDuplicate.excelPath != "string") {
             throw new Error("excelpath 必须为路径");
         }
-        if(!configOptions.checkDuplicate.defaultLang){
+        if (!configOptions.checkDuplicate.defaultLang) {
             throw new Error("checkDuplicate必须配置defaultLang选项");
         }
-
+        configOptions.checkDuplicate.excelPath = path.join(filePath, configOptions.checkDuplicate.excelPath);
+        configOptions.checkDuplicate.logPath = path.join(filePath, configOptions.checkDuplicate.logPath);
     }
 
     return configOptions;
@@ -157,10 +157,5 @@ function isFileExists(filePath) {
     return fs.existsSync(filePath);
 }
 
-function output(str) {
-    console.log("");
-    console.log(str);
-    console.log("");
-}
 
 module.exports = translateCheck;

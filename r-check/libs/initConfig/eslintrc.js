@@ -16,6 +16,7 @@ module.exports = {
     "XMLHttpRequest":true,
     "R":true,
     "G":true,
+    "B":true,
     "undefined":true,
     "Highcharts":true,
     "Highchart":true
