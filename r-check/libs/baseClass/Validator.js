@@ -2,14 +2,20 @@ class Validator {
     constructor(options) {
         this.checkOptions(options);
         this.options = this.parseOptions(options);
-        this.runningFlag = true;
+        this.result = {
+            messages: [],
+            errNum: 0,
+            warnNum: 0
+        };
     }
 
     /**
      * 如果需要校验配置参数，重写此方法
      * @param {*校验器的配置} opt 
      */
-    checkOptions(opt) {}
+    checkOptions(opt) {
+        return true
+    }
 
     /**
      * 如果需要对参数进行处理，重写此方法
@@ -22,9 +28,14 @@ class Validator {
     //this is the entry for each Validator entity   
     //you should call this method to run your custom Validator
     run() {
+        let result;
         this.beforeCheck();
-        this.runningFlag && this.check();
+        this.parseOptions();
+        if (this.checkOptions() != false) {
+            result = this.check();
+        }
         this.afterCheck();
+        return result;
     }
 
     //@override required
@@ -39,6 +50,15 @@ class Validator {
 
     afterCheck() {
         console.log(`${this.name}校验器验证完毕`);
+    }
+
+    message(mes, noWrap = false) {
+        console.log("");
+        console.log("");
+        !noWrap && (mes = `/***************${mes}********************/`);
+        console.log(mes);
+        console.log("");
+        console.log("");
     }
 
     debug() {

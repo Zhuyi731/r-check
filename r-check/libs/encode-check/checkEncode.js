@@ -4,9 +4,9 @@ const glob = require("glob");
 const path = require("path");
 
 function checkEncode(fPath, options) {
-    console.log(" ");
+    // console.log(" ");
     console.log("/************开始文件编码格式检查************/")
-    console.log(" ");
+    // console.log(" ");
     let fileList = glob.sync(fPath + "/!(node_modules|goform)/**/*.*");
     let errorDatas = 0;
 
@@ -16,7 +16,7 @@ function checkEncode(fPath, options) {
     fileList = filterFiles(fileList, rConfig);
 
     //遍历文件检查编码    
-    fileList.forEach((file) => {
+    fileList.forEach(file => {
         let data = fs.readFileSync(file),
             result = jschardet.detect(data),
             fileType = result.encoding,
@@ -42,6 +42,7 @@ function checkEncode(fPath, options) {
     console.log(" ");
     console.log("/************文件编码格式检查结束************/")
     console.log(" ");
+    return errorDatas;
 }
 
 /**

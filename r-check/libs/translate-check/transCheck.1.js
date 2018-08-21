@@ -11,7 +11,11 @@ function translateCheck(filePath, options) {
     let configOptions = checkOptionsValid(filePath, options);
 
     //TODO:可以优化checkOptions到各个Validator中验证
-
+    let messages = {
+        codeJson: null,
+        excelJson: null,
+        excel: null
+    };
     if (configOptions.jsonAndCode) {
         let jc = new JsonCodeValidator({
             src: configOptions.jsonAndCode.codePath,
@@ -19,19 +23,19 @@ function translateCheck(filePath, options) {
             logPath: configOptions.jsonAndCode.logPath,
             fileName: "json与代码中未对应项错误日志.txt"
         });
-        jc.run();
+        messages.codeJson = jc.run();
     }
 
     if (configOptions.jsonAndExcel) {
         let va = new ExcelJsonValidator(configOptions.jsonAndExcel);
-        va.run();
+        messages.excelJson = va.run();
     }
 
     if (configOptions.checkDuplicate) {
         let dupVa = new DupValidator(configOptions.checkDuplicate);
-        dupVa.run();
+        messages.excel = dupVa.run();
     }
-
+    return messages;
 }
 
 /**
@@ -98,7 +102,7 @@ function checkOptionsValid(filePath, options) {
      *8.检查需要检查的语言项是否为数组
      */
     if (configOptions.jsonAndExcel) {
-        if (!configOptions.jsonAndExcel.jsonPath || !configOptions.jsonAndExcel.excelPath || !configOptions.jsonAndExcel.defaultLang ) {
+        if (!configOptions.jsonAndExcel.jsonPath || !configOptions.jsonAndExcel.excelPath || !configOptions.jsonAndExcel.defaultLang) {
             throw new Error("jsonAndExcel中的jsonPath、excelPath、defaultLang属性必须配置");
         } else {
             configOptions.jsonAndExcel.jsonPath = path.join(filePath, configOptions.jsonAndExcel.jsonPath);

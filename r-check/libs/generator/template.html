@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	    crossorigin="anonymous">
+	<title>错误总览</title>
+	<style>
+		.none {
+			display: none;
+		}
+
+		.list-group .badge {
+			position: absolute;
+			top: 10px;
+			right: 15px;
+		}
+
+		.list-group button {
+			transition: all 0.5s;
+			display: inline-block;
+			border-radius: 4px;
+			width: 13%;
+		}
+
+		.error-table {
+			border: 1px solid #ddd;
+			border-spacing: 0px;
+			border-radius: 5px;
+			margin-bottom: 2px;
+			text-align: center;
+		}
+
+		.error-table thead tr {
+			color: #b94a48;
+			background: #f2dede;
+			border-radius: 2px;
+			height: 30px;
+			line-height: 30px;
+			font-size: 16px;
+		}
+
+		.error-table thead tr th {
+			text-align: center;
+		}
+
+		.error-table .table-head .total {
+			float: right;
+		}
+
+		.error-table .error-line {
+			color: #9da0a4;
+		}
+
+		.error-table .error-type {
+			font-weight: 700;
+		}
+
+		.error-table .error-detail {
+			color: #333;
+		}
+
+		.error-table tbody tr {
+			display: table-row;
+		}
+
+		.error-table.active tbody {
+			display: table-footer-group;
+		}
+
+		.error-table tbody {
+			display: none;
+		}
+
+		.error-table .plus-minus {
+			cursor: pointer;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>项目错误报告</h1>
+			<p>项目/*r-productName*/错误总览</p>
+			<hr>
+			<p>连接互联网查看此网页效果更佳(不支持IE8查看！！！)</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="list-group" id="leftPannel">
+					<button type="button" id="html" class="list-group-item">HTML 错误<span class="badge badge-dark"><!--htmlCt--></span></button>
+					<button type="button" id="css" class="list-group-item">CSS 错误<span class="badge badge-dark"><!--cssCt--></span></button>
+					<button type="button" id="js" class="list-group-item">JS 错误<span class="badge badge-dark"><!--jsCt--></span></button>
+					<button type="button" id="codeJson" class="list-group-item">代码&lt;==&gt;json<span class="badge badge-dark"><!--codeJsonCt--></span></button>
+					<button type="button" id="excelJson" class="list-group-item">Excel&lt;==&gt;json<span class="badge badge-dark"><!--excelJsonCt--></span></button>
+					<button type="button" id="excel" class="list-group-item">Excel重复词条<span class="badge badge-dark"><!--excelCt--></span></button>
+					<button type="button" id="encode" class="list-group-item">编码检查<span class="badge badge-dark"><!--encodeCt--></span></button>
+				</div>
+
+			</div>
+			<div class="col-xs-12 right-pannel">
+				<div class="content none" id="htmlContent">
+					<div class="panel panel-danger">
+						<div class="panel-heading">HTML 错误</div>
+						<div class="panel-body">
+							<!--html-->
+						</div>
+					</div>
+				</div>
+				<div class="content none" id="cssContent">
+					<div class="panel panel-danger">
+						<div class="panel-heading">CSS 错误</div>
+						<div class="panel-body">
+							<!--css-->
+						</div>
+					</div>
+				</div>
+				<div class="content none" id="jsContent">
+					<div class="panel panel-danger">
+						<div class="panel-heading">JS 错误</div>
+						<div class="panel-body">
+							<!--js-->
+						</div>
+					</div>
+				</div>
+				<div class="content none" id="codeJsonContent">
+					<div class="panel panel-danger">
+						<div class="panel-heading">代码与json包不对应项</div>
+						<div class="panel-body">
+							<!--codeJson-->
+						</div>
+					</div>
+				</div>
+				<div class="content none" id="excelJsonContent">
+					<div class="panel panel-danger">
+						<div class="panel-heading">Excel与json包不对应项</div>
+						<div class="panel-body">
+							<!--excelJson-->
+						</div>
+					</div>
+				</div>
+				<div class="content none" id="excelContent">
+					<div class="panel panel-danger">
+						<div class="panel-heading">Excel中的重复词条</div>
+						<div class="panel-body">
+							<!--excel-->
+						</div>
+					</div>
+				</div>
+				<div class="content none" id="encodeContent">
+					<div class="panel panel-danger">
+						<div class="panel-heading">编码检查</div>
+						<div class="panel-body">
+							<!--encode-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	    crossorigin="anonymous"></script>
+	<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	    crossorigin="anonymous"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	    crossorigin="anonymous"></script>
+	<script>
+		$(function () {
+			function Main() {
+
+				this.init = function () {
+					this.initEvent();
+				}
+
+				this.initEvent = function () {
+					$("#leftPannel").delegate("button", "click", function (e) {
+						$(".content").addClass("none");
+						$("button.active").removeClass("active");
+						$(this).addClass("active");
+						$("#" + $(this).attr("id") + "Content").removeClass("none");
+					});
+
+					$(".table-head").on("click", function (e) {
+						$(this).parent().parent().toggleClass("active");
+						let text = $(this).find(".plus-minus").text();
+						$(this).find(".plus-minus").text(text == "[-]" ? "[+]" : "[-]");
+					});
+
+				}
+			}
+			var main = new Main();
+			main.init();
+		});
+	</script>
+</body>
+
+</html>

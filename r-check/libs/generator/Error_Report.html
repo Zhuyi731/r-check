@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	    crossorigin="anonymous">
+	<title>错误总览</title>
+	<style>
+		.none {
+			display: none;
+		}
+
+		.list-group .badge {
+			position: absolute;
+			top: 10px;
+			right: 15px;
+		}
+
+		.list-group button {
+			transition: all 0.5s;
+			display: inline-block;
+			border-radius: 4px;
+			width: 13%;
+		}
+
+		.error-table {
+			border: 1px solid #ddd;
+			border-spacing: 0px;
+			border-radius: 5px;
+			margin-bottom: 2px;
+			text-align: center;
+		}
+
+		.error-table thead tr {
+			color: #b94a48;
+			background: #f2dede;
+			border-radius: 2px;
+			height: 30px;
+			line-height: 30px;
+			font-size: 16px;
+		}
+
+		.error-table thead tr th {
+			text-align: center;
+		}
+
+		.error-table .table-head .total {
+			float: right;
+		}
+
+		.error-table .error-line {
+			color: #9da0a4;
+		}
+
+		.error-table .error-type {
+			font-weight: 700;
+		}
+
+		.error-table .error-detail {
+			color: #333;
+		}
+
+		.error-table tbody tr {
+			display: table-row;
+		}
+
+		.error-table.active tbody {
+			display: table-footer-group;
+		}
+
+		.error-table tbody {
+			display: none;
+		}
+
+		.error-table .plus-minus {
+			cursor: pointer;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>项目错误报告</h1>
+			<p>项目/*r-productName*/错误总览</p>
+			<hr>
+			<p>连接互联网查看此网页效果更佳(不支持IE8查看！！！)</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="list-group" id="leftPannel">
+					<button type="button" id="html" class="list-group-item">HTML 错误<span class="badge badge-dark">2</span></button>
+					<button type="button" id="css" class="list-group-item">CSS 错误<span class="badge badge-dark">0</span></button>
+					<button type="button" id="js" class="list-group-item">JS 错误<span class="badge badge-dark">52</span></button>
+					<button type="button" id="codeJson" class="list-group-item">代码&lt;==&gt;json<span class="badge badge-dark">30</span></button>
+					<button type="button" id="excelJson" class="list-group-item">Excel&lt;==&gt;json<span class="badge badge-dark">156</span></button>
+					<button type="button" id="excel" class="list-group-item">Excel重复词条<span class="badge badge-dark">2</span></button>
+					<button type="button" id="encode" class="list-group-item">编码检查<span class="badge badge-dark">1</span></button>
+				</div>
+
+			</div>
+			<div class="col-xs-12 right-pannel">
+				<div class="content none" id="htmlContent">
+					<div class="panel panel-danger">
+						<div class="panel-heading">HTML 错误</div>
+						<div class="panel-body">
+							<table class="table error-table">
+            <thead>
+                <tr class="danger table-head" colspan="8">
+                    <th colspan="8">
+                        <span class="plus-minus">[+]</span> app/module/system_password/system_password.html<span class="total"> 2 problems (2 errors, 0 warnings)</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td class="error-line" width="15%"> 第6行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> The attribute name of [ data-userType ] must be in lowercase. </td>
+                <td width="15%"><a href="https://github.com/yaniswang/HTMLHint/wiki/attr-lowercase" target="_blank" >attr-lowercase </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第11行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> The attribute name of [ data-userType ] must be in lowercase. </td>
+                <td width="15%"><a href="https://github.com/yaniswang/HTMLHint/wiki/attr-lowercase" target="_blank" >attr-lowercase </a></td>
+            </tr>
+            </tbody>
+        </table>
+						</div>
+					</div>
+				</div>
+				<div class="content none" id="cssContent">
+					<div class="panel panel-danger">
+						<div class="panel-heading">CSS 错误</div>
+						<div class="panel-body">
+							<h1>没有错误</h1>
+						</div>
+					</div>
+				</div>
+				<div class="content none" id="jsContent">
+					<div class="panel panel-danger">
+						<div class="panel-heading">JS 错误</div>
+						<div class="panel-body">
+							<table class="table error-table">
+            <thead>
+                <tr class="danger table-head" colspan="8">
+                    <th colspan="8">
+                        <span class="plus-minus">[+]</span> \app\index.js<span class="total"> 3 problems (0 errors, 3 warnings)</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td class="error-line" width="15%"> 第39行 </td>
+                <td class="error-type text-danger" width="15%"> Warning </td>
+                <td class="error-detail" width="55%"> 'CONFIG_STYLE' is not defined. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/no-undef" target="_blank" >no-undef </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第39行 </td>
+                <td class="error-type text-danger" width="15%"> Warning </td>
+                <td class="error-detail" width="55%"> 'CONFIG_STYLE' is not defined. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/no-undef" target="_blank" >no-undef </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第43行 </td>
+                <td class="error-type text-danger" width="15%"> Warning </td>
+                <td class="error-detail" width="55%"> 'CONFIG_PRODUCT_MODEL' is not defined. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/no-undef" target="_blank" >no-undef </a></td>
+            </tr>
+            </tbody>
+        </table><table class="table error-table">
+            <thead>
+                <tr class="danger table-head" colspan="8">
+                    <th colspan="8">
+                        <span class="plus-minus">[+]</span> \app\login.js<span class="total"> 4 problems (0 errors, 4 warnings)</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td class="error-line" width="15%"> 第44行 </td>
+                <td class="error-type text-danger" width="15%"> Warning </td>
+                <td class="error-detail" width="55%"> 'CONFIG_STYLE' is not defined. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/no-undef" target="_blank" >no-undef </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第44行 </td>
+                <td class="error-type text-danger" width="15%"> Warning </td>
+                <td class="error-detail" width="55%"> 'CONFIG_STYLE' is not defined. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/no-undef" target="_blank" >no-undef </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第48行 </td>
+                <td class="error-type text-danger" width="15%"> Warning </td>
+                <td class="error-detail" width="55%"> 'CONFIG_PRODUCT_MODEL' is not defined. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/no-undef" target="_blank" >no-undef </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第49行 </td>
+                <td class="error-type text-danger" width="15%"> Warning </td>
+                <td class="error-detail" width="55%"> 'CONFIG_PRODUCT_MODEL' is not defined. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/no-undef" target="_blank" >no-undef </a></td>
+            </tr>
+            </tbody>
+        </table><table class="table error-table">
+            <thead>
+                <tr class="danger table-head" colspan="8">
+                    <th colspan="8">
+                        <span class="plus-minus">[+]</span> \app\module\system_status\js\system_status.js<span class="total"> 2 problems (0 errors, 2 warnings)</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td class="error-line" width="15%"> 第361行 </td>
+                <td class="error-type text-danger" width="15%"> Warning </td>
+                <td class="error-detail" width="55%"> 'CONFIG_STYLE' is not defined. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/no-undef" target="_blank" >no-undef </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第361行 </td>
+                <td class="error-type text-danger" width="15%"> Warning </td>
+                <td class="error-detail" width="55%"> 'CONFIG_STYLE' is not defined. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/no-undef" target="_blank" >no-undef </a></td>
+            </tr>
+            </tbody>
+        </table><table class="table error-table">
+            <thead>
+                <tr class="danger table-head" colspan="8">
+                    <th colspan="8">
+                        <span class="plus-minus">[+]</span> \app\module\wizard\js\wizard.js<span class="total"> 43 problems (41 errors, 2 warnings)</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td class="error-line" width="15%"> 第150行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> '$html' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第152行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> '$html' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第161行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> '$html' is already defined. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/no-redeclare" target="_blank" >no-redeclare </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第161行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> '$html' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第163行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> '$html' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第837行 </td>
+                <td class="error-type text-danger" width="15%"> Warning </td>
+                <td class="error-detail" width="55%"> 'checkIpInSameSegment' is not defined. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/no-undef" target="_blank" >no-undef </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1047行 </td>
+                <td class="error-type text-danger" width="15%"> Warning </td>
+                <td class="error-detail" width="55%"> 'checkIpInSameSegment' is not defined. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/no-undef" target="_blank" >no-undef </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1268行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1268行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1269行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1269行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1271行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1271行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1271行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1271行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1272行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1272行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1283行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1283行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' is already defined. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/no-redeclare" target="_blank" >no-redeclare </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1283行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1284行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1284行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1286行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1286行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1286行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1286行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1286行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1286行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1286行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1286行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1287行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1287行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1295行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1295行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' is already defined. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/no-redeclare" target="_blank" >no-redeclare </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1295行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1296行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1296行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1298行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1298行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1298行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1298行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1299行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr><tr>
+                <td class="error-line" width="15%"> 第1299行 </td>
+                <td class="error-type text-danger" width="15%"> Error </td>
+                <td class="error-detail" width="55%"> 'prop' used outside of binding context. </td>
+                <td width="15%"><a href="https://eslint.org/docs/rules/block-scoped-var" target="_blank" >block-scoped-var </a></td>
+            </tr>
+            </tbody>
+        </table>
+						</div>
+					</div>
+				</div>
+				<div class="content none" id="codeJsonContent">
+					<div class="panel panel-danger">
+						<div class="panel-heading">代码与json包不对应项</div>
+						<div class="panel-body">
+							<table class="table error-table">
+                        <thead>
+                            <tr class="danger table-head" colspan="4">
+                                <th colspan="4">
+                                    <span class="plus-minus">[+]</span>\app\common\component\FormCalendar.js<span class="total"> 8 problems (8 errors, 0 warnings)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "&lt;dt&gt;日&lt;/dt&gt;" &nbsp;没有被翻译 </td>
+                        </tr><tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "&lt;dt&gt;一&lt;/dt&gt;" &nbsp;没有被翻译 </td>
+                        </tr><tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "&lt;dt&gt;二&lt;/dt&gt;" &nbsp;没有被翻译 </td>
+                        </tr><tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "&lt;dt&gt;三&lt;/dt&gt;" &nbsp;没有被翻译 </td>
+                        </tr><tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "&lt;dt&gt;四&lt;/dt&gt;" &nbsp;没有被翻译 </td>
+                        </tr><tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "&lt;dt&gt;五&lt;/dt&gt;" &nbsp;没有被翻译 </td>
+                        </tr><tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "&lt;dt&gt;六&lt;/dt&gt;" &nbsp;没有被翻译 </td>
+                        </tr><tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "Date format: YYYY-MM-DD" &nbsp;没有被翻译 </td>
+                        </tr>   
+                        </tbody>
+                    </table><table class="table error-table">
+                        <thead>
+                            <tr class="danger table-head" colspan="4">
+                                <th colspan="4">
+                                    <span class="plus-minus">[+]</span>\app\common\component\ModalDialog.js<span class="total"> 2 problems (2 errors, 0 warnings)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "消息提醒" &nbsp;没有被翻译 </td>
+                        </tr><tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "消息体" &nbsp;没有被翻译 </td>
+                        </tr>   
+                        </tbody>
+                    </table><table class="table error-table">
+                        <thead>
+                            <tr class="danger table-head" colspan="4">
+                                <th colspan="4">
+                                    <span class="plus-minus">[+]</span>\app\common\libs\reasy-ui.js<span class="total"> 2 problems (2 errors, 0 warnings)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "Cannot enter \\" &nbsp;没有被翻译 </td>
+                        </tr><tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "Space, dot(.), single quotation marks ('') and double quotation marks (\"\") are disallowed in a host name." &nbsp;没有被翻译 </td>
+                        </tr>   
+                        </tbody>
+                    </table><table class="table error-table">
+                        <thead>
+                            <tr class="danger table-head" colspan="4">
+                                <th colspan="4">
+                                    <span class="plus-minus">[+]</span>\app\login.js<span class="total"> 1 problems (1 errors, 0 warnings)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "简体中文" &nbsp;没有被翻译 </td>
+                        </tr>   
+                        </tbody>
+                    </table><table class="table error-table">
+                        <thead>
+                            <tr class="danger table-head" colspan="4">
+                                <th colspan="4">
+                                    <span class="plus-minus">[+]</span>\app\module\lan_vlan\js\lan_vlan.js<span class="total"> 1 problems (1 errors, 0 warnings)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "PVID" &nbsp;没有被翻译 </td>
+                        </tr>   
+                        </tbody>
+                    </table><table class="table error-table">
+                        <thead>
+                            <tr class="danger table-head" colspan="4">
+                                <th colspan="4">
+                                    <span class="plus-minus">[+]</span>\app\module\system_status\js\system_status.js<span class="total"> 3 problems (3 errors, 0 warnings)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "Mixed WPA/WPA2-PSK" &nbsp;没有被翻译 </td>
+                        </tr><tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "You can change the name of this device on the \"Network\" &gt; \"LAN Setup\" page." &nbsp;没有被翻译 </td>
+                        </tr><tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "it displays \"No Peer AP\" if the device works in AP or Router mode. And in other modes, it displays the MAC address of peer AP that this device bridged." &nbsp;没有被翻译 </td>
+                        </tr>   
+                        </tbody>
+                    </table><table class="table error-table">
+                        <thead>
+                            <tr class="danger table-head" colspan="4">
+                                <th colspan="4">
+                                    <span class="plus-minus">[+]</span>\app\module\wizard\js\p2mpMode.js<span class="total"> 1 problems (1 errors, 0 warnings)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "Mixed WPA/WPA2-PSK" &nbsp;没有被翻译 </td>
+                        </tr>   
+                        </tbody>
+                    </table><table class="table error-table">
+                        <thead>
+                            <tr class="danger table-head" colspan="4">
+                                <th colspan="4">
+                                    <span class="plus-minus">[+]</span>\app\module\wizard\js\repeaterMode.js<span class="total"> 1 problems (1 errors, 0 warnings)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "Mixed WPA/WPA2-PSK" &nbsp;没有被翻译 </td>
+                        </tr>   
+                        </tbody>
+                    </table><table class="table error-table">
+                        <thead>
+                            <tr class="danger table-head" colspan="4">
+                                <th colspan="4">
+                                    <span class="plus-minus">[+]</span>\app\module\wizard\js\wizard.js<span class="total"> 2 problems (2 errors, 0 warnings)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "Mixed WPA/WPA2-PSK" &nbsp;没有被翻译 </td>
+                        </tr><tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "Open" &nbsp;没有被翻译 </td>
+                        </tr>   
+                        </tbody>
+                    </table><table class="table error-table">
+                        <thead>
+                            <tr class="danger table-head" colspan="4">
+                                <th colspan="4">
+                                    <span class="plus-minus">[+]</span>\app\index.tmpl.html<span class="total"> 1 problems (1 errors, 0 warnings)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "O3V2.0" &nbsp;没有被翻译 </td>
+                        </tr>   
+                        </tbody>
+                    </table><table class="table error-table">
+                        <thead>
+                            <tr class="danger table-head" colspan="4">
+                                <th colspan="4">
+                                    <span class="plus-minus">[+]</span>\app\login.html<span class="total"> 1 problems (1 errors, 0 warnings)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "O3V2.0" &nbsp;没有被翻译 </td>
+                        </tr>   
+                        </tbody>
+                    </table><table class="table error-table">
+                        <thead>
+                            <tr class="danger table-head" colspan="4">
+                                <th colspan="4">
+                                    <span class="plus-minus">[+]</span>\app\module\net_tool\net_tool.html<span class="total"> 3 problems (3 errors, 0 warnings)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "AVG RX" &nbsp;没有被翻译 </td>
+                        </tr><tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "AVG TX" &nbsp;没有被翻译 </td>
+                        </tr><tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "AVG Total" &nbsp;没有被翻译 </td>
+                        </tr>   
+                        </tbody>
+                    </table><table class="table error-table">
+                        <thead>
+                            <tr class="danger table-head" colspan="4">
+                                <th colspan="4">
+                                    <span class="plus-minus">[+]</span>\app\module\system_log\system_log.html<span class="total"> 1 problems (1 errors, 0 warnings)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "WAN" &nbsp;没有被翻译 </td>
+                        </tr>   
+                        </tbody>
+                    </table><table class="table error-table">
+                        <thead>
+                            <tr class="danger table-head" colspan="4">
+                                <th colspan="4">
+                                    <span class="plus-minus">[+]</span>\app\module\wizard\wizard.html<span class="total"> 1 problems (1 errors, 0 warnings)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "The device is set to" &nbsp;没有被翻译 </td>
+                        </tr>   
+                        </tbody>
+                    </table><table class="table error-table">
+                        <thead>
+                            <tr class="danger table-head" colspan="4">
+                                <th colspan="4">
+                                    <span class="plus-minus">[+]</span>\app\module\wrl_basic\wrl_advance.html<span class="total"> 2 problems (2 errors, 0 warnings)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "WMM" &nbsp;没有被翻译 </td>
+                        </tr><tr>
+                            <td class="error-line" width="15%"> 在"cn"语言中 </td>
+                            <td class="error-type text-danger" width="15%"> Error </td>
+                            <td class="error-line" width="80%"> "APSD" &nbsp;没有被翻译 </td>
+                        </tr>   
+                        </tbody>
+                    </table>
+						</div>
+					</div>
+				</div>
+				<div class="content none" id="excelJsonContent">
+					<div class="panel panel-danger">
+						<div class="panel-heading">Excel与json包不对应项</div>
+						<div class="panel-body">
+							<table class="table error-table">
+                    <thead>
+                        <tr class="danger table-head">
+                            <th><span class="plus-minus">[+]</span>cn<span class="total">(156 errors)</span></th>
+                            <th> key值 </th>
+                            <th> Excel值 </th>
+                            <th> Json值 </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> %s can't be the broadcast address. </td>
+                            <td width="25%"> %s不能为广播地址！ </td>
+                            <td width="25%"> %s不能为广播地址 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> %s can't be the network segment. </td>
+                            <td width="25%"> %s不能为网络地址！ </td>
+                            <td width="25%"> %s不能为网络地址 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> (GMT+05:30) Madras, Calcutta, Bombay,New Delhi </td>
+                            <td width="25%"> （GMT+05:30）马德拉斯，加尔各答，孟买，新德里 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 3 Days </td>
+                            <td width="25%"> 3天 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Advantage of Universal Repeater compared with Repeater mode: the WDS function is not required on peer AP. </td>
+                            <td width="25%"> 相对于中继模式的主要优势：上级AP无需支持WDS功能。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> ALL </td>
+                            <td width="25%"> 全部 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> All </td>
+                            <td width="25%"> 全部IP地址 </td>
+                            <td width="25%"> 全部 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> All confiugrations will restore to default factory setting after reset. </td>
+                            <td width="25%"> 所有配置会恢复到出厂默认状态 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> APSD </td>
+                            <td width="25%"> APSD </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Are you sure to reboot it? </td>
+                            <td width="25%"> 确定要重启吗？ </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Auto_ </td>
+                            <td width="25%"> 自动协商 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Auto-negotiation </td>
+                            <td width="25%"> 自动调节 </td>
+                            <td width="25%"> 自动协商 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> AVG RX </td>
+                            <td width="25%"> AVG RX </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> AVG Total </td>
+                            <td width="25%"> AVG Total </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> AVG TX </td>
+                            <td width="25%"> AVG TX </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Backup / Restore </td>
+                            <td width="25%"> 备份/恢复 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> bidirectional </td>
+                            <td width="25%"> 双向 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Cannot enter \\ </td>
+                            <td width="25%"> 不能输入\\ </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> connection status of PoE LAN/LAN port. It includes connection rate and duplex mode. </td>
+                            <td width="25%"> 显示设备两个网线接口的连接状态，包括连接速率和双工模式。 </td>
+                            <td width="25%"> 显示设备两个网线接口的连接状态，包括连接速率和双工模式 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> coverage-oriented </td>
+                            <td width="25%"> 强覆盖 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Current Mode: </td>
+                            <td width="25%"> 当前模式： </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> data/Page %s, </td>
+                            <td width="25%"> 数据/%s页 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Date & Time </td>
+                            <td width="25%"> 时间与日期 </td>
+                            <td width="25%"> 日期与时间 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Date format: YYYY-MM-DD </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Day </td>
+                            <td width="25%"> 天 </td>
+                            <td width="25%"> 日 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Destination IP Address/Domain Name </td>
+                            <td width="25%"> 目标IP地址/域名 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Destination IP Address/Domain Name: </td>
+                            <td width="25%"> 目标IP地址/域名： </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> DHCP动态获取 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Digits, letters, underscores, spaces, and Chinese characters are allowed. </td>
+                            <td width="25%"> 仅允许输入数字、字母、下划线、空格和中文字符 </td>
+                            <td width="25%"> 仅允许输入数字、字母、下划线和中文字符 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> For example, the default threshold of LED1, LED2 and LED3 are -90 dBm, -80 dBm and -70 dBm respectively. If the wireless signal strength received by this device is -63 dBm, all LEDs light up.  If the wireless signal strength received by this device is -73 dBm, only LED1 and LED2 light up. Default value is optimum. Do not change it if unnecessary. </td>
+                            <td width="25%"> 例如，设备默认设置LED1为-90dBm，LED2为-80dBm，LED3为-70dBm。此时，如果接收信号强度为-63dBm，则所有LED灯都亮起；如果接收信号强度为-73dBm，则只有LED1和LED2亮起。默认值是根据经验预设的最佳值，若无特殊需要，建议您保持默认设置。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Forget your password? </td>
+                            <td width="25%"> 忘记密码？ </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Fragmenting is a process that divides a frame into several fragments, which are transmitted and acknowledged separately. If the size of a frame exceeds this threshold, the frame is fragmented. In case of a high error rate, you can reduce the threshold to enable this device to resend only the fragments that have not been sent successfully, so as to increase the frame throughput. In an environment with little interference, you can increase the threshold to reduce the number of frames, so as to increase the frame throughput. </td>
+                            <td width="25%"> 分片的基本原理是将一个大的帧分成更小的分片，每个分片独立地传输和确认。当帧的实际大小超过指定的分片门限值时，该帧被分片传输。在误码率较高的环境下，可以把分片阈值适当降低，这样，如果传输失败，只有未成功发送的部分需要重新发送，从而提高帧传输的吞吐量。在无干扰环境下，适当提高分片阈值，可以减少确认帧的次数，以提高帧传输的吞吐量。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Fri. </td>
+                            <td width="25%"> 五 </td>
+                            <td width="25%"> 星期五 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Guest Account </td>
+                            <td width="25%"> 访客 </td>
+                            <td width="25%"> 访客账户 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> If the channel bandwidth is set to 20 MHz, this device uses lower transmission rate. And the maximum transmission rate is MCS7 (65 Mbps). </td>
+                            <td width="25%"> 如果选择20MHz的信道带宽，将自动使用较低的数据传输速率。此时，最大数据传输速率为MCS7（65Mbps）。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> If the channel bandwidth is set to 40 MHz, the maximum transmission rate is MCS7 (135 Mbps). </td>
+                            <td width="25%"> 如果选择40MHz的信道带宽，则最大数据传输速率为MCS7（135Mbps）。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> If the IP Address Type of this device is set to "DHCP(Dynamic IP)" and you want to log in to the web UI of the device, you need to check the IP address of this device from the DHCP server client list in the network, and then use this IP address to login. </td>
+                            <td width="25%"> 设置IP获取方式为“DHCP（自动获取）”后，下次登录设备的管理页面前，您必须到网络中的DHCP服务器的客户端列表中查看设备获得的IP地址，再用该IP地址登录。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> If the strength of the signals transmitted by a wireless device is weaker than this threshold, the wireless device cannot connect to this device. </td>
+                            <td width="25%"> 启用“接入信号强度限制”后，信号强度低于指定值的无线设备将无法接入到本设备。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> If this device works in Router mode, the PoE LAN/WAN port works as WAN port and is used to connect to a modem. </td>
+                            <td width="25%"> 作为路由器使用，设备的“PoE LAN/WAN”口为WAN口，连接到Modem（猫）。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> In this mode, the device can create a wireless network for wireless devices, such as smart phones, laptops, tablets and so on. </td>
+                            <td width="25%"> 把现有的有线网络转化为无线网络，供智能手机、笔记本、平板等无线设备接入。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> In this mode, the device works as a wireless adapter to connect to the wireless network of peer AP, and does not provide wireless access point. </td>
+                            <td width="25%"> 作为无线网卡，连接到上级无线网络，自身不提供无线接入功能。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> In this mode, this device creates a same wireless network as that of peer AP for broader network coverage. </td>
+                            <td width="25%"> 中继现有无线信号，并自动创建一个与上级无线网络相同的无线网络，扩展无线网络覆盖范围。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Information of current APs connected to this device when the device works in Client, Universal Repeater, or WISP mode. </td>
+                            <td width="25%"> 客户端、万能中继、无线WAN模式下，显示当前连接到本设备的AP信息。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Information of current wireless clients connected to this device when the device works in AP, Repeater, P2MP or Router mode. </td>
+                            <td width="25%"> AP、中继、P2MP、路由模式下，显示当前连接到本设备的无线设备信息。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> IP Address </td>
+                            <td width="25%"> IP 地址 </td>
+                            <td width="25%"> IP地址 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> IP address (also called management IP address) of this device. By default, it is 192.168.2.1. You can access the web UI of this device using this IP address. </td>
+                            <td width="25%"> 设备的IP地址，也是设备的管理IP地址，默认为192.168.2.1。局域网内的用户访问此IP地址，可以登录到本设备的管理页面。 </td>
+                            <td width="25%"> 设备的IP地址，也是设备的管理IP地址，默认为192.168.2.1。局域网内的用户访问此IP地址，可以登录到本设备的管理页面 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> IP Address: </td>
+                            <td width="25%"> 输入IP地址： </td>
+                            <td width="25%"> IP地址： </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> it displays \"No Peer AP\" if the device works in AP or Router mode. And in other modes, it displays the MAC address of peer AP that this device bridged. </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Key Update Interval: interval at which a WPA key is updated. A shorter interval leads to higher security. The value 0 indicates that no key update is performed. </td>
+                            <td width="25%"> WPA数据加密密钥自动更新周期，较短的密钥更新周期可增强WPA数据安全性。为0表示不更新。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> LAN </td>
+                            <td width="25%"> LAN </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> LAN IP </td>
+                            <td width="25%"> LAN IP </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> LAN IP Address: </td>
+                            <td width="25%"> 内网IP地址： </td>
+                            <td width="25%"> LAN IP： </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> LAN MAC </td>
+                            <td width="25%"> LAN MAC </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> LAN: </td>
+                            <td width="25%"> LAN： </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> LED1 Indicator Signal Threshold </td>
+                            <td width="25%"> LED1信号灯阈值 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> LED1/2/3 Signal Indicator Threshold: </td>
+                            <td width="25%"> LED1/2/3信号灯阈值： </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> LED2 Indicator Signal Threshold </td>
+                            <td width="25%"> LED2信号灯阈值 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> LED3 Indicator Signal Threshold </td>
+                            <td width="25%"> LED3信号灯阈值 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> MAC Address of Peer AP: </td>
+                            <td width="25%"> 上级AP的MAC： </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> MAC Address of Upstream AP </td>
+                            <td width="25%"> 上级AP的MAC地址 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> MAC地址 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Manage VLAN </td>
+                            <td width="25%"> 管理VLAN </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Max Download Rate </td>
+                            <td width="25%"> 最大下载速率 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Max Upload Rate </td>
+                            <td width="25%"> 最大上传速率 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Max. Download Rate for Single User </td>
+                            <td width="25%"> 单用户最大下载速率 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Max. Download Rate for Single User: </td>
+                            <td width="25%"> 单用户最大下载速率： </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Max. Upload Rate for Single User </td>
+                            <td width="25%"> 单用户最大上传速率 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Max. Upload Rate for Single User: </td>
+                            <td width="25%"> 单用户最大上传速率： </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Mixed WPA/WPA2-PSK </td>
+                            <td width="25%"> Mixed WPA/WPA2-PSK </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Mon. </td>
+                            <td width="25%"> 一 </td>
+                            <td width="25%"> 星期一 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Need a reboot to activate configurations.Reboot or not? </td>
+                            <td width="25%"> 需要重启才能使配置生效，确定要继续吗？ </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> No. of Test Connection </td>
+                            <td width="25%"> 组数 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> No. of Test Connection: </td>
+                            <td width="25%"> 组数： </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> O3 V2.0 </td>
+                            <td width="25%"> O3V2.0 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> O3V2.0 </td>
+                            <td width="25%"> O3V2.0 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Open (use open system), Shared (use shared key), and 802.1x (use RADIUS server for authentication). If the Open or Shared option is used, enter one to four WEP keys, each of which consists of 5 or 13 ASCII characters or 10 or 26 hexadecimal characters. Only the default key is effective. If the 802.1x option is used, enter the IP address, port number, and key which consists of 1 to 64 ASCII characters of the RADIUS server. </td>
+                            <td width="25%"> Open（使用开放系统方式），Shared（使用共享密钥方式），802.1x（使用RADIUS服务器进行身份认证）。Open和Shared可同时设置4个密钥，每个密钥可以输入5或13个ASCII码字符，或者输入10或26位十六进制数，但只有默认密钥生效。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Packet size: </td>
+                            <td width="25%"> 数据包大小： </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Peer AP: </td>
+                            <td width="25%"> 上级AP： </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Please enter an IP address </td>
+                            <td width="25%"> 输入IP地址 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Please select a firmware upgrade file. </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> 请选择升级文件 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> PoE LAN/LAN口速率 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Preferred DNS server and alternate DNS server can"t be the same. </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> PVID </td>
+                            <td width="25%"> PVID </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Reset To Factory Settings </td>
+                            <td width="25%"> 恢复出厂设置 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Restore to default MAC address: </td>
+                            <td width="25%"> 恢复默认MAC： </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> s (Range: 60 to 9999, 0 indicates that no key update is performed.） </td>
+                            <td width="25%"> s（范围：60~9999，0表示不更新） </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Sat. </td>
+                            <td width="25%"> 六 </td>
+                            <td width="25%"> 星期六 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> security modes implemented based on a shared key, including WPA and WPA2. </td>
+                            <td width="25%"> 基于共享密钥的WPA或WPA2模式。 </td>
+                            <td width="25%"> 基于预共享密钥的WPA或WPA2模式。 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> security modes implemented based on RADIUS server authentication to obtain a key, including WPA and WPA2. </td>
+                            <td width="25%"> 基于RADIUS服务器进行身份认证并得到密钥的WPA或WPA2模式。 </td>
+                            <td width="25%"> 基于 IEEE 802.1X身份认证的WPA或WPA2模式，需要第三方RADIUS服务器进行身份认证。 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> select this option if this device is required to assign IP addresses to LAN computers. </td>
+                            <td width="25%"> 当您需要使用设备的DHCP服务器为局域网客户端分配IP地址信息时，可以点击滑块至              状态，启用DHCP服务器。 </td>
+                            <td width="25%"> 当您需要使用设备的DHCP服务器为局域网客户端分配IP地址信息时，请勾选该选项。 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Software Version </td>
+                            <td width="25%"> 软件版本 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Space, dot(.), single quotation marks ('') and double quotation marks (\"\") are disallowed in a host name. </td>
+                            <td width="25%"> 主机名不能包括空格、点、单引号和双引号 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Specify a value in this field. </td>
+                            <td width="25%"> 该区域必须有一个值 </td>
+                            <td width="25%"> 此项不能为空 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Specify wireless transmission rate of the device. </td>
+                            <td width="25%"> 设置设备的无线传输速率。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Sun. </td>
+                            <td width="25%"> 日 </td>
+                            <td width="25%"> 星期日 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> The default password is admin </td>
+                            <td width="25%"> 默认密码：admin </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> The default username is admin </td>
+                            <td width="25%"> 默认用户名：admin </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> The device is set to </td>
+                            <td width="25%"> 设备已配置为 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> The end IP address cannot be less than the start IP address. </td>
+                            <td width="25%"> 结束IP地址不能小于于起始IP地址 </td>
+                            <td width="25%"> 结束IP地址不能小于起始IP地址 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> The primary DNS server address cannot be the same as the secondary DNS server address. </td>
+                            <td width="25%"> 首选DNS与备用DNS不能相同 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> The system is rebooting,it will take about 2 minutes, please wait… </td>
+                            <td width="25%"> 设备正在重启，整个过程约2分钟，请稍候… </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> then enter the remote AP's wifi password,and click Next to continue. </td>
+                            <td width="25%"> 然后输入上级AP的密钥，点击“下一步” </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> This device connects to multiple wired networks in wireless manner, and provides wireless access point. </td>
+                            <td width="25%"> 通过无线桥接将多个有线网络连通起来，自身提供无线接入功能。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> This device connects to multiple wired networks in wireless manner, but does not provide wireless access point. </td>
+                            <td width="25%"> 通过无线桥接将多个有线网络连通起来，自身不提供无线接入功能。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Threshold of lost packets for reboot </td>
+                            <td width="25%"> 触发重启丢包个数 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Threshold of lost packets for reboot: </td>
+                            <td width="25%"> 触发重启丢包个数： </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Thu. </td>
+                            <td width="25%"> 星期四 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Thur. </td>
+                            <td width="25%"> 四 </td>
+                            <td width="25%"> 星期四 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Time format: YYYY-MM-DD HH:MM:SS. </td>
+                            <td width="25%"> 时间格式：YYYY-MM-DD HH:MM:SS </td>
+                            <td width="25%"> 时间格式：YYYY-MM-DD HH:MM:SS. </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> To use the Repeater function of this device, peer AP must support WDS function, and use the same radio band as that of the device. </td>
+                            <td width="25%"> 使用中继模式时，对端AP必须支持WDS功能，且必须和本设备工作在相同的频段。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> transmit/receive rate of the device in Client, Universal Repeater, WISP, Repeater, or P2MP mode. </td>
+                            <td width="25%"> 客户端、万能中继、无线WAN、中继、P2MP模式下，显设备的发送速率和接收速率。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> transmit/receive rate of the first device connected to the wireless network of this device when it works in AP or Router mode. </td>
+                            <td width="25%"> AP、路由模式下，显示第一个接入设备无线网络的客户端的发送速率和接收速率。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Tue. </td>
+                            <td width="25%"> 二 </td>
+                            <td width="25%"> 星期二 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> used to determine the operating frequency band of this device when it uses the 40 MHz channel bandwidth in 11n mode. </td>
+                            <td width="25%"> 用于确定本设备在11n模式使用40MHz信道带宽时所工作的频率段。 </td>
+                            <td width="25%"> 用于确定本设备在11n模式使用40MHz信道带宽时所工作的频率。 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> used to test the throughput between two Tenda CPE in the same network. The test requires one of the two devices to be set as a server and the other as a client. The client launches the test request to the server and the server responds to it. The test result displays on the "Speed Test" page of the client. </td>
+                            <td width="25%"> 用于检测同一网络内两台进行无线桥接的设备之间的连接速度。测速时，需要将其中一台设备配置为服务器，另外一台设备则配置为客户端。客户端向服务器发起测速请求，服务器被动接受客户端发起的测速请求，测试结果显示在客户端的“速率测试”页面上。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> WAN IP </td>
+                            <td width="25%"> WAN IP </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Wed. </td>
+                            <td width="25%"> 三 </td>
+                            <td width="25%"> 星期三 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> width of the frequency band of the channel of this device. </td>
+                            <td width="25%"> 信道带宽是指限定了允许通过该信道的信号下限频率和上限频率，也就是限定了一个频率通带。 </td>
+                            <td width="25%"> 信道带宽是指该信道下信号可用的频率通带大小，也就是下限频率和上限频率之间的频率通带大小。 </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> Wireless network name. </td>
+                            <td width="25%"> 无线网络名称。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> WLAN Interface </td>
+                            <td width="25%"> WLAN </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> WLAN MAC </td>
+                            <td width="25%"> WLAN MAC </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> WLAN: </td>
+                            <td width="25%"> WLAN： </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> WMM </td>
+                            <td width="25%"> WMM </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> You can change the name of this device on the Network > LAN Setup page. </td>
+                            <td width="25%"> 您可以在「网络设置」>「LAN口设置」页面修改设备名称。 </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 保存 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 对端AP2 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 对端AP3 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 对端AP4 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 访客账户 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 管理员账户 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 简体中文 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 禁用 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 客户端 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 密码 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 启用 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 请输入10或26个有效Hex码 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 请输入1-32字节可见ASCII码或中文 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 请输入5位或者13位可见ASCII码 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 请输入8-63个可见ASCII码或者64个Hex码 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 请输入合法的MAC地址字段 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 请输入正确格式的时间 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 请选择SSID或输入对端MAC地址 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 日期 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 删除 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 消息提醒 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 消息体 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 星期 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 星期二 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 星期六 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 星期日 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 星期三 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 星期五 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 星期一 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 用户名 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 主机名 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr><tr>
+                            <td class="error-line" width="25%"> cn </td>
+                            <td width="25%"> 最大输入长度为64位 </td>
+                            <td width="25%"> undefined </td>
+                            <td width="25%"> null </td>
+                        </tr>
+                    </tbody>
+                </table>
+						</div>
+					</div>
+				</div>
+				<div class="content none" id="excelContent">
+					<div class="panel panel-danger">
+						<div class="panel-heading">Excel中的重复词条</div>
+						<div class="panel-body">
+							<table class="table error-table active">
+                    <thead>
+                        <tr class="danger table-head" colspan="8">
+                            <th> 第一次出现行数 </th>
+                            <th> 第二次出现行数 </th>
+                            <th> Key值 </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td width="20%"> 335 </td>
+                        <td width="20%"> 336 </td>
+                        <td width="60%"> IP Address: </td>
+                    </tr><tr>
+                        <td width="20%"> 357 </td>
+                        <td width="20%"> 358 </td>
+                        <td width="60%"> LAN IP Address: </td>
+                    </tr>
+                    </tbody>
+                </table>
+						</div>
+					</div>
+				</div>
+				<div class="content none" id="encodeContent">
+					<div class="panel panel-danger">
+						<div class="panel-heading">编码检查</div>
+						<div class="panel-body">
+							
+            <table class="table error-table active">
+                <thead>
+                    <tr class="danger table-head" colspan="8">
+                        <th> 文件路径 </th>
+                        <th> 编码格式 </th>
+                        <th> 确信度 </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td > \app\index.js </td>
+                    <td > GB2312 </td>
+                    <td > 99.00% </td>
+                </tr>
+                </tbody>
+            </table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	    crossorigin="anonymous"></script>
+	<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	    crossorigin="anonymous"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	    crossorigin="anonymous"></script>
+	<script>
+		$(function () {
+			function Main() {
+
+				this.init = function () {
+					this.initEvent();
+				}
+
+				this.initEvent = function () {
+					$("#leftPannel").delegate("button", "click", function (e) {
+						$(".content").addClass("none");
+						$("button.active").removeClass("active");
+						$(this).addClass("active");
+						$("#" + $(this).attr("id") + "Content").removeClass("none");
+					});
+
+					$(".table-head").on("click", function (e) {
+						$(this).parent().parent().toggleClass("active");
+						let text = $(this).find(".plus-minus").text();
+						$(this).find(".plus-minus").text(text == "[-]" ? "[+]" : "[-]");
+					});
+
+				}
+			}
+			var main = new Main();
+			main.init();
+		});
+	</script>
+</body>
+
+</html>
