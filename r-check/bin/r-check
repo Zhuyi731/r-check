@@ -257,14 +257,14 @@ function HelloWorld() {
 
 
 
-//DEBUG: r-check run DEBUG start
+// // //DEBUG: r-check run DEBUG start
 let debug_cwd = path.join(__dirname,"../test");
 let opt =  {
-    closeCheck: false,
+    closeCheck: true,
     checkHtml: true,
     checkCss: true,
     checkJs: true,
-    checkEncode: true,
+    checkEncode: false,
     checkTranslate: true,
     debug: true,
     multifile: true,

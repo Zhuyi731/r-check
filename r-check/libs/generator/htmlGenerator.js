@@ -6,11 +6,11 @@ const config = require("../config");
  * 便于项目成员查看错误所在的位置以及错误分布情况
  */
 class HtmlGenarator {
-    constructor(options, cwd) {
-        this.cwd = cwd;
+    constructor(options) {
+        this.cwd = options.cwd;
         this.options = options;
         this.templatePath = path.join(__dirname, "./template.html");
-        this.outputPath = path.join(__dirname, "./Error_Report.html");
+        this.outputPath = path.join(this.cwd, "./Error_Report.html");
         this.noError = "<h1>没有检查出错误</h1>";
         this.rConfig = require(path.join(this.cwd, config.configFileName));
         this.contents = {
@@ -40,29 +40,29 @@ class HtmlGenarator {
                 replaceExp: /<!--codeJson-->/,
                 countExp: /<!--codeJsonCt-->/,
                 content: "<h1>没有配置该检查</h1>",
-                problemCount: 0,   
-                configed:this.options.cliOptions.checkTranslate && this.rConfig.jsonAndCode
+                problemCount: 0,
+                configed: this.options.cliOptions.checkTranslate && this.rConfig.jsonAndCode
             },
             excelJsonContent: {
                 replaceExp: /<!--excelJson-->/,
                 countExp: /<!--excelJsonCt-->/,
                 content: "<h1>没有配置该检查</h1>",
-                problemCount: 0,   
-                configed:this.options.cliOptions.checkTranslate && this.rConfig.jsonAndExcel
+                problemCount: 0,
+                configed: this.options.cliOptions.checkTranslate && this.rConfig.jsonAndExcel
             },
             excelContent: {
                 replaceExp: /<!--excel-->/,
                 countExp: /<!--excelCt-->/,
                 content: "<h1>没有配置该检查</h1>",
-                problemCount: 0,   
-                configed:this.options.cliOptions.checkTranslate && this.rConfig.checkDuplicate
+                problemCount: 0,
+                configed: this.options.cliOptions.checkTranslate && this.rConfig.checkDuplicate
             },
             encodeContent: {
                 replaceExp: /<!--encode-->/,
                 countExp: /<!--encodeCt-->/,
                 content: "<h1>没有配置该检查</h1>",
-                problemCount: 0,   
-                configed:this.options.cliOptions.checkEncode 
+                problemCount: 0,
+                configed: this.options.cliOptions.checkEncode
             }
         }
     }
@@ -320,6 +320,7 @@ class HtmlGenarator {
     }
 
     _creatEncodeCheckContents() {
+        if (!this.options.cliOptions.checkEncode) return;
         let encodeMes = this.messageDatas.encode,
             trTemplate,
             tbodyTemplate = "",
@@ -367,7 +368,7 @@ class HtmlGenarator {
         for (prop in this.contents) {
             if (this.contents.hasOwnProperty(prop)) {
                 curConfig = this.contents[prop];
-                if(curConfig.configed && curConfig.problemCount == 0){
+                if (curConfig.configed && curConfig.problemCount == 0) {
                     curConfig.content = this.noError;
                 }
 
@@ -375,7 +376,16 @@ class HtmlGenarator {
                 htmlContent = htmlContent.replace(curConfig.replaceExp, curConfig.content);
             }
         }
+
+        htmlContent = this._replaceData(htmlContent);
         fs.writeFileSync(this.outputPath, htmlContent, "utf-8");
+    }
+
+    _replaceData(htmlContent) {
+        let contents = this.contents,
+            transErrorMes = this.contents.excelJsonContent.configed ? `${contents.codeJsonContent.problemCount+contents.excelJsonContent.problemCount+contents.excelContent.problemCount} Problems` : "没有配置该检查",
+            data = `编码规范检查: HTML:${contents.htmlContent.problemCount} Problems; CSS :${contents.cssContent.problemCount} Problems; JS  :${contents.jsContent.problemCount} Problems; 翻译检查 :${transErrorMes}; 编码检查 :${contents.encodeContent.problemCount} Problems;`;
+        return htmlContent.replace(/<!-data-to-replace->/, data);
     }
 
     _replaceHtmlTag(text) {

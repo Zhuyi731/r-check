@@ -105,20 +105,16 @@ var options = {
         "unqualified-attributes": false
     },
     "jsonAndCode": { //检查源码中每条翻译是否在json中都由对应的词条
-        "jsonPath": "./app/common/lang", //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况
-        "codePath": "./", //***必填  代码的路径，如果就是本地  输入./即可
-        "logPath": "./errorLog" //***选填  错误日志的路径，不填默认为 ./errorLog
+        "jsonPath": "./app/common/lang" //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况
     },
     "jsonAndExcel": { //检查json文件和excel文件的词条是否一一对应
         "jsonPath": "./app/common/lang", //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况
         "excelPath": "./ci_excel/lang.xlsx", //***必填   语言包的路径
-        "logPath": "./errorLog", //***选填   错误日志的路径，不填默认为 ./errorLog
         "defaultLang": "en" //***必填   默认的语言，excel文件中以这种语言为基准
     },
     "checkDuplicate": { //检查excel中是否有重复的词条。重复词条会导致翻译的一对多问题
         "excelPath": "./ci_excel/lang.xlsx", //***必填   语言包的路径、
-        "defaultLang": "en", //***必填   默认的语言，excel文件中以这种语言为基准
-        "logPath": "./errorLog" //***选填   错误日志的路径，不填默认为 ./errorLo
+        "defaultLang": "en" //***必填   默认的语言，excel文件中以这种语言为基准
     },
     "errorLogPath": "./errorLog", //错误日志存放的文件夹
     "exclude": /(node_modules|goform|reasy|reasy-ui)/g //不检查的文件夹 

@@ -1,12 +1,5 @@
 class Validator {
-    constructor(options) {
-        this.checkOptions(options);
-        this.options = this.parseOptions(options);
-        this.result = {
-            messages: [],
-            errNum: 0,
-            warnNum: 0
-        };
+    constructor() {
     }
 
     /**
@@ -28,12 +21,10 @@ class Validator {
     //this is the entry for each Validator entity   
     //you should call this method to run your custom Validator
     run() {
-        let result;
         this.beforeCheck();
         this.parseOptions();
-        if (this.checkOptions() != false) {
-            result = this.check();
-        }
+        this.checkOptions();
+        let result = this.check();
         this.afterCheck();
         return result;
     }

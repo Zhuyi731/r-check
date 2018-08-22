@@ -31,15 +31,20 @@ function entry(cwdPath, options) {
             cliOptions: options
         })
     }];
-    messages.code = validatorControllers[0].validator.run();
 
-    messages.translate = validatorControllers[1].validator.run();
+    validatorControllers.forEach(validatorController => {
+        messages[validatorController.name] = validatorController.validator.run();
+    });
 
-    messages.encode = validatorControllers[2].validator.run();
+    // messages.code = validatorControllers[0].validator.run();
+    // messages.translate = validatorControllers[1].validator.run();
+    // messages.encode = validatorControllers[2].validator.run();
 
     let generator = new HtmlGenerator({
-        cliOptions: options
-    }, cwdPath);
+        cliOptions: options,
+        cwd: cwdPath
+    });
+
     generator.creatHtml(messages);
 
 }

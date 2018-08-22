@@ -5,6 +5,7 @@ const B = require('../utils/b28lib').b28lib;
 const console = require('../utils/console');
 const nodeGlob = require("glob");
 const Validator = require("../../baseClass/Validator");
+const config = require("../../config");
 
 class JsonCodeValidator extends Validator {
     constructor(options) {
@@ -13,15 +14,15 @@ class JsonCodeValidator extends Validator {
         this.description = "检查代码中的语句是否在翻译中都有翻译";
         this.options = options;
         //不需要检查的文件Exp
-        this.excludes = /(errorLog|lang|img|.css|.svn|.git|jquery|.min.js|shiv.js|respond.js|b28|shim.js|goform|cgi-bin)/;
+        this.excludes = /(Error_Report|errorLog|lang|img|.css|.svn|.git|jquery|.min.js|shiv.js|respond.js|b28|shim.js|goform|cgi-bin)/;
         //代码中的所有词条
         this.langArr = [];
         //语言包路径下所有json文件的路径
-        this.jsonFiles = nodeGlob.sync(`${this.options.jsonPath}/**/*.json`);
+        this.jsonFiles = nodeGlob.sync(`${this.options.checkOptions.jsonPath}/**/*.json`);
         //所有js文件的路径
-        this.jsFiles = nodeGlob.sync(`${this.options.src}/**/*.js`);
+        this.jsFiles = nodeGlob.sync(`${this.options.cwd}/**/*.js`);
         //所有页面文件的路径
-        this.pagerFiles = nodeGlob.sync(`${this.options.src}/**/*.*(html|htm|asp|tlp|gch)`);
+        this.pagerFiles = nodeGlob.sync(`${this.options.cwd}/**/*.*(html|htm|asp|tlp|gch)`);
         this.runningFlag = true;
         this.errorMessages = {
             errNum: 0,
@@ -36,6 +37,27 @@ class JsonCodeValidator extends Validator {
 
     afterCheck() {
         this.message("代码翻译检查完毕");
+    }
+
+    checkOptions() {
+        if(!this.options.checkOptions) return ;
+        let opt = this.options.checkOptions,
+            rules = [{
+                id: "basic",
+                message: "jsonAndCode的jsonPath属性必须配置",
+                notPass: !opt.jsonPath
+            }, {
+                id: "checkJsonPath",
+                message: `@${config.configFileName}中jsonAndCode.jsonPath路径 ${path.join(this.options.cwd, opt.jsonPath)}不存在`,
+                notPass: !fs.existsSync(path.join(this.options.cwd, opt.jsonPath))
+            }];
+
+        rules.forEach(rule => {
+            if (rule.notPass) {
+                console.log(rule.message);
+                throw new Error(rule.message);
+            }
+        });
     }
 
     //@override
@@ -76,31 +98,16 @@ class JsonCodeValidator extends Validator {
                         errNum: 0,
                         warnNum: 0
                     };
-                    // tpErrorData.push(`/*****在 ${fileName} 文件中以下词条在 ${curCheckLang} 语言包中没有翻译*****/`);
                 }
 
                 if (curSentence && !/^\/\*---/.test(curSentence) && transData[curSentence] === undefined) {
                     curErrorMessage.errors.push(`${curSentence}`);
                     curErrorMessage.errNum++;
                     curErrorMessage.lang = curCheckLang;
-                    // tpErrorData.push(`${curSentence}`);
                 }
-
             }
-            // /**如果当前文件下没有没被翻译的词条，则把这个文件的信息去掉，避免干扰*/
-            // for (i = 0; i < tpErrorData.length - 1; i++) {
-            //     if (/^\/\*\*/.test(tpErrorData[i]) && /^\/\*\*/.test(tpErrorData[i + 1])) {
-            //         tpErrorData.splice(i, 1);
-            //         i--;
-            //     }
-            // }
-            // /^\/\*\*/.test(tpErrorData[tpErrorData.length - 1]) && tpErrorData.splice(tpErrorData.length - 1, 1);
-
-            // tpErrorData.length > 1 && (errorData = errorData.concat(tpErrorData));
         }, this);
 
-        // fs.writeFileSync(path.join(this.options.logPath, this.options.fileName), errorData.join("\n"), "utf-8");
-        console.log(`文件检查已完成，错误信息文件为: ${this.options.fileName}`);
         return this.errorMessages;
     }
 
@@ -121,7 +128,6 @@ class JsonCodeValidator extends Validator {
         this.pagerFiles.forEach(file => {
             this.langArr = this.langArr.concat(this._getPageLangData(file));
         });
-
     }
 
     //提取html

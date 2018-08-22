@@ -1,7 +1,7 @@
 {
   "name": "r-check",
-  "version": "3.0.0",
-  "description": "1.完全重构代码2.全新的错误输出方式3.完全OOP式拆分检查器与控制器4.简化代码5.不兼容旧版本",
+  "version": "3.0.8",
+  "description": "添加r.config.js的配置校验",
   "main": "index.js",
   "dependencies": {
     "commander": "2.15.1",

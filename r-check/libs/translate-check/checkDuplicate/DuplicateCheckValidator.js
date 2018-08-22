@@ -2,13 +2,15 @@ const xlsx = require("xlsx");
 const fs = require("fs");
 const path = require("path");
 const Validator = require("../../baseClass/Validator");
+const config = require("../../config");
 
 class DupValidator extends Validator {
     constructor(options) {
         super();
         this.name = "Duplicate Validator";
         this.description = "检查Excel中，是否存在两条一样的语句的情况，这样会导致一对多的翻译错误";
-        this.options = options;
+        this.cwd = options.cwd;
+        this.options = options.checkOptions;
         this.excelDatas = [];
         this.errDatas = {
             errNum: 0,
@@ -23,6 +25,26 @@ class DupValidator extends Validator {
 
     afterCheck() {
         this.message("重复词条检查完毕");
+    }
+
+    checkOptions() {
+        let opt = this.options,
+            rules = [{
+                id: "basic",
+                message: "checkDuplicate的excelPath、defaultLang属性必须配置",
+                notPass: !opt.excelPath || !opt.defaultLang
+            }, {
+                id: "isExcelPathExist",
+                message: `@${config.configFileName}中checkDuplicate.excelPath路径 ${path.join(this.cwd, opt.excelPath)}不存在`,
+                notPass: !fs.existsSync(path.join(this.cwd, opt.excelPath))
+            }];
+
+        rules.forEach(rule => {
+            if (rule.notPass) {
+                console.log(rule.message);
+                throw new Error(rule.message);
+            }
+        });
     }
 
     //@override

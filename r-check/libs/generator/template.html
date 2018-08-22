@@ -84,7 +84,7 @@
 	<div class="container">
 		<div class="jumbotron">
 			<h1>项目错误报告</h1>
-			<p>项目/*r-productName*/错误总览</p>
+			<p>当前项目:<!--r-productName--> 错误总览</p>
 			<hr>
 			<p>连接互联网查看此网页效果更佳(不支持IE8查看！！！)</p>
 		</div>
@@ -173,6 +173,9 @@
 	    crossorigin="anonymous"></script>
 	<script>
 		$(function () {
+			//下面注释不能删除，用于替换错误数据
+			/*replace-data| <!-data-to-replace-> |replace-data*/
+
 			function Main() {
 
 				this.init = function () {
