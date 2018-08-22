@@ -6,7 +6,7 @@
 
 > r-check是腾达公司Web组reasy-team用于组内检查及开发的一个工具。并可以通过子进程调用给web组CI服务器调用，用于检查代码规范。[CI服务器详情请点击此处](https://github.com/Zhuyi731/Tenda_CI_server)  
 
-#目的
+#目的  
 项目开发痛点:  
 >1. 项目开发中，经常会遇到一些基础的低级错误,而这些错误是可以通过编辑器的各种Lint来避免的(然而组内每个人的配置都不尽相同，并且有些人不会去配置Lint)。
 >2. 组内代码风格不一致,可以通过Lint来控制
@@ -32,6 +32,8 @@ r-check 工具集成了如下功能
 3.编码格式检查主要检查所有文件格式是否为UTF-8格式(有无BOM均可)。来避免因为编码异常改变导致的错误。  
 
 4.修复由eslint检查出来的错误
+  
+5.开发了一个OEM自动开发的工具挂在CI服务器上，然而其本地开发不是很方便，所以需要一个本地的开发环境(TODO:@4.0.0)  
 
 
 #安装
@@ -53,20 +55,20 @@ r-check 工具集成了如下功能
 	└─r-check							//npm 包发布的路径
 		├─bin							//cli界面的配置
 		├─common						//公共工具
-		├─custom-csslint				//开发版csslint编译后的版本
-		├─custom-htmlhint				//开发版htmlhint编译后的版本
+		├─custom-csslint					//开发版csslint编译后的版本
+		├─custom-htmlhint					//开发版htmlhint编译后的版本
 		└─libs							//核心内容
 			├─baseClass					//验证器与控制器基类。
-			├─code-check				//编码规范检查
-			│  ├─CssValidator			//css检查器
-			│  ├─HtmlValidator			//html检查器
-			│  └─JsValidator			//js检查器
-			├─encode-check				//编码检查
-			│  └─EncodeValidator		//编码检查器
+			├─code-check					//编码规范检查
+			│  ├─CssValidator				//css检查器
+			│  ├─HtmlValidator				//html检查器
+			│  └─JsValidator				//js检查器
+			├─encode-check					//编码检查
+			│  └─EncodeValidator				//编码检查器
 			├─generator					//错误报告生成器
-			├─initConfig				//配置文件及生成工具
-			├─oem-dev-tool				//本地OEM开发工具
-			└─translate-check			//翻译检查
+			├─initConfig					//配置文件及生成工具
+			├─oem-dev-tool					//本地OEM开发工具
+			└─translate-check				//翻译检查
 				├─checkDuplicate		
 				├─jsonAndCode
 				├─jsonAndExcel
