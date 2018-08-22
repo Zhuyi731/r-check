@@ -4,16 +4,24 @@
 ![](https://img.shields.io/npm/dt/r-check.svg)
 ![](https://img.shields.io/npm/l/r-check.svg)
 
-r-check是一个组内用于一些基本检查的一个工具。  
-能够预防一些基本的错误。  
-主要的检查内容有：  
+> r-check是腾达公司Web组reasy-team用于组内检查及开发的一个工具。并可以通过子进程调用给web组CI服务器调用，用于检查代码规范。[CI服务器详情请点击此处](https://github.com/Zhuyi731/Tenda_CI_server)  
 
+#目的
+项目开发痛点:  
+>1. 项目开发中，经常会遇到一些基础的低级错误,而这些错误是可以通过编辑器的各种Lint来避免的(然而组内每个人的配置都不尽相同，并且有些人不会去配置Lint)。
+>2. 组内代码风格不一致,可以通过Lint来控制
+>3. 因公司项目实际情况，翻译由前端完成，在多国语言项目上往往会出现许多问题,而这些问题都是可以通过脚本来检测出来的。  
+
+r-check 工具作为组内CI服务器的底层检查工具，既可本地使用，也可以交由服务器通过Child_Process调用。
+ 
+r-check 工具集成了如下功能
 - 语法规范检查
+- js语法规范错误修复
 - 翻译检查  
 - 编码格式检查  
+- OEM产品本地自动化开发
 
-
-1.语法规范扩展于htmlHint&&csslint&&ESLint    
+1.语法规范扩展于htmlHint、csslint以及ESLint    
 2.翻译检查主要检查： 
 
 - 代码中的词条是否都在语言包中  
@@ -23,53 +31,77 @@ r-check是一个组内用于一些基本检查的一个工具。
 
 3.编码格式检查主要检查所有文件格式是否为UTF-8格式(有无BOM均可)。来避免因为编码异常改变导致的错误。  
 
+4.修复由eslint检查出来的错误
+
 
 #安装
-1.npm install r-check -g (记得加入-g命令全局安装，安装时会自动生成r-check.cmd脚本文件)  
-2.下载完成后输入r-check -V（大写）来检查是否安装成功    
-3.进入需要检查的项目根目录  
-4.在cmd黑色窗口里运行r-check run根据步骤选择即可检查  
-5.检查之后会在更目录多出一个errorLog文件夹，errorLog文件夹下有html及css和js三个子文件夹，分别保存三者的错误信息  
-6.在cmd中，可以输入r-check -V查看当前版本  
-7.在cmd中,输入r-check run -h查看其他配置参数，配置参数具体用法参考[CLI参数](#CLI参数)  
+1. npm install r-check -g (记得加入-g命令全局安装，安装时会自动生成r-check.cmd脚本文件)  
+2. 下载完成后输入r-check -V（大写）来检查是否安装成功    
+3. 进入需要检查的项目根目录  
+4. 在cmd窗口运行*r-check init*根据步骤生成配置文件(也可以通过*r-check init -y*生成*默认配置*文件)
+5. 生成配置文件后,在cmd窗口运行r-check run根据步骤选择即可检查
+6. 或者通过r-check run -Q -x -x (x为配置参数) 配置参数具体用法参考[CLI参数](#CLI参数)   
+7. 检查之后会在根目录生成一个Error_Report.html文件，可视化的展示错误报告(后面会添加图表及项目错误趋势报告)。  
+ 
 
 
 #项目目录结构
 
 	r-check:   
-	├─bin   //二进制文件,用于生成r-check.cmd  并解析输入的配置参数    
-	├─common //默认配置，utils  
-	├─custom-csslint  //自定义的csslint插件  
-	│  └─dist  
-	├─custom-htmlhint  //自定义的htmlhint插件  
-	│
-	├─libs          //源文件代码  
-	│  ├─code-check //检查代码规范的
-	│  │  ├─ cssTest.js  //检查css源码规范，使用cssLint插件  
-	│  │  ├─ htmlTest.js //检查html源码规范,使用htmlHint插件  
-	│  │  ├─ jsTest.js   // 检查js源码规范，使用ESLint插件  
-	│  │  └─ sourceCodetest.js  //用于检查配置参数是否正确，控制检查的开启与关闭  
-	│  ├─encode-check     
-	│  │  └─ checkEncode.js //检查编码格式  	
-	│  │  	
-	│  ├─initconfig  
-	│  │  └─ initConfig.js //用于执行 init指令生成配置文件  	
-	│  └─translate-check   //用于翻译检查  
-	│  
-	├─test          //用于测试的代码    
-	└─index.js      //入口文件     
+	├─dev-csslint							//开发版csslint
+	├─dev-htmlhint							//开发版htmlhint
+	└─r-check							//npm 包发布的路径
+		├─bin							//cli界面的配置
+		├─common						//公共工具
+		├─custom-csslint				//开发版csslint编译后的版本
+		├─custom-htmlhint				//开发版htmlhint编译后的版本
+		└─libs							//核心内容
+			├─baseClass					//验证器与控制器基类。
+			├─code-check				//编码规范检查
+			│  ├─CssValidator			//css检查器
+			│  ├─HtmlValidator			//html检查器
+			│  └─JsValidator			//js检查器
+			├─encode-check				//编码检查
+			│  └─EncodeValidator		//编码检查器
+			├─generator					//错误报告生成器
+			├─initConfig				//配置文件及生成工具
+			├─oem-dev-tool				//本地OEM开发工具
+			└─translate-check			//翻译检查
+				├─checkDuplicate		
+				├─jsonAndCode
+				├─jsonAndExcel
+				└─utils
 
 ##配置文件生成
+使用r-check init 指令  
+然后根据提示即可生成配置文件  
+可选参数:-y 生成默认配置文件(生成3个配置文件)  
+-o 老代码配置文件(配置-y才可用)
+  
+配置文件共三个：
+
+- r.config.js
+- .eslintrc.js
+- .eslintignore
+
+这三个文件的作用  
+
+- r.config.js:用于配置翻译检查的参数以及html、css语法规范的检查配置。  
+- .eslintrc.js:用于配置ESLint插件的语法规范检查规则(组内统一)。此规则同时也将应用于你的IDE（如果你装了ESLint插件的话）  
+- .eslintignore:用于配置ESLint应该忽略的文件(比如node_modules)  
+
 输入r-check init按步骤选择即可  
 1. 第一步会提示生成的配置文件类型，有三种：生成所有配置文件 && 仅生成ESLint相关配置文件 && 仅生成r.config.js  
 2. 第二步需要使用者选择是否为老代码，因为很多老代码不是SPA，没有经过打包，会有许多错误。如果不是老代码直接回车，默认为否。  
 3. 如果配置文件已经存在于当前目录中，则会询问是否覆盖配置文件。选择是，则会覆盖所有配置文件。选择否，则不会覆盖配置文件，但没有的配置文件仍会生成。
+
 
 ## CLI参数 
 使用r-check -v 查看版本号(当前版本@1.2.5)  
 使用r-check -h 可以查看帮助信息  
 运行r-check run检查目录下编码规范及翻译检查。 
 运行r-check init生成配置文件
+运行r-check fix修复eslint检查出来的基础错误   
 
 ###检查参数
 检查参数是为了让使用者进行快速的配置，而不用一步步选择。  
@@ -86,14 +118,12 @@ r-check是一个组内用于一些基本检查的一个工具。
 	
 	Options:  
 	
-		-P, --path [configfile path]  The path of your config file which should follow with the -P or --path option.
 		-S, --close-check             Close source code check.
 		-C, --close-css               Close css check.
 		-H, --close-html              Close html check.
 		-J, --close-js                Close js check.
 		-E, --close-encode            Close encode check.
 		-T, --check-translate         Open translate check.
-		-D, --debug,                  Run in debug mode.
 		-M, --multifile               Output the results as a single log for each file checked
 		-Q, --question                Run immidiately without config any options
 		-h, --help                    output usage information
@@ -120,7 +150,7 @@ e.g:
 >  包括html,css,js代码规范   
 
 e.g:
->  r-check -QS 
+>  r-check run -QS 
 
 或者  
 
@@ -129,8 +159,7 @@ e.g:
 ### -C or--close-css关闭css检查  
 ### -H or --close-html关闭html检查  
 ### -J or --close-js关闭js检查     
-**注意：**所有的短指令是可以组合起来的  
-但是长指令不可以  
+**注意：**所有的短指令是可以组合起来的  但是长指令不可以  
 e.g:
 >  例如 r-check -QCHJ
 
@@ -148,7 +177,7 @@ e.g:
 以避免在前后台在编码格式上出现错误，以及在IE8下的显示问题。    
 编码检查虽然是必须的，但是编码检查会进行大量的IO操作，建议检查一次确认没有问题之后手动关闭。  
 e.g:  
->  r-check -E
+>  r-check run -E
 
 ### -T or --check-translate **开启翻译检查**  
 因为不一定所有的产品需要翻译检查。  
@@ -159,21 +188,18 @@ e.g:
     //配置项中有重复的项是为了配置方便，避免出现混淆。请在每个检查下都配置一遍  
     module.exports = {
       "jsonAndCode": { //检查源码中每条翻译是否在json中都由对应的词条
-         "jsonPath": "./app/common/lang",     //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况
-         "codePath": "./app",                 //***必填  代码的路径，如果就是本地  输入./即可
-         "logPath": "./errorLog"              //***选填  错误日志的路径，不填默认为 ./errorLog
+         "jsonPath": "./app/common/lang"     //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况
+        
        },
       "jsonAndExcel": { //检查json文件和excel文件的词条是否一一对应
          "jsonPath": "./app/common/lang", //***必填   json文件的上级目录的上级目录   因为可能有多国语言的情况
          "excelPath": "./docs/O3.xlsx",   //***必填   语言包的路径
-         "logPath": "./errorLog",         //***选填   错误日志的路径，不填默认为 ./errorLog
-         "defaultLang": "en",             //***必填   默认的语言，excel文件中以这种语言为基准
-         "langToCheck": ["cn"]            //***必填   需要检查的语言项，必须要能在excel文件中找到
+         "defaultLang": "en"             //***必填   默认的语言，excel文件中以这种语言为基准
+       
        },
       "checkDuplicate": { //检查excel中是否有重复的词条。重复词条会导致翻译的一对多问题
          "excelPath": "./test/O3.xlsx", //***必填   语言包的路径、
-         "defaultLang": "en",           //***必填   默认的语言，excel文件中以这种语言为基准
-         "logPath": "./errorLog"        //***选填   错误日志的路径，不填默认为 ./errorLo
+         "defaultLang": "en"           //***必填   默认的语言，excel文件中以这种语言为基准
        }
     };
 
@@ -191,20 +217,11 @@ e.g:
 	
 
 #开发及扩展  
+搭配CI使用，请参照[Tenda web组 CI服务器](https://github.com/Zhuyi731/Tenda_CI_server)
+
 npm install 安装的是发布版本  
 开发版本请到[github](https://github.com/Zhuyi731/r-check.git)下载 
  
 或者使用git bash下载至本地  
 git clone https://github.com/Zhuyi731/r-check.git   
 
-
-
-##目录结构
-	  
-	│  
-	├─compressed          //压缩后的代码，用于发布
-	│  
-	├─reasy-htmlcss-hint-node   //开发时的代码
-	│  └─code
-	│
-	├─gulpfile.js    //gulp相关配置文件
