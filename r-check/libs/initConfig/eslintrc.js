@@ -1,28 +1,29 @@
 module.exports = {
   "parserOptions": {
     "ecmaVersion": 6, //兼容ES6
-    "sourceType": "module" 
+    "sourceType": "module"
   },
-  "env":{
+  "env": {
     "browser": true,
     "node": true,
-    "es6":true,
-    "jquery":true,
-    "amd":true
+    "es6": true,
+    "jquery": true,
+    "amd": true
   },
   //为了使no-undef能支持一些全局变量
-  "globals":{
-    "_":true,
-    "XMLHttpRequest":true,
-    "R":true,
-    "G":true,
-    "B":true,
-    "undefined":true,
-    "Highcharts":true,
-    "Highchart":true
+  "globals": {
+    "_": true,
+    "XMLHttpRequest": true,
+    "R": true,
+    "G": true,
+    "B": true,
+    "ActiveXObject": true,
+    "undefined": true,
+    "Highcharts": true,
+    "Highchart": true
   },
   "rules": {
-     /*
+    /*
      *以下的 off||0代表关闭
      *warm||1 代表抛出Error，不会使编译退出
      *error||2代表抛出错误，会导致编译退出
@@ -39,7 +40,7 @@ module.exports = {
     "no-cond-assign": 2, //禁止在条件表达式中使用赋值语句
     //TODO 2->0 by pjl
     "no-constant-condition": 1, //禁止在条件中使用常量表达式 if(true) if(1)
-    "no-debugger":  2, //禁止使用debugger  建议调试环境关闭
+    "no-debugger": 2, //禁止使用debugger  建议调试环境关闭
     "no-div-regex": 1, //不能使用看起来像除法的正则表达式/=foo/
     "no-dupe-keys": 2, //在创建对象字面量时不允许键重复 {a:1,a:1}
     "no-dupe-args": 2, //函数参数不能重复
@@ -104,7 +105,7 @@ module.exports = {
     // switch 的 case 内必须有 break, return 或 throw
     // by pjl 之前遇到过未写break导致下面那个case也执行了
     'no-fallthrough': 2,
- 
+
     // @变量申明 以下规则与变量申明有关
     // 禁止重复定义变量
     // TODO 我们的代码中存在重复定义变量的现象，且之前遇到过因重复定义变量导致的bug

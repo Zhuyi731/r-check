@@ -1,7 +1,7 @@
 {
   "name": "r-check",
-  "version": "3.0.8",
-  "description": "添加r.config.js的配置校验",
+  "version": "3.0.10",
+  "description": "1.修复r.config.js找不到的BUG",
   "main": "index.js",
   "dependencies": {
     "commander": "2.15.1",
