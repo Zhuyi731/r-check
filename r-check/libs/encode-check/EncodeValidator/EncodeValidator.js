@@ -9,14 +9,14 @@ class EncodeValidator extends Validator {
         super();
         this.name = "Encode Validator";
         this.description = "检查可能存在的非UTF-8编码的文件";
-        this.exclude = /\.(txt|png|jpg|gif|eot|svg|ttf|woff|xlsx|doc|md|ico)$/;
+        this.exclude = /\.(txt|png|jpg|gif|eot|svg|ttf|woff|xls|xlsx|doc|docx|md|ico|rar|bat)$/;
         this.exclude2 = /(goform|node_modules)/;
         this.options = options;
         this.errDatas = {
             errNum: 0,
             warnNum: 0,
             messages: []
-        }
+        };
     }
 
     beforeCheck() {

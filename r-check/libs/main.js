@@ -2,6 +2,12 @@ const TranlateValidatorController = require("./translate-check/TranlateValidator
 const EncodeCheckValidatorController = require("./encode-check/EncodeCheckValidatorController");
 const HtmlGenerator = require("./generator/htmlGenerator");
 const CodeCheckValidatorController = require("./code-check/CodeCheckValidatorController");
+//   _
+//  | |__ _ _ __  _
+//  | '_ \| | | |/ _` |
+//  | |_) | |_| | (_| |
+//  |_.__/ \__,_|\__, |    bug警告！
+//              |___/
 
 function entry(cwdPath, options) {
     let messages = {

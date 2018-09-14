@@ -105,7 +105,6 @@ module.exports = {
     // switch 的 case 内必须有 break, return 或 throw
     // by pjl 之前遇到过未写break导致下面那个case也执行了
     'no-fallthrough': 2,
-
     // @变量申明 以下规则与变量申明有关
     // 禁止重复定义变量
     // TODO 我们的代码中存在重复定义变量的现象，且之前遇到过因重复定义变量导致的bug

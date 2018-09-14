@@ -38,8 +38,7 @@ class JsValidator extends Validator {
     }
 
     check() {
-        this.errorLogPath = path.join(this.options.cwd, config.errorLogPath),
-            util.isLogExist(this.errorLogPath, path.join(this.errorLogPath, "/js"));
+        this.errorJsonPath = path.join(this.options.cwd, config.eslintErrorLogPath);
         this._executeCheck();
         this._getResult();
 
@@ -50,11 +49,11 @@ class JsValidator extends Validator {
         //Html版本
         // eslint.execute(["eslint", this.options.cwd, "-o", `${this.errorLogPath}/js/errorLog.json`, "-f", "html", "./"]);
         //Json版本
-        eslint.execute(["eslint", this.options.cwd, "-o", `${this.errorLogPath}/js/errorLog.json`, "-f", "json", "./"]);
+        eslint.execute(["eslint", this.options.cwd, "-o", `${this.errorJsonPath}`, "-f", "json", "./"]);
     }
 
     _getResult() {
-        let json = require(`${this.errorLogPath}/js/errorLog.json`),
+        let json = require(`${this.errorJsonPath}`),
             messages = json.messages;
 
         json.forEach(error => {

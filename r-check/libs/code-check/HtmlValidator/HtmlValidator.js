@@ -46,10 +46,6 @@ class HtmlValidator extends Validator {
     }
 
     check() {
-        let errorLogPath = config.errorLogPath,
-            htmlLogPath = path.join(errorLogPath, "/html");
-        //如果错误日志文件路径不存在，则创建
-        util.isLogExist(errorLogPath, htmlLogPath);
         this._getHtmlFileList();
         this._checkHtmlFiles();
 

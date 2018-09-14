@@ -37,10 +37,6 @@ class CssValidator extends Validator {
     }
 
     check() {
-        let errorLogPath = config.errorLogPath,
-            cssLogPath = path.join(errorLogPath, "/css");
-        //如果错误日志文件路径不存在，则创建
-        util.isLogExist(errorLogPath, cssLogPath);
         this._getCssFileList();
         this._checkCssFiles();
 

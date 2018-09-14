@@ -3,6 +3,8 @@ goform/
 common/
 lang/
 component/
+build/
+dll/
 .eslintrc.js
 r.config.js
 webpack.config.js
