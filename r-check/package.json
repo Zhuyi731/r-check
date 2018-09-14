@@ -1,7 +1,7 @@
 {
   "name": "r-check",
-  "version": "3.1.1",
-  "description": "1.移除依赖包中的htmlhint和csslint",
+  "version": "3.1.2",
+  "description": "[Fix] 修复eslint使用babel-eslint不能检查的问题",
   "main": "index.js",
   "dependencies": {
     "babel-eslint": "^9.0.0",
