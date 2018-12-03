@@ -1,13 +1,15 @@
 {
   "name": "r-check",
-  "version": "3.1.2",
-  "description": "[Fix] 修复eslint使用babel-eslint不能检查的问题",
+  "version": "3.1.3",
+  "description": "一个代码规范检查工具库",
   "main": "index.js",
   "dependencies": {
     "babel-eslint": "^9.0.0",
     "commander": "2.15.1",
+	"csslint": "^1.0.5",
     "eslint": "4.19.1",
     "glob": "7.1.2",
+	"htmlhint": "^0.9.13",
     "inquirer": "5.2.0",
     "jschardet": "1.6.0",
     "jsdom": "11.6.2",
