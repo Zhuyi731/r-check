@@ -137,19 +137,17 @@ program
     .option("-D, --debug,", "Run in debug mode.")
     .option("-M, --multifile", "Output the results as a single log for each file checked")
     .option("-Q, --question", "Run immidiately without config any options")
-    .action(args => {
+    .action((args) => {
         let scb = ans => {
             return !ans.closeCheck;
         };
         if (args.question) {
-            debug("参数:", args);
             run(cwd, parseOpt(args));
         } else {
             console.log("可以使用r-check run -Q指令来配置相关检查哦！");
             console.log("也可以通过配置参数来快速配置");
             console.log("");
             console.log("");
-
             inquirer
                 .prompt([{
                     type: "confirm",

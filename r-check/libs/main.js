@@ -38,20 +38,23 @@ function entry(cwdPath, options) {
         })
     }];
 
-    validatorControllers.forEach(validatorController => {
-        messages[validatorController.name] = validatorController.validator.run();
-    });
+    try {
+        validatorControllers.forEach(validatorController => {
+            messages[validatorController.name] = validatorController.validator.run();
+        });
+    } catch (e) {
+        console.log(e);
+    }
 
-    // messages.code = validatorControllers[0].validator.run();
-    // messages.translate = validatorControllers[1].validator.run();
-    // messages.encode = validatorControllers[2].validator.run();
-
-    let generator = new HtmlGenerator({
-        cliOptions: options,
-        cwd: cwdPath
-    });
-
-    generator.creatHtml(messages);
+    try {
+        let generator = new HtmlGenerator({
+            cliOptions: options,
+            cwd: cwdPath
+        });
+        generator.creatHtml(messages);
+    } catch (e) {
+        console.log(e);
+    }
 
 }
 

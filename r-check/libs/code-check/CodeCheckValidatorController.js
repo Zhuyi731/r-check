@@ -16,7 +16,6 @@ class CodeCheckValidatorController extends ValidatorController {
         this.validators = [];
     }
 
-
     checkOptions() {
         //关闭检查则不检查
         if (this.options.cliOptions.closeCheck) return false;
@@ -76,7 +75,7 @@ class CodeCheckValidatorController extends ValidatorController {
         this._initValidators();
 
         this.validators.forEach(validator => {
-            errorMessages[validator.mesId] = validator.validator.run();
+            validator.validator && (errorMessages[validator.mesId] = validator.validator.run());
         });
 
         return errorMessages;
@@ -86,30 +85,25 @@ class CodeCheckValidatorController extends ValidatorController {
     _initValidators() {
         this.validators = [{
             mesId: "htmlMes",
-            validator: new HtmlValidator({
+            validator: this.options.cliOptions.checkHtml ? new HtmlValidator({
                 cwd: this.options.cwd,
                 checkOptions: this.options.checkOptions,
                 cliOptions: this.options.cliOptions
-            }),
+            }) : null
         }, {
             mesId: "cssMes",
-            validator: new CssValidator({
+            validator: this.options.cliOptions.checkCss ? new CssValidator({
                 cwd: this.options.cwd,
                 checkOptions: this.options.checkOptions,
                 cliOptions: this.options.cliOptions
-            })
+            }) : null
         }, {
             mesId: "jsMes",
-            validator: new JsValidator({
+            validator: this.options.cliOptions.checkJs ? new JsValidator({
                 cwd: this.options.cwd
-            })
+            }) : null
         }];
     }
-
-    parseOptions() {
-
-    }
-
 }
 
 module.exports = CodeCheckValidatorController;
