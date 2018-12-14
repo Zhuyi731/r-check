@@ -20,7 +20,7 @@ HelloWorld();
  * 当输入r-check -h时会显示下列帮助信息
  */
 program
-    .version(require('../package').version)
+    .version(require('../package').version, '-v, --version')
     .usage('<command> [options],use order(r-check run -h) for help information');
 
 

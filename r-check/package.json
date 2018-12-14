@@ -1,6 +1,6 @@
 {
   "name": "r-check",
-  "version": "3.1.4",
+  "version": "3.1.6",
   "description": "一个代码规范检查工具库",
   "main": "index.js",
   "dependencies": {
